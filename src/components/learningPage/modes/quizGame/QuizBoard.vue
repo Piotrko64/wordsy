@@ -33,10 +33,28 @@ watch(progress, () => {
             v-for="answer in quizQuestions[progress].answers"
             @click="checkAnswer(answer)"
             :disabled="!!userAnswer"
+            v-wave
+            :class="{
+                good: userAnswer && quizQuestions[progress].correctAnswer === answer,
+                bad: userAnswer === answer && quizQuestions[progress].correctAnswer !== userAnswer,
+            }"
         >
             {{ answer }}
         </button>
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+button {
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family: var(--signika);
+    border: 3px solid var(--secondGray);
+    &.good {
+        border: 3px solid green;
+    }
+    &.bad {
+        border: 3px solid red;
+    }
+}
+</style>
