@@ -15,7 +15,6 @@ function speakSentence(e: MouseEvent, text: string) {
     e.stopPropagation();
 
     speak(text, lang);
-    console.log(lang);
 }
 </script>
 
@@ -33,7 +32,7 @@ function speakSentence(e: MouseEvent, text: string) {
 <style lang="scss">
 .front,
 .back {
-    padding: 10px;
+    padding: 8px 14px;
     box-sizing: border-box;
     position: absolute;
     height: 100%;
@@ -59,6 +58,7 @@ function speakSentence(e: MouseEvent, text: string) {
         text-transform: uppercase;
         img {
             height: 25px;
+            margin-top: 0px;
         }
     }
     p {

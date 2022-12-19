@@ -30,7 +30,7 @@ function toggleActive() {
 <style lang="scss">
 .card {
     width: 100%;
-    height: 220px;
+    height: 260px;
     border-radius: 5px;
     overflow: hidden;
     perspective: 1000px;
