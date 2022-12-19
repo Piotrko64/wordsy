@@ -4,7 +4,7 @@ import { fakeStartingWordsData } from "../../data/test/fakeStartingWordsData";
 
 describe("checking functions to add one corect answer if is it necessary", () => {
     const fakeCorrectAnswer = "jestem fałszywą odpowiedzią";
-    const fakeAnswers = getAnswersWithOneCorrect(fakeCorrectAnswer, fakeStartingWordsData, "wordPL");
+    const fakeAnswers = getAnswersWithOneCorrect(fakeCorrectAnswer, fakeStartingWordsData, "wordPL", 4);
 
     it("should return 4 answers", () => {
         expect(fakeAnswers.length).toEqual(4);

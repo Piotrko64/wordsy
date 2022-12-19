@@ -1,8 +1,9 @@
 import { getRandomNumber } from "../../utils/randomNumber/getRandomNumber";
 import { ListWords } from "../../@types/WordsType";
-import { getAnswersWithOneCorrect } from "./getAnswersWithOneCorrect";
+
 import { shuffleElementsArray } from "../../utils/shuffleElements/shuffleElementsArray";
-import { QuestionsQuiz } from "@/src/@types/quiz/QuestionsQuiz";
+import { QuestionsQuiz } from "@/src/@types/quizzes/QuestionsQuiz";
+import { getAnswersWithOneCorrect } from "../generateAnswers/getAnswersWithOneCorrect";
 
 export function generateQuiz(listWord: ListWords): QuestionsQuiz {
     function getRandomLang(): Record<"questionLang" | "answerLang", "wordPL" | "wordEN"> {
@@ -18,7 +19,7 @@ export function generateQuiz(listWord: ListWords): QuestionsQuiz {
         return {
             question: word[questionLang],
             langQuestion: questionLang,
-            answers: getAnswersWithOneCorrect(word[answerLang], listWord, answerLang),
+            answers: getAnswersWithOneCorrect(word[answerLang], listWord, answerLang, 4),
             correctAnswer: word[answerLang],
         };
     });

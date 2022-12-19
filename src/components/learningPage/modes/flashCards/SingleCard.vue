@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { speak } from "../../../../helpers/speech/speak";
 import SingleSiteCard from "./SingleSiteCard.vue";
 
 const active = ref(false);

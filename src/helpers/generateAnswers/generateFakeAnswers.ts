@@ -1,7 +1,7 @@
 import { getRandomNumber } from "../../utils/randomNumber/getRandomNumber";
 import { ListWords } from "@/src/@types/WordsType";
 
-export function generateFakeAnswers(listWord: ListWords, langWord: "wordPL" | "wordEN") {
+export function generateFakeAnswers(listWord: ListWords, langWord: "wordPL" | "wordEN", amount: number) {
     const takenAnswersIndex: Array<number> = [];
     const answers = [];
 
@@ -17,7 +17,7 @@ export function generateFakeAnswers(listWord: ListWords, langWord: "wordPL" | "w
         return listWord[randomNumber][langWord];
     }
 
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i <= amount - 1; i++) {
         if (i >= listWord.length - 1) {
             break;
         }
