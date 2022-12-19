@@ -23,6 +23,19 @@
     padding-right: 8px;
 }
 
+button {
+    background-color: white;
+    border-radius: 5px;
+    border: 3px solid var(--secondGray);
+    font-family: var(--signika);
+    font-size: 1.1rem;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 .whiteBlock {
     background-color: white;
     border-radius: 5px;

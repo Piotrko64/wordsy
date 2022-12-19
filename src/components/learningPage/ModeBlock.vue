@@ -26,6 +26,7 @@ const { getProgress, getMode, getPercentProgress } = storeToRefs(useWordsStore()
     font-size: 1.6rem;
     display: inline-block;
     font-weight: 400;
+    margin-bottom: 5px;
     .text {
         padding-top: 5px;
         padding-bottom: 5px;

@@ -16,7 +16,7 @@ function validAnswers(yourAnswer: string) {
 }
 
 function speakWord(text: string) {
-    speak(text, voiceQuizQuestions.value[progress.value].language === "PL" ? "pl" : "en-GB");
+    speak(text, voiceQuizQuestions.value[progress.value].language === "PL" ? "pl" : "en");
 }
 
 watch(progress, () => {
