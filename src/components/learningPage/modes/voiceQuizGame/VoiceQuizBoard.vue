@@ -15,8 +15,8 @@ function validAnswers(yourAnswer: string) {
     userAnswer.value = yourAnswer;
 }
 
-function speakWord(text: string, lang: string) {
-    speak(text, lang);
+function speakWord(text: string) {
+    speak(text, voiceQuizQuestions.value[progress.value].language === "PL" ? "pl" : "en-GB");
 }
 
 watch(progress, () => {
@@ -25,7 +25,7 @@ watch(progress, () => {
 </script>
 
 <template>
-    <img :src="micro" alt="Powiedz słowo" @click="speakWord(voiceQuizQuestions[progress].word, 'EN')" />
+    <img :src="micro" alt="Powiedz słowo" @click="speakWord(voiceQuizQuestions[progress].word)" />
     <button
         v-for="answer in voiceQuizQuestions[progress].allAnswers"
         @click="validAnswers(answer)"
