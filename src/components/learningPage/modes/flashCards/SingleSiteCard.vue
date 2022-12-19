@@ -13,7 +13,7 @@ const { classes, word, sentence, lang } = defineProps<Props>();
 
 function speakSentence(e: MouseEvent, text: string) {
     e.stopPropagation();
-
+    console.log(lang);
     speak(text, lang);
 }
 </script>
