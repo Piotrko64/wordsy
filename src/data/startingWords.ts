@@ -32,6 +32,14 @@ export const startingWords = [
         exampleEN: "How can one person make such a mess?",
     },
     {
+        wordPL: "wspominać",
+        wordEN: "mention",
+        fav: false,
+        important: false,
+        examplePL: "Mój brat wspomniał, że cię widział któregoś dnia",
+        exampleEN: "My brother mentioned seeing you the other day",
+    },
+    {
         wordPL: "przyczyna / powód",
         wordEN: "cause",
         fav: false,
@@ -46,6 +54,14 @@ export const startingWords = [
         important: false,
         examplePL: "Nie chcę ryzykować straty moich pieniędzy",
         exampleEN: "I don't want to risk losing my money",
+    },
+    {
+        wordPL: "młodość",
+        wordEN: "youth",
+        fav: false,
+        important: false,
+        examplePL: "Mój dziadek tęskni za swoją młodością",
+        exampleEN: "My grandfather misses his youth",
     },
     {
         wordPL: "przedział / okres (trwania czegoś)",
@@ -72,6 +88,14 @@ export const startingWords = [
         exampleEN: "He reported the crime to the police. ",
     },
     {
+        wordPL: "dorastać",
+        wordEN: "grow up",
+        fav: false,
+        important: true,
+        examplePL: "Ty potrzebujesz trochę czasu, aby dorosnąć",
+        exampleEN: "You need some time to grow up",
+    },
+    {
         wordPL: "wpływać (na coś)",
         wordEN: "influence",
         fav: false,
@@ -80,12 +104,28 @@ export const startingWords = [
         exampleEN: "Don't try to influence my decision, I won't listen to you anyway.",
     },
     {
+        wordPL: "wykorzystywać / nadużywać",
+        wordEN: "exploit",
+        fav: false,
+        important: false,
+        examplePL: "On nadmiernie wykorzystywał ten komputer, dlatego się zepsuł.",
+        exampleEN: "He exploited this computer, that's why it broke down",
+    },
+    {
         wordPL: "ukończenie wyższych studiów",
         wordEN: "graduation",
         fav: false,
         important: false,
         examplePL: "Otrzymałam twoją wiadomość, że nie przyjedziesz na moje uroczyste rozdanie świadectw.",
         exampleEN: "I received your message that you weren't coming to my graduation.",
+    },
+    {
+        wordPL: "sobie wzajemnie / siebie wzajemnie",
+        wordEN: "each other",
+        fav: false,
+        important: true,
+        examplePL: "Musimy pomagać sobie nawzajem",
+        exampleEN: "We must help each other",
     },
     {
         wordPL: "sprzedawca",
@@ -110,5 +150,13 @@ export const startingWords = [
         important: true,
         examplePL: "To niegrzeczne pytać kobietę o jej wiek",
         exampleEN: "It's rude to ask a woman her age",
+    },
+    {
+        wordPL: "zauważać / ogłoszenie",
+        wordEN: "notice",
+        fav: false,
+        important: true,
+        examplePL: "Miło, że to zauważyłeś.",
+        exampleEN: "I'm glad you noticed that",
     },
 ];

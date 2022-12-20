@@ -7,9 +7,11 @@ import { getAnswersWithOneCorrect } from "../generateAnswers/getAnswersWithOneCo
 
 export function generateQuiz(listWord: ListWords): QuestionsQuiz {
     function getRandomLang(): Record<"questionLang" | "answerLang", "wordPL" | "wordEN"> {
+        const randomNumber = getRandomNumber(0, 1);
+
         return {
-            questionLang: getRandomNumber(0, 1) ? "wordPL" : "wordEN",
-            answerLang: getRandomNumber(0, 1) ? "wordEN" : "wordPL",
+            questionLang: randomNumber ? "wordPL" : "wordEN",
+            answerLang: randomNumber ? "wordEN" : "wordPL",
         };
     }
 

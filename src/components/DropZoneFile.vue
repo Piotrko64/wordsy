@@ -14,6 +14,8 @@ function turnOnActiveZone() {
 function turnOffActiveZone() {
     isActiveZone.value = false;
 }
+
+function handleDrop(event: any) {}
 </script>
 
 <template>
@@ -22,7 +24,7 @@ function turnOffActiveZone() {
         @dragenter="preventEvent($event), turnOnActiveZone()"
         @dragover="preventEvent($event), turnOnActiveZone()"
         @dragleave="preventEvent($event), turnOffActiveZone()"
-        @drop="preventEvent($event), turnOffActiveZone()"
+        @drop="preventEvent($event), turnOffActiveZone(), handleDrop($event)"
         :class="{ active: isActiveZone }"
     ></div>
 </template>

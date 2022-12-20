@@ -24,5 +24,6 @@ export function generateFakeAnswers(listWord: ListWords, langWord: "wordPL" | "w
 
         answers.push(getRandomAnswer());
     }
+
     return answers;
 }
