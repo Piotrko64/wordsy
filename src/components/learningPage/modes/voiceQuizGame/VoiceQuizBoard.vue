@@ -2,7 +2,7 @@
 import { generateVoiceQuiz } from "../../../../helpers/voiceQuiz/generateVoiceQuiz";
 import { useWordsStore } from "../../../../stores/WordsStore";
 import { storeToRefs } from "pinia";
-import { ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { speak } from "../../../../helpers/speech/speak";
 import micro from "../../../../assets/icons/voiceWhite.png";
 
@@ -19,6 +19,10 @@ function speakWord(text: string) {
     speak(text, voiceQuizQuestions.value[progress.value].language === "PL" ? "pl" : "en");
 }
 
+onMounted(() => {
+    store.restartProgress();
+});
+
 watch(progress, () => {
     userAnswer.value = false;
 });
@@ -28,22 +32,27 @@ watch(progress, () => {
     <button class="actionButton" @click="speakWord(voiceQuizQuestions[progress].word)" v-wave>
         <img :src="micro" alt="Powiedz słowo" />
     </button>
-    <button
-        v-for="answer in voiceQuizQuestions[progress].allAnswers"
-        @click="validAnswers(answer)"
-        :disabled="!!userAnswer"
-        class="answer"
-        v-wave
-        :class="{
-            good: userAnswer && voiceQuizQuestions[progress].correctAnswer === answer,
-            bad: userAnswer === answer && voiceQuizQuestions[progress].correctAnswer !== userAnswer,
-        }"
-    >
-        {{ answer }}
-    </button>
+    <div class="containerButtons">
+        <button
+            v-for="answer in voiceQuizQuestions[progress].allAnswers"
+            @click="validAnswers(answer)"
+            :disabled="!!userAnswer"
+            class="answer answerButton"
+            v-wave
+            :class="{
+                good: userAnswer && voiceQuizQuestions[progress].correctAnswer === answer,
+                bad: userAnswer === answer && voiceQuizQuestions[progress].correctAnswer !== userAnswer,
+            }"
+        >
+            {{ answer }}
+        </button>
+    </div>
 </template>
 
 <style scoped lang="scss">
+.actionButton {
+    margin-top: 15px;
+}
 button {
     display: flex;
     justify-content: center;
@@ -53,16 +62,16 @@ button {
         height: 40px;
     }
 }
-.answer {
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-family: var(--signika);
-    border: 3px solid var(--secondGray);
-    &.good {
-        border: 3px solid green;
-    }
-    &.bad {
-        border: 3px solid red;
+.containerButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 25px 0;
+    .answer {
+        width: 100%;
+        max-width: none;
+
+        flex: none;
     }
 }
 </style>

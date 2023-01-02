@@ -37,6 +37,7 @@ watch(progress, () => {
             @click="checkAnswer(answer)"
             :disabled="!!userAnswer"
             v-wave
+            class="answerButton"
             :class="{
                 good: userAnswer && quizQuestions[progress].correctAnswer === answer,
                 bad: userAnswer === answer && quizQuestions[progress].correctAnswer !== userAnswer,

@@ -45,6 +45,28 @@ button {
     color: black;
 }
 
+.answerButton {
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: var(--signika);
+    border: 3px solid var(--secondGray);
+    padding: 8px;
+    min-width: 220px;
+    flex: 1;
+    display: flex;
+    transition: all 0.1s ease-in-out;
+}
+.answerButton.good {
+    color: white;
+    background-color: var(--green);
+    border: 3px solid white;
+}
+.answerButton.bad {
+    color: white;
+    background-color: rgb(230, 70, 70);
+    border: 3px solid white;
+}
+
 .whiteBlock {
     background-color: white;
     border-radius: 5px;

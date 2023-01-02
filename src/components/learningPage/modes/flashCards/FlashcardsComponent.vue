@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
 import { useWordsStore } from "../../../../stores/WordsStore";
 import SingleCard from "./SingleCard.vue";
 
 const store = useWordsStore();
 const { getActualWord } = storeToRefs(store);
+
+onMounted(() => {
+    store.restartProgress();
+});
 </script>
 
 <template>
