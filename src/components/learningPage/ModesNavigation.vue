@@ -4,24 +4,36 @@ import { dataModesNavigation } from "../../data/navigation/dataModesNavigation";
 
 <template>
     <h3><span>Tryby</span></h3>
-    <div>
-        <router-link v-for="mode in dataModesNavigation" :to="'/' + mode.urlName" class="horizontalSpace">{{
-            mode.name
-        }}</router-link>
-    </div>
+    <router-link v-for="mode in dataModesNavigation" :to="'/' + mode.urlName">
+        <div class="horizontalSpace">
+            <img :src="mode.img" :alt="mode.name" />
+            {{ mode.name }}
+        </div>
+    </router-link>
 </template>
 
 <style scoped lang="scss">
 div {
     display: flex;
-    flex-direction: column;
-
+    margin-bottom: 5px;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    width: 100%;
     gap: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    img {
+        width: 34px;
+        object-fit: contain;
+        height: 38px;
+    }
     a {
-        width: 100%;
         font-size: 1.5rem;
-        background-color: white;
-        border-radius: 5px;
+        color: var(--green);
+        &::first-letter {
+            font-weight: 900;
+        }
     }
 }
 

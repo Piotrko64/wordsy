@@ -25,7 +25,7 @@ watch(progress, () => {
 </script>
 
 <template>
-    <button class="actionButton" @click="speakWord(voiceQuizQuestions[progress].word)">
+    <button class="actionButton" @click="speakWord(voiceQuizQuestions[progress].word)" v-wave>
         <img :src="micro" alt="Powiedz słowo" />
     </button>
     <button
