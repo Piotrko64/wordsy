@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { speak } from "../../../../helpers/speech/speak";
-import micro from "../../../../assets/icons/microphone.png";
+import micro from "../../../../assets/icons/voice.png";
 
 interface Props {
     classes: "front" | "back";
@@ -56,9 +56,13 @@ function speakSentence(e: MouseEvent, text: string) {
     }
     h2 {
         text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img {
             height: 25px;
             margin-top: 0px;
+            margin-left: 10px;
         }
     }
     p {

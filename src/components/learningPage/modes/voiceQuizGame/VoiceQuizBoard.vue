@@ -4,7 +4,7 @@ import { useWordsStore } from "../../../../stores/WordsStore";
 import { storeToRefs } from "pinia";
 import { ref, watch } from "vue";
 import { speak } from "../../../../helpers/speech/speak";
-import micro from "../../../../assets/icons/microphone.png";
+import micro from "../../../../assets/icons/voiceWhite.png";
 
 const store = useWordsStore();
 const { getListWords, progress } = storeToRefs(store);
@@ -25,11 +25,14 @@ watch(progress, () => {
 </script>
 
 <template>
-    <img :src="micro" alt="Powiedz słowo" @click="speakWord(voiceQuizQuestions[progress].word)" />
+    <button class="actionButton" @click="speakWord(voiceQuizQuestions[progress].word)">
+        <img :src="micro" alt="Powiedz słowo" />
+    </button>
     <button
         v-for="answer in voiceQuizQuestions[progress].allAnswers"
         @click="validAnswers(answer)"
         :disabled="!!userAnswer"
+        class="answer"
         v-wave
         :class="{
             good: userAnswer && voiceQuizQuestions[progress].correctAnswer === answer,
@@ -42,6 +45,15 @@ watch(progress, () => {
 
 <style scoped lang="scss">
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 40px;
+    }
+}
+.answer {
     border-radius: 5px;
     font-size: 1.2rem;
     font-family: var(--signika);
