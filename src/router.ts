@@ -3,6 +3,8 @@ import FlashcardsComponentVue from "./components/learningPage/modes/flashCards/F
 import QuizBoardVue from "./components/learningPage/modes/quizGame/QuizBoard.vue";
 import VoiceQuizBoardVue from "./components/learningPage/modes/voiceQuizGame/VoiceQuizBoard.vue";
 import LearningPageVue from "./pages/LearningPage.vue";
+import ScreenSaverMode from "./components/learningPage/modes/screensaverMode/ScreenSaverMode.vue";
+import AddWordsPageVue from "./pages/AddWordsPage.vue";
 
 const routes = [
     {
@@ -12,7 +14,12 @@ const routes = [
             { path: "fiszki", component: FlashcardsComponentVue },
             { path: "quiz", component: QuizBoardVue },
             { path: "voiceQuiz", component: VoiceQuizBoardVue },
+            { path: "screensaverMode", component: ScreenSaverMode },
         ],
+    },
+    {
+        path: "/AddWords",
+        component: AddWordsPageVue,
     },
 ];
 

@@ -23,14 +23,16 @@ div {
     gap: 4px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border: 3px solid var(--secondGreen);
     img {
         width: 34px;
         object-fit: contain;
         height: 38px;
+        margin-right: 5px;
     }
     a {
         font-size: 1.5rem;
-        color: var(--green);
+        color: var(--secondGreen);
         &::first-letter {
             font-weight: 900;
         }
@@ -44,7 +46,7 @@ h3 {
     margin-bottom: 10px;
 
     text-align: center;
-    color: var(--green);
+    color: var(--secondGreen);
     font-size: 2rem;
     font-weight: 600;
     span {
@@ -59,7 +61,7 @@ h3 {
         top: 50%;
         left: 50%;
         position: absolute;
-        background-color: var(--green);
+        background-color: var(--secondGreen);
         transform: translate(-50%, -50%);
         z-index: -5;
     }

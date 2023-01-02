@@ -24,11 +24,13 @@ const store = useWordsStore();
     width: 100%;
     gap: 5px;
     margin-top: 5px;
+
     button {
         width: 100%;
         border: none;
+        border: 3px solid var(--secondGray);
         img {
-            height: 27px;
+            height: 25px;
         }
     }
 }
