@@ -20,9 +20,8 @@ function updateDataForm(name: InputNames, text: string) {
 
 function addNewWord(event: Event) {
     event.preventDefault();
-    console.log(dataForm);
+
     addNewOwnWord(dataForm);
-    console.log(getListWords);
 }
 </script>
 

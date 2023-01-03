@@ -21,7 +21,7 @@ export const dataModesNavigation = [
     },
     {
         name: "Tryb wygaszacza",
-        urlName: "screensaverMode",
+        urlName: "trybWygaszacza",
         img: display,
     },
 ];

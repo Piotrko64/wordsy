@@ -8,6 +8,8 @@ const elementToFullScreen = ref();
 const store = useWordsStore();
 const { getActualWord } = storeToRefs(store);
 
+let timer: NodeJS.Timeout;
+
 function toggleFullScreen() {
     if (elementToFullScreen.value.requestFullscreen) {
         console.log(isScreensaverMode.value);
@@ -21,7 +23,19 @@ function toggleFullScreen() {
     }
 }
 
-watch(isScreensaverMode, () => {});
+function goToNext() {
+    if (isScreensaverMode.value) {
+        timer = setInterval(() => {
+            store.nextWord();
+        }, 3000);
+    } else {
+        clearInterval(timer);
+    }
+}
+
+watch(isScreensaverMode, () => {
+    goToNext();
+});
 </script>
 
 <template>
