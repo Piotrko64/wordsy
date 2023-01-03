@@ -24,6 +24,12 @@
     padding-right: 8px;
 }
 
+.centerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .actionButton {
     background-color: var(--green);
 

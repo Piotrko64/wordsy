@@ -2,36 +2,35 @@
 import { Ref, ref, watch } from "vue";
 
 const {
-    RequiredInput,
+    requiredInput,
     typeInput = "text",
     name,
     title,
     minLength,
-    readyValue = "",
+    placeholder,
 } = defineProps<{
-    RequiredInput?: boolean;
+    requiredInput?: boolean;
     typeInput?: string;
     name: string;
     title: string;
     minLength: number;
-    readyValue?: string;
+    placeholder: string;
 }>();
 
 const emits = defineEmits(["updateData"]);
 
 const errorInputMesage: Ref<string> = ref("");
 const isBlur: Ref<boolean> = ref(false);
-const valueInput: Ref<string> = ref(readyValue || "");
+const valueInput: Ref<string> = ref("");
 const isValid: Ref<boolean> = ref(true);
 
 watch([isBlur], () => {
     isValid.value = false;
-    if (RequiredInput && valueInput.value.trim() === "") {
-        errorInputMesage.value = "This Input is required!";
+    if (requiredInput && valueInput.value.trim() === "") {
+        console.log(requiredInput);
+        errorInputMesage.value = "To pole musi być uzupełnione!";
     } else if (valueInput.value.length < minLength) {
-        errorInputMesage.value = `The minimum length is ${minLength}`;
-    } else if (typeInput === "email" && !valueInput.value.includes("@")) {
-        errorInputMesage.value = `Wrong Email!`;
+        errorInputMesage.value = `Minimalna liczba znaków to ${minLength}`;
     } else {
         isValid.value = true;
     }
@@ -40,7 +39,7 @@ watch([isBlur], () => {
 
 <template>
     <div class="flexInput">
-        <label :for="name">{{ name }}</label>
+        <label :for="name">{{ title }}</label>
         <input
             @input="emits('updateData', name, valueInput)"
             :type="typeInput"
@@ -48,7 +47,7 @@ watch([isBlur], () => {
             :id="name"
             @blur="isBlur = true"
             @focus="isBlur = false"
-            :placeholder="RequiredInput ? '' : 'Opcjonalne'"
+            :placeholder="placeholder"
             maxlength="50"
         />
         <p v-if="!isValid && isBlur">{{ errorInputMesage }}</p>

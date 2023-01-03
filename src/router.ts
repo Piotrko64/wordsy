@@ -11,10 +11,10 @@ const routes = [
         path: "/",
         component: LearningPageVue,
         children: [
-            { path: "fiszki", component: FlashcardsComponentVue },
-            { path: "quiz", component: QuizBoardVue },
-            { path: "voiceQuiz", component: VoiceQuizBoardVue },
-            { path: "screensaverMode", component: ScreenSaverMode },
+            { path: "Fiszki", component: FlashcardsComponentVue },
+            { path: "Quiz", component: QuizBoardVue },
+            { path: "VoiceQuiz", component: VoiceQuizBoardVue },
+            { path: "TrybWygaszacza", component: ScreenSaverMode },
         ],
     },
     {
