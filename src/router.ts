@@ -10,6 +10,7 @@ const routes = [
     {
         path: "/",
         component: LearningPageVue,
+        redirect: "/Fiszki",
         children: [
             { path: "Fiszki", component: FlashcardsComponentVue },
             { path: "Quiz", component: QuizBoardVue },

@@ -1,9 +1,10 @@
-export const startingWords = [
+import { WordsType } from "./../@types/WordsType";
+export const startingWords: Array<WordsType> = [
     {
         wordPL: "woda gazowana",
         wordEN: "sparkling water (carbonated water)",
         fav: false,
-        important: false,
+
         examplePL: "Oni wolą wodę gazowaną",
         exampleEN: "They prefer carbonated water ",
     },
@@ -11,7 +12,7 @@ export const startingWords = [
         wordPL: "podobne",
         wordEN: "similar",
         fav: false,
-        important: false,
+
         examplePL: "Te dwa zdjęcia są podobne, ale nie identyczne.",
         exampleEN: "These two pictures are similar, but not identical.",
     },
@@ -19,7 +20,7 @@ export const startingWords = [
         wordPL: "zapewniać / dostarczać",
         wordEN: "provide",
         fav: false,
-        important: false,
+
         examplePL: "Nasze materiały są nam dostarczane przez miejscowego producenta.",
         exampleEN: "Our materials are provided to us by a local manufacturer.",
     },
@@ -27,7 +28,7 @@ export const startingWords = [
         wordPL: "bałagan / nieporządek",
         wordEN: "mess",
         fav: false,
-        important: false,
+
         examplePL: "Jak jedna osoba może zrobić taki bałagan?",
         exampleEN: "How can one person make such a mess?",
     },
@@ -35,7 +36,7 @@ export const startingWords = [
         wordPL: "wspominać",
         wordEN: "mention",
         fav: false,
-        important: false,
+
         examplePL: "Mój brat wspomniał, że cię widział któregoś dnia",
         exampleEN: "My brother mentioned seeing you the other day",
     },
@@ -43,7 +44,7 @@ export const startingWords = [
         wordPL: "przyczyna / powód",
         wordEN: "cause",
         fav: false,
-        important: false,
+
         examplePL: "Czy policja zna przyczyny wypadku?",
         exampleEN: "Do the police know the cause of the accident?",
     },
@@ -51,7 +52,7 @@ export const startingWords = [
         wordPL: "ryzyko / zagrożenie",
         wordEN: "risk",
         fav: false,
-        important: false,
+
         examplePL: "Nie chcę ryzykować straty moich pieniędzy",
         exampleEN: "I don't want to risk losing my money",
     },
@@ -59,7 +60,7 @@ export const startingWords = [
         wordPL: "młodość",
         wordEN: "youth",
         fav: false,
-        important: false,
+
         examplePL: "Mój dziadek tęskni za swoją młodością",
         exampleEN: "My grandfather misses his youth",
     },
@@ -67,7 +68,7 @@ export const startingWords = [
         wordPL: "przedział / okres (trwania czegoś)",
         wordEN: "span",
         fav: false,
-        important: false,
+
         examplePL: "Zakres (rozpiętość pamięci)",
         exampleEN: "Memory span",
     },
@@ -75,7 +76,7 @@ export const startingWords = [
         wordPL: "przejść na emeryturę",
         wordEN: "retire",
         fav: false,
-        important: false,
+
         examplePL: "Jest tyle rzeczy, które chcę zrobić, gdy przejdę na emeryturę.",
         exampleEN: "There are so many things I plan to do when I retire",
     },
@@ -83,7 +84,7 @@ export const startingWords = [
         wordPL: "przestępstwo",
         wordEN: "crime",
         fav: false,
-        important: false,
+
         examplePL: "On zgłosił przestępstwo na policję.",
         exampleEN: "He reported the crime to the police. ",
     },
@@ -91,7 +92,7 @@ export const startingWords = [
         wordPL: "dorastać",
         wordEN: "grow up",
         fav: false,
-        important: true,
+
         examplePL: "Ty potrzebujesz trochę czasu, aby dorosnąć",
         exampleEN: "You need some time to grow up",
     },
@@ -99,7 +100,7 @@ export const startingWords = [
         wordPL: "wpływać (na coś)",
         wordEN: "influence",
         fav: false,
-        important: false,
+
         examplePL: "Nie próbuj wywierać wpływu na moją decyzję, i tak cię nie posłucham.",
         exampleEN: "Don't try to influence my decision, I won't listen to you anyway.",
     },
@@ -107,7 +108,7 @@ export const startingWords = [
         wordPL: "wykorzystywać / nadużywać",
         wordEN: "exploit",
         fav: false,
-        important: false,
+
         examplePL: "On nadmiernie wykorzystywał ten komputer, dlatego się zepsuł.",
         exampleEN: "He exploited this computer, that's why it broke down",
     },
@@ -115,7 +116,7 @@ export const startingWords = [
         wordPL: "ukończenie wyższych studiów",
         wordEN: "graduation",
         fav: false,
-        important: false,
+
         examplePL: "Otrzymałam twoją wiadomość, że nie przyjedziesz na moje uroczyste rozdanie świadectw.",
         exampleEN: "I received your message that you weren't coming to my graduation.",
     },
@@ -123,7 +124,7 @@ export const startingWords = [
         wordPL: "sobie wzajemnie / siebie wzajemnie",
         wordEN: "each other",
         fav: false,
-        important: true,
+
         examplePL: "Musimy pomagać sobie nawzajem",
         exampleEN: "We must help each other",
     },
@@ -131,7 +132,7 @@ export const startingWords = [
         wordPL: "sprzedawca",
         wordEN: "seller",
         fav: false,
-        important: false,
+
         examplePL: "Pracuję jako sprzedawca albumów muzycznych",
         exampleEN: "I work as a musical records seller",
     },
@@ -139,7 +140,7 @@ export const startingWords = [
         wordPL: "różnorodność / rodzaj / odmiana",
         wordEN: "variety",
         fav: false,
-        important: true,
+
         examplePL: "W naszym sklepie posiadamy duży wybór krawatów",
         exampleEN: "We have a great variety of ties in our shop",
     },
@@ -147,7 +148,7 @@ export const startingWords = [
         wordPL: "niegrzeczny / nieuprzejmy / chamski",
         wordEN: "rude",
         fav: false,
-        important: true,
+
         examplePL: "To niegrzeczne pytać kobietę o jej wiek",
         exampleEN: "It's rude to ask a woman her age",
     },
@@ -155,7 +156,7 @@ export const startingWords = [
         wordPL: "zauważać / ogłoszenie",
         wordEN: "notice",
         fav: false,
-        important: true,
+
         examplePL: "Miło, że to zauważyłeś.",
         exampleEN: "I'm glad you noticed that",
     },

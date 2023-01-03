@@ -4,7 +4,7 @@ import plus from "../assets/icons/navigation/plus.png";
 
 <template>
     <nav class="horizontalSpace">
-        <a href="/" class="logo">Wordsy</a>
+        <router-link to="/" class="logo">Wordsy</router-link>
         <router-link to="AddWords" class="centerFlex">
             <img :src="plus" alt="Dodaj nowe słowo" />
         </router-link>
