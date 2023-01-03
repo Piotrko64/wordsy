@@ -51,7 +51,7 @@ function addNewWord(event: Event) {
             placeholder=""
         ></BaseTextarea>
         <BaseTextarea
-            name="examplePL"
+            name="exampleEN"
             title="A tu przetłumaczone zdanie na angielski"
             @update-data="updateDataForm"
             placeholder=""

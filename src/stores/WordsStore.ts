@@ -27,6 +27,9 @@ export const useWordsStore = defineStore("wordsStore", {
         getPercentProgress(state) {
             return ((state.progress + 1) / state.allWords.length) * 100 + "%";
         },
+        getOwnWords(state) {
+            return state.ownWords;
+        },
     },
     actions: {
         restartProgress() {
@@ -43,8 +46,8 @@ export const useWordsStore = defineStore("wordsStore", {
             this.mode = mode;
         },
         addNewOwnWord(word: SingleWord) {
-            this.ownWords.push(word);
-            this.allWords.push(word)
+            this.ownWords.unshift(word);
+            this.allWords.unshift(word);
         },
     },
 });

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { preventEvent } from "../helpers/manageFiles/preventEvent";
-import { onChangeInput } from "../helpers/manageFiles/inputFile/onChangeInput";
+import { preventEvent } from "../../helpers/manageFiles/preventEvent";
+import { onChangeInput } from "../../helpers/manageFiles/inputFile/onChangeInput";
 
-import { handleDropFile } from "../helpers/manageFiles/dropZone/handleDropFile";
+import { handleDropFile } from "../../helpers/manageFiles/dropZone/handleDropFile";
+import BackupPanel from "./BackupPanel.vue";
 
 const isActiveZone = ref(false);
 
@@ -29,6 +30,7 @@ function turnOffActiveZone() {
         Dodaj / przeciągnij plik JSON z twoimi słowkami
         <input type="file" class="zoneInput" accept="application/JSON" />
     </label>
+    <BackupPanel />
 </template>
 
 <style scoped lang="scss">
