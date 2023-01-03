@@ -6,6 +6,7 @@ export const useWordsStore = defineStore("counter", {
         mode: "Fiszki",
         listWord: startingWords,
         progress: 0,
+        ownWords: [],
     }),
     getters: {
         getListWords(state) {
@@ -35,6 +36,9 @@ export const useWordsStore = defineStore("counter", {
         },
         prevWord() {
             this.progress = Math.max(this.progress - 1, 0);
+        },
+        changeMode(mode: string) {
+            this.mode = mode;
         },
     },
 });

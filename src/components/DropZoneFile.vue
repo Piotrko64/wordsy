@@ -17,25 +17,40 @@ function turnOffActiveZone() {
 </script>
 
 <template>
-    <input
-        type="file"
-        class="zone"
+    <label
+        class="dropZone"
+        :class="{ active: isActiveZone }"
         @dragenter="preventEvent($event), turnOnActiveZone()"
         @dragover="preventEvent($event), turnOnActiveZone()"
         @dragleave="preventEvent($event), turnOffActiveZone()"
         @drop="preventEvent($event), turnOffActiveZone(), handleDropFile($event)"
-        :class="{ active: isActiveZone }"
         @change="onChangeInput($event)"
-    />
+    >
+        Dodaj / przeciągnij plik JSON z twoimi słowkami
+        <input type="file" class="zoneInput" accept="application/JSON" />
+    </label>
 </template>
 
 <style scoped lang="scss">
-.zone {
-    border: 3px solid black;
+.dropZone {
+    cursor: pointer;
+    border: 3px dashed var(--green);
     height: 100px;
-    width: 200px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--secondGreen);
+    transition: all 0.2s ease-in-out;
     &.active {
-        background-color: aquamarine;
+        background-color: white;
+        color: var(--green);
+    }
+    .zoneInput {
+        display: none;
     }
 }
 </style>

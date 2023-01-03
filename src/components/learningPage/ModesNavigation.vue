@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { useWordsStore } from "../../stores/WordsStore";
 import { dataModesNavigation } from "../../data/navigation/dataModesNavigation";
+
+const { changeMode } = useWordsStore();
 </script>
 
 <template>
     <h3><span>Tryby</span></h3>
-    <router-link v-for="mode in dataModesNavigation" :to="'/' + mode.urlName">
+    <router-link v-for="mode in dataModesNavigation" :to="'/' + mode.urlName" @click="changeMode(mode.name)">
         <div class="horizontalSpace">
             <img :src="mode.img" :alt="mode.name" />
             {{ mode.name }}
