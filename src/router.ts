@@ -4,6 +4,7 @@ import QuizBoardVue from "./components/learningPage/modes/quizGame/QuizBoard.vue
 import VoiceQuizBoardVue from "./components/learningPage/modes/voiceQuizGame/VoiceQuizBoard.vue";
 import LearningPageVue from "./pages/LearningPage.vue";
 import ScreenSaverMode from "./components/learningPage/modes/screensaverMode/ScreenSaverMode.vue";
+import SpeechMode from "./components/learningPage/modes/speechMode/SpeechMode.vue";
 import AddWordsPageVue from "./pages/AddWordsPage.vue";
 
 const routes = [
@@ -16,6 +17,7 @@ const routes = [
             { path: "Quiz", component: QuizBoardVue },
             { path: "VoiceQuiz", component: VoiceQuizBoardVue },
             { path: "TrybWygaszacza", component: ScreenSaverMode },
+            { path: "TrybSpeech", component: SpeechMode },
         ],
     },
     {

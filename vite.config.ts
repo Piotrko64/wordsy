@@ -14,18 +14,42 @@ export default defineConfig({
                 enabled: true,
             },
             manifest: {
-                name: "My Awesome App",
-                short_name: "MyApp",
-                description: "My Awesome App description",
-                theme_color: "#ffffff",
+                display: "standalone",
+                background_color: "#19BC00",
+
+                orientation: "portrait-primary",
+                name: "Wordsy",
+                short_name: "Wordsy",
+                description: "Nauka angielskiego",
+                theme_color: "#19BC00",
                 icons: [
                     {
-                        src: "pwa-192x192.png",
+                        src: "assets/pwa/icons/android-launchericon-48-48.png",
+                        sizes: "48x48",
+                        type: "image/png",
+                    },
+                    {
+                        src: "assets/pwa/icons/android-launchericon-72-72.png",
+                        sizes: "72x72",
+                        type: "image/png",
+                    },
+                    {
+                        src: "assets/pwa/icons/android-launchericon-96-96.png",
+                        sizes: "96x96",
+                        type: "image/png",
+                    },
+                    {
+                        src: "assets/pwa/icons/android-launchericon-192-192.png",
                         sizes: "192x192",
                         type: "image/png",
                     },
                     {
-                        src: "pwa-512x512.png",
+                        src: "assets/pwa/icons/android-launchericon-144-144.png",
+                        sizes: "144x144",
+                        type: "image/png",
+                    },
+                    {
+                        src: "assets/pwa/icons/android-launchericon-512-512.png",
                         sizes: "512x512",
                         type: "image/png",
                     },

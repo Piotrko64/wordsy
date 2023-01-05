@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useWordsStore } from "../../stores/WordsStore";
 import download from "downloadjs";
-import JSZip from "JSZip";
+import JSZip from "jszip";
 
 const { getOwnWords } = useWordsStore();
 
@@ -13,7 +13,7 @@ function downloadZipFile() {
     const zip = new JSZip();
     zip.file("backup.json.", JSON.stringify(getOwnWords));
 
-    zip.generateAsync({ type: "blob" }).then(function (content) {
+    zip.generateAsync({ type: "blob" }).then(function (content: Blob) {
         download(content, "backup.zip");
     });
 }

@@ -10,6 +10,7 @@
         "test": "vitest"
     },
     "dependencies": {
+        "@types/dom-speech-recognition": "^0.0.1",
         "@types/downloadjs": "^1.4.3",
         "downloadjs": "^1.4.7",
         "jszip": "^3.10.1",
