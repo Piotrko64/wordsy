@@ -54,7 +54,7 @@ h3 {
     font-weight: 600;
     span {
         z-index: 10;
-        background-color: var(--gray);
+        background-color: #ecece7;
         padding: 0 15px;
     }
     &::before {

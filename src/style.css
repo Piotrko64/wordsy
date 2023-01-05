@@ -99,6 +99,6 @@ a:hover {
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--gray);
+    background-color: #ecece7;
     font-family: var(--signika);
 }
