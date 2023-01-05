@@ -120,6 +120,7 @@ onMounted(() => {
         flex-direction: column;
         gap: 20px;
         margin: 5px;
+        transform: translateY(-20px);
         .whiteCard {
             background-color: white;
             min-width: 65vw;

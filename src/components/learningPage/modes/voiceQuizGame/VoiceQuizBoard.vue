@@ -8,7 +8,7 @@ import micro from "../../../../assets/icons/voiceWhite.png";
 
 const store = useWordsStore();
 const { getListWords, progress } = storeToRefs(store);
-const voiceQuizQuestions = ref(generateVoiceQuiz(getListWords.value));
+const voiceQuizQuestions = ref(generateVoiceQuiz(getListWords.value, true));
 const userAnswer = ref<false | string>(false);
 
 function validAnswers(yourAnswer: string) {
