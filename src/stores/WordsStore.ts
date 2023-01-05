@@ -42,6 +42,13 @@ export const useWordsStore = defineStore("wordsStore", {
         prevWord() {
             this.progress = Math.max(this.progress - 1, 0);
         },
+        nextWordWithoutLimit() {
+            if (this.progress === this.allWords.length - 1) {
+                this.progress = 0;
+            } else {
+                this.progress = this.progress + 1;
+            }
+        },
         changeMode(mode: string) {
             this.mode = mode;
         },
