@@ -25,3 +25,7 @@ export const dataModesNavigation = [
         img: display,
     },
 ];
+
+export function findRouteName(name: string) {
+    return dataModesNavigation.find((mode) => mode.urlName === name)?.name;
+}

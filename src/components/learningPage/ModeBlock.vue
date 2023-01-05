@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import { useRoute } from "vue-router";
 import { useWordsStore } from "../../stores/WordsStore";
-
-const { getProgress, getMode, getPercentProgress } = storeToRefs(useWordsStore());
+import { findRouteName } from "../../data/navigation/dataModesNavigation";
+const { getProgress, getPercentProgress } = storeToRefs(useWordsStore());
+const route = useRoute();
+console.log(route.path.slice(1));
 </script>
 
 <template>
     <div class="whiteBlock mode">
         <div class="text horizontalSpace">
-            <div>{{ getMode }}</div>
+            <div>{{ findRouteName(route.path.slice(1)) }}</div>
             <div class="counter">{{ getProgress }}</div>
         </div>
         <div
