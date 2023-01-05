@@ -2,6 +2,7 @@ import flashCardsImg from "../../assets/icons/modes/cards.png";
 import quizImg from "../../assets/icons/modes/quiz.png";
 import quizVoiceImg from "../../assets/icons/modes/voiceQuiz.png";
 import display from "../../assets/icons/modes/display.png";
+import micro from "../../assets/icons/modes/greenMicro.png";
 
 export const dataModesNavigation = [
     {
@@ -23,6 +24,11 @@ export const dataModesNavigation = [
         name: "Tryb wygaszacza",
         urlName: "trybWygaszacza",
         img: display,
+    },
+    {
+        name: "Wymów zdanie",
+        urlName: "trybSpeech",
+        img: micro,
     },
 ];
 
