@@ -111,7 +111,7 @@ onMounted(() => {
     }
 }
 .fullScreen {
-    background-image: url("/assets/wallpapers/mountains.jpg");
+    background-image: url("/assets/wallpapers/mountain.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
