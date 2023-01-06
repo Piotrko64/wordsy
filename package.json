@@ -7,9 +7,11 @@
         "dev": "vite",
         "build": "vue-tsc && vite build",
         "preview": "vite preview",
-        "test": "vitest"
+        "test": "vitest --watch --environment jsdom"
     },
     "dependencies": {
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/vue": "^6.6.1",
         "@types/dom-speech-recognition": "^0.0.1",
         "@types/downloadjs": "^1.4.3",
         "downloadjs": "^1.4.7",
@@ -24,6 +26,7 @@
     "devDependencies": {
         "@types/lodash": "^4.14.191",
         "@vitejs/plugin-vue": "^4.0.0",
+        "jsdom": "^20.0.3",
         "typescript": "^4.9.3",
         "vite": "^4.0.0",
         "vite-plugin-pwa": "^0.14.0",

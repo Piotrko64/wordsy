@@ -39,7 +39,7 @@ watch([isBlur], () => {
 
 <template>
     <div class="flexInput">
-        <label :for="name">{{ title }}</label>
+        <label :for="name" data-testid="label">{{ title }}</label>
         <input
             @input="emits('updateData', name, valueInput)"
             :type="typeInput"
