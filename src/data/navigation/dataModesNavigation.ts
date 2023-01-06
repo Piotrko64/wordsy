@@ -33,5 +33,5 @@ export const dataModesNavigation = [
 ];
 
 export function findRouteName(name: string) {
-    return dataModesNavigation.find((mode) => mode.urlName === name)?.name;
+    return dataModesNavigation.find((mode) => mode.urlName === name)?.name || "Fiszki";
 }

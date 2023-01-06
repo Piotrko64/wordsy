@@ -50,6 +50,7 @@ watch([isBlur], () => {
             :placeholder="placeholder"
             maxlength="50"
         />
+
         <p v-if="!isValid && isBlur">{{ errorInputMesage }}</p>
     </div>
 </template>

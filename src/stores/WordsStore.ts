@@ -1,6 +1,8 @@
 import { startingWords } from "./../data/startingWords";
 import { SingleWord } from "./../@types/WordsType";
 import { defineStore } from "pinia";
+import { readWordsFromStorage } from "../helpers/localStorage/saveToLocalStorage";
+import { saveOwnWordsToLocalStorage } from "./../helpers/localStorage/saveToLocalStorage";
 
 export const useWordsStore = defineStore("wordsStore", {
     state: () => ({
@@ -36,6 +38,11 @@ export const useWordsStore = defineStore("wordsStore", {
             this.progress = 0;
         },
 
+        addWordsFromLocalStorage() {
+            this.ownWords = [...this.ownWords, ...readWordsFromStorage()];
+            this.allWords = this.allWords.concat(readWordsFromStorage());
+        },
+
         nextWord() {
             this.progress = Math.min(this.progress + 1, this.allWords.length - 1);
         },
@@ -55,6 +62,7 @@ export const useWordsStore = defineStore("wordsStore", {
         addNewOwnWord(word: SingleWord) {
             this.ownWords.unshift(word);
             this.allWords.unshift(word);
+            saveOwnWordsToLocalStorage(this.ownWords);
         },
     },
 });
