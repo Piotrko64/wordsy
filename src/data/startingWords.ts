@@ -41,12 +41,36 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "My brother mentioned seeing you the other day",
     },
     {
+        wordPL: "powody, przesłanki",
+        wordEN: "rationale",
+        fav: false,
+
+        examplePL: "Jego powody do działania wydają się nierozsądne.",
+        exampleEN: "His rationale for action seems unreasonable",
+    },
+    {
+        wordPL: "bajkowy",
+        wordEN: "fairytale",
+        fav: false,
+
+        examplePL: "",
+        exampleEN: "",
+    },
+    {
         wordPL: "przyczyna / powód",
         wordEN: "cause",
         fav: false,
 
         examplePL: "Czy policja zna przyczyny wypadku?",
         exampleEN: "Do the police know the cause of the accident?",
+    },
+    {
+        wordPL: "zajmować się, radzić sobie",
+        wordEN: "handle",
+        fav: false,
+
+        examplePL: "Pozwól mi się tym zająć",
+        exampleEN: "Let me handle it",
     },
     {
         wordPL: "ryzyko / zagrożenie",
@@ -63,6 +87,14 @@ export const startingWords: Array<WordsType> = [
 
         examplePL: "Mój dziadek tęskni za swoją młodością",
         exampleEN: "My grandfather misses his youth",
+    },
+    {
+        wordPL: "trudny, trwały, wymagający",
+        wordEN: "tough",
+        fav: false,
+
+        examplePL: "To jest trudna decyzja",
+        exampleEN: "This is a tough decision",
     },
     {
         wordPL: "przedział / okres (trwania czegoś)",
@@ -87,6 +119,14 @@ export const startingWords: Array<WordsType> = [
 
         examplePL: "On zgłosił przestępstwo na policję.",
         exampleEN: "He reported the crime to the police. ",
+    },
+    {
+        wordPL: "płynny / gładki / spokojny",
+        wordEN: "smooth",
+        fav: false,
+
+        examplePL: "Ta zupa jest bardzo gładka, możesz dać ją swojemu dziecku.",
+        exampleEN: "This soup is very smooth, you can give it to your child.",
     },
     {
         wordPL: "dorastać",

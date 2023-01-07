@@ -22,7 +22,8 @@ function speakSentence(e: MouseEvent, text: string) {
     speak(text, lang);
 }
 
-function addFavWord() {
+function addFavWord(e: Event) {
+    e.stopPropagation();
     addWordAsFavourite(word);
 }
 </script>
@@ -34,7 +35,12 @@ function addFavWord() {
         </h2>
         <div>
             <p>{{ sentence }}</p>
-            <img :src="micro" alt="Powiedz całe zdanie" @click="speakSentence($event, sentence)" />
+            <img
+                v-if="sentence"
+                :src="micro"
+                alt="Powiedz całe zdanie"
+                @click="speakSentence($event, sentence)"
+            />
         </div>
         <img :src="reverse" alt="odwróć" class="reverse" />
         <div class="star">

@@ -5,12 +5,16 @@ import { storeToRefs } from "pinia";
 
 const resultSpeech = ref("");
 const isPermission = ref(false);
+const isSpeechRecognition = ref(false);
 const { getActualWord } = storeToRefs(useWordsStore());
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
+console.log(navigator.userAgent.indexOf("Chrome") != -1);
+
 function recognitionStart() {
+    recognition.interimResults = true;
     recognition.start();
 }
 
@@ -26,8 +30,6 @@ onMounted(() => {
             isPermission.value = false;
         });
 
-    console.log(!!SpeechRecognition);
-    recognition.interimResults = true;
     recognition.lang = "en-US";
 
     recognition.addEventListener("result", (e: SpeechRecognitionEvent) => {
@@ -35,6 +37,9 @@ onMounted(() => {
         resultSpeech.value = yourSpeech;
         console.log(!!recognition);
     });
+    if (recognition) {
+        isSpeechRecognition.value = true;
+    }
 });
 
 watch(getActualWord, () => {
@@ -45,6 +50,9 @@ watch(getActualWord, () => {
 <template>
     <h2>Tryb mówienia</h2>
     <p v-if="!isPermission">Ten tryb potrzebuje pozwolenia na używanie mikrofonu!</p>
+    <p v-if="!isSpeechRecognition">
+        Ten tryb zaleca się używać w przeglądarce Chrome - korzystanie na innych może być problematyczne
+    </p>
     {{ getActualWord.exampleEN }}
     <button @click="recognitionStart()">rere</button>
     <div v-for="(word, index) in resultSpeech.split(' ')">

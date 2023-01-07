@@ -2,6 +2,7 @@
 import { useWordsStore } from "../../../../stores/WordsStore";
 import { ref, watch, onMounted } from "vue";
 import { storeToRefs } from "pinia";
+import { findWallpaper } from "../../../../data/wallpapers/wallpapers";
 
 const TIME_TO_READ = 12000;
 
@@ -52,7 +53,12 @@ onMounted(() => {
         <h3>Aktualne słówko:</h3>
         <p>{{ getActualWord.wordEN }}</p>
     </div>
-    <div ref="elementToFullScreen" v-show="isScreensaverMode" class="centerFlex fullScreen">
+    <div
+        ref="elementToFullScreen"
+        v-show="isScreensaverMode"
+        class="centerFlex fullScreen"
+        :style="{ backgroundImage: `url(/assets/wallpapers/${findWallpaper()}.jpg)` }"
+    >
         <div class="container">
             <transition name="fade" mode="out-in">
                 <div class="whiteCard whiteBlock centerFlex" :key="getActualWord.wordEN">
@@ -111,7 +117,6 @@ onMounted(() => {
     }
 }
 .fullScreen {
-    background-image: url("/assets/wallpapers/mountains.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

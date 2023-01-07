@@ -11,9 +11,13 @@ export const useWordsStore = defineStore("wordsStore", {
         progress: 0,
         ownWords: [] as Array<SingleWord>,
         allWords: startingWords,
+        onlyFavWords: false,
     }),
     getters: {
         getListWords(state) {
+            if (this.onlyFavWords) {
+                return state.allWords.filter((word) => word.fav);
+            }
             return state.allWords;
         },
 
