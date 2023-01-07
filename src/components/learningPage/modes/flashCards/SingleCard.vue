@@ -9,9 +9,10 @@ interface CardContent {
     wordEN: string;
     examplePL: string;
     exampleEN: string;
+    fav?: boolean;
 }
 
-const { wordPL, wordEN, exampleEN, examplePL } = defineProps<CardContent>();
+const { wordPL, wordEN, exampleEN, examplePL, fav } = defineProps<CardContent>();
 
 function toggleActive() {
     active.value = !active.value;
@@ -21,8 +22,8 @@ function toggleActive() {
 <template>
     <div class="card" :class="{ active }">
         <div class="content" v-wave @click="toggleActive">
-            <SingleSiteCard :word="wordPL" :sentence="examplePL" classes="front" lang="pl" />
-            <SingleSiteCard :word="wordEN" :sentence="exampleEN" classes="back" lang="en-GB" />
+            <SingleSiteCard :word="wordPL" :sentence="examplePL" classes="front" lang="pl" :fav="fav" />
+            <SingleSiteCard :word="wordEN" :sentence="exampleEN" classes="back" lang="en-GB" :fav="fav" />
         </div>
     </div>
 </template>

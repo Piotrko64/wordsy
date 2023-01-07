@@ -38,6 +38,16 @@ export const useWordsStore = defineStore("wordsStore", {
             this.progress = 0;
         },
 
+        addWordAsFavourite(word: string) {
+            const findIndex = this.allWords.findIndex(
+                (example) => example.wordPL === word || example.wordEN === word
+            );
+
+            if (findIndex === -1) return;
+
+            this.allWords[findIndex].fav = !this.allWords[findIndex].fav;
+        },
+
         addWordsFromLocalStorage() {
             this.ownWords = [...this.ownWords, ...readWordsFromStorage()];
             this.allWords = this.allWords.concat(readWordsFromStorage());

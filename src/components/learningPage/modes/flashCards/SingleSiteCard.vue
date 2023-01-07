@@ -1,25 +1,34 @@
 <script setup lang="ts">
 import { speak } from "../../../../helpers/speech/speak";
 import micro from "../../../../assets/icons/voice.png";
+import reverse from "../../../../assets/icons/reverse.png";
+import Star from "../../../../ui/svg/Star.vue";
+import { useWordsStore } from "../../../../stores/WordsStore";
 
 interface Props {
     classes: "front" | "back";
     word: string;
     sentence: string;
     lang: string;
+    fav?: boolean;
 }
 
-const { classes, word, sentence, lang } = defineProps<Props>();
+const { addWordAsFavourite, getListWords } = useWordsStore();
+const { classes, word, sentence, lang, fav } = defineProps<Props>();
 
 function speakSentence(e: MouseEvent, text: string) {
     e.stopPropagation();
 
     speak(text, lang);
 }
+
+function addFavWord() {
+    addWordAsFavourite(word);
+}
 </script>
 
 <template>
-    <div :class="classes">
+    <div :class="classes" class="card">
         <h2>
             {{ word }} <img :src="micro" alt="Powiedz to wyrażenie" @click="speakSentence($event, word)" />
         </h2>
@@ -27,9 +36,26 @@ function speakSentence(e: MouseEvent, text: string) {
             <p>{{ sentence }}</p>
             <img :src="micro" alt="Powiedz całe zdanie" @click="speakSentence($event, sentence)" />
         </div>
+        <img :src="reverse" alt="odwróć" class="reverse" />
+        <div class="star">
+            <Star :isActive="fav" :callback="addFavWord" />
+        </div>
     </div>
 </template>
 <style lang="scss">
+.card {
+    position: relative;
+}
+.star {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.reverse {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
 .front,
 .back {
     padding: 8px 14px;
