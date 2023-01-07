@@ -2,6 +2,7 @@
 import { useWordsStore } from "../../../../stores/WordsStore";
 import { onMounted, ref, watch } from "vue";
 import { storeToRefs } from "pinia";
+import { detect } from "detect-browser";
 
 const resultSpeech = ref("");
 const isPermission = ref(false);
@@ -19,6 +20,8 @@ function recognitionStart() {
 }
 
 onMounted(() => {
+    const browser = detect();
+    console.log(browser!.name);
     navigator.mediaDevices
         .getUserMedia({ video: false, audio: true })
         .then((stream) => {

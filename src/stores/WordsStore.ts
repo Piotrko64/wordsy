@@ -1,5 +1,5 @@
 import { startingWords } from "./../data/startingWords";
-import { SingleWord } from "./../@types/WordsType";
+import { WordsType, SingleWord } from "./../@types/WordsType";
 import { defineStore } from "pinia";
 import { readWordsFromStorage } from "../helpers/localStorage/saveToLocalStorage";
 import { saveOwnWordsToLocalStorage } from "./../helpers/localStorage/saveToLocalStorage";
@@ -9,11 +9,14 @@ export const useWordsStore = defineStore("wordsStore", {
         mode: "Fiszki",
         startWords: startingWords,
         progress: 0,
-        ownWords: [] as Array<SingleWord>,
+        ownWords: [] as Array<WordsType>,
         allWords: startingWords,
         onlyFavWords: false,
     }),
     getters: {
+        isFav(state) {
+            return state.onlyFavWords;
+        },
         getListWords(state) {
             if (this.onlyFavWords) {
                 return state.allWords.filter((word) => word.fav);
@@ -38,6 +41,11 @@ export const useWordsStore = defineStore("wordsStore", {
         },
     },
     actions: {
+        filterFavWords(filter: boolean) {
+            this.allWords = [...this.ownWords, ...this.startWords].filter((example) =>
+                filter ? example.fav : true
+            );
+        },
         restartProgress() {
             this.progress = 0;
         },
