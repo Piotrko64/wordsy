@@ -35,7 +35,7 @@ export const startingWords: Array<WordsType> = [
     {
         wordPL: "wspominać",
         wordEN: "mention",
-        fav: false,
+        fav: true,
 
         examplePL: "Mój brat wspomniał, że cię widział któregoś dnia",
         exampleEN: "My brother mentioned seeing you the other day",
@@ -43,7 +43,7 @@ export const startingWords: Array<WordsType> = [
     {
         wordPL: "powody, przesłanki",
         wordEN: "rationale",
-        fav: false,
+        fav: true,
 
         examplePL: "Jego powody do działania wydają się nierozsądne.",
         exampleEN: "His rationale for action seems unreasonable",

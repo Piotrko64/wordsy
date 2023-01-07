@@ -42,6 +42,7 @@ export const useWordsStore = defineStore("wordsStore", {
     },
     actions: {
         filterFavWords(filter: boolean) {
+            this.onlyFavWords = filter;
             this.allWords = [...this.ownWords, ...this.startWords].filter((example) =>
                 filter ? example.fav : true
             );

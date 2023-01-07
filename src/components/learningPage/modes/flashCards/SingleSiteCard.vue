@@ -44,7 +44,7 @@ function addFavWord(e: Event) {
         </div>
         <img :src="reverse" alt="odwróć" class="reverse" />
         <div class="star">
-            <Star :isActive="fav" :callback="addFavWord" />
+            <Star :isActive="fav" @click-star="addFavWord" />
         </div>
     </div>
 </template>

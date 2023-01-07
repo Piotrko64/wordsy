@@ -3,7 +3,7 @@ import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
 import { useWordsStore } from "../../stores/WordsStore";
 import { findRouteName } from "../../data/navigation/dataModesNavigation";
-import Star from "@/src/ui/svg/Star.vue";
+import Star from "../../ui/svg/Star.vue";
 
 const store = useWordsStore();
 
@@ -11,7 +11,9 @@ const { getProgress, getPercentProgress } = storeToRefs(store);
 const route = useRoute();
 
 function toggleFavourite() {
-    store.filterFavWords(!store.isFav);
+    console.log(store.isFav);
+    const isFav = store.isFav;
+    store.filterFavWords(!isFav);
 }
 </script>
 
@@ -19,7 +21,7 @@ function toggleFavourite() {
     <div class="whiteBlock mode">
         <div class="text horizontalSpace">
             <div>{{ findRouteName(route.path.slice(1)) }}</div>
-            <Star :isActive="store.isFav" :callback="toggleFavourite" />
+            <Star :isActive="store.isFav" @clickStar="toggleFavourite" />
             <div class="counter">{{ getProgress }}</div>
         </div>
         <div
