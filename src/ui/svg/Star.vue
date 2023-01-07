@@ -23,6 +23,7 @@ const emits = defineEmits(["click-star"]);
 </template>
 <style>
 svg {
+    cursor: pointer;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;

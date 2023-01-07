@@ -11,8 +11,7 @@ const { getProgress, getPercentProgress } = storeToRefs(store);
 const route = useRoute();
 
 function toggleFavourite() {
-    console.log(store.isFav);
-    const isFav = store.isFav;
+    const { isFav } = store;
     store.filterFavWords(!isFav);
 }
 </script>
@@ -20,9 +19,14 @@ function toggleFavourite() {
 <template>
     <div class="whiteBlock mode">
         <div class="text horizontalSpace">
-            <div>{{ findRouteName(route.path.slice(1)) }}</div>
-            <Star :isActive="store.isFav" @clickStar="toggleFavourite" />
-            <div class="counter">{{ getProgress }}</div>
+            <div class="modeTitle">
+                {{ findRouteName(route.path.slice(1)) }}
+            </div>
+
+            <div class="counter">
+                <Star :isActive="store.isFav" @clickStar="toggleFavourite" />
+                <div class="marginLeft">{{ getProgress }}</div>
+            </div>
         </div>
         <div
             class="progressBar"
@@ -45,6 +49,8 @@ function toggleFavourite() {
         padding-bottom: 5px;
         display: flex;
         justify-content: space-between;
+        .modeTitle {
+        }
         &::first-letter {
             font-weight: 900;
         }
@@ -55,5 +61,13 @@ function toggleFavourite() {
 
         height: 6px;
     }
+}
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marginLeft {
+    margin-left: 5px;
 }
 </style>
