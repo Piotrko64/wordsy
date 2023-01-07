@@ -43,7 +43,7 @@ div {
 }
 
 h3 {
-    margin-top: 20px;
+    margin-top: 30px;
     position: relative;
     z-index: 5;
     margin-bottom: 10px;
