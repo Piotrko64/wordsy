@@ -119,7 +119,24 @@ onMounted(() => {
 .fullScreen {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 120%;
+    animation: animation 60s infinite;
+
+    @keyframes animation {
+        0% {
+            background-position: 50% 100%;
+        }
+        40% {
+            background-position: 80% 100%;
+        }
+        90% {
+            background-position: 40% 100%;
+        }
+
+        100% {
+            background-position: 50% 100%;
+        }
+    }
     .container {
         display: flex;
         flex-direction: column;

@@ -34,7 +34,7 @@ function addFavWord(e: Event) {
             {{ word }} <img :src="micro" alt="Powiedz to wyrażenie" @click="speakSentence($event, word)" />
         </h2>
         <div>
-            <p>{{ sentence }}</p>
+            <p v-if="sentence">{{ sentence }}</p>
             <img
                 v-if="sentence"
                 :src="micro"
