@@ -33,12 +33,44 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "How can one person make such a mess?",
     },
     {
+        wordPL: "absurdalny, niedorzeczny, niepoważny",
+        wordEN: "ridiculous",
+        fav: false,
+
+        examplePL: "Nigdy wcześniej nie słyszałem tak absurdalnego pomysłu!",
+        exampleEN: "I have never heard such a ridiculous idea before!",
+    },
+    {
         wordPL: "wspominać",
         wordEN: "mention",
         fav: true,
 
         examplePL: "Mój brat wspomniał, że cię widział któregoś dnia",
         exampleEN: "My brother mentioned seeing you the other day",
+    },
+    {
+        wordPL: "schwytać, zdobywać, złapać",
+        wordEN: "capture",
+        fav: true,
+
+        examplePL: "Złapałem moją krowę po tym, jak uciekła.",
+        exampleEN: "I captured my cow after it'd run away.",
+    },
+    {
+        wordPL: "średnik",
+        wordEN: "semicolon",
+        fav: true,
+
+        examplePL: "Średnika używa się, aby oddzielić różne części zdania.",
+        exampleEN: "The semi-colon is used to separate different parts of a sentence.",
+    },
+    {
+        wordPL: "zapewniać, zagwarantować, upewniać się",
+        wordEN: "ensure",
+        fav: true,
+
+        examplePL: "Ta umowa zapewnia trzy tygodnie urlopu dla każdego.",
+        exampleEN: "This deal ensures three weeks of vacation for everyone",
     },
     {
         wordPL: "powody, przesłanki",
