@@ -2,6 +2,8 @@
 import { useWordsStore } from "../../stores/WordsStore";
 import download from "downloadjs";
 import JSZip from "jszip";
+import backup from "../../assets/icons/backup/backup.png";
+import zip from "../../assets/icons/backup/zip.png";
 
 const { getOwnWords } = useWordsStore();
 
@@ -20,8 +22,23 @@ function downloadZipFile() {
 </script>
 
 <template>
-    <button @click="downloadJsonWords()">Pobierz kopię zapasową słówek jako plik JSON</button>
-    <button @click="downloadZipFile()">Pobierz kopię słówek jako archiwum .zip</button>
+    <div class="container">
+        <button @click="downloadJsonWords()" class="actionButton">
+            Pobierz kopię zapasową słówek jako plik JSON <img :src="backup" />
+        </button>
+        <button @click="downloadZipFile()" class="actionButton">
+            Pobierz kopię słówek jako archiwum .zip <img :src="zip" />
+        </button>
+    </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container {
+    display: flex;
+    gap: 10px;
+    img {
+        margin-left: 10px;
+        height: 35px;
+    }
+}
+</style>
