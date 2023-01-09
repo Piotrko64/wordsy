@@ -6,6 +6,7 @@ import Star from "../../../../ui/svg/Star.vue";
 import { useWordsStore } from "../../../../stores/WordsStore";
 
 interface Props {
+    id: string;
     classes: "front" | "back";
     word: string;
     sentence: string;
@@ -14,7 +15,7 @@ interface Props {
 }
 
 const { addWordAsFavourite, getListWords } = useWordsStore();
-const { classes, word, sentence, lang, fav } = defineProps<Props>();
+const { classes, word, sentence, lang, fav, id } = defineProps<Props>();
 
 function speakSentence(e: MouseEvent, text: string) {
     e.stopPropagation();
@@ -24,7 +25,7 @@ function speakSentence(e: MouseEvent, text: string) {
 
 function addFavWord(e: Event) {
     e.stopPropagation();
-    addWordAsFavourite(word);
+    addWordAsFavourite(id);
 }
 </script>
 

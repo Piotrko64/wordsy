@@ -1,4 +1,5 @@
 import { WordsType } from "./../@types/WordsType";
+import { v4 as uuidv4 } from "uuid";
 export const startingWords: Array<WordsType> = [
     {
         wordPL: "woda gazowana",
@@ -232,4 +233,6 @@ export const startingWords: Array<WordsType> = [
         examplePL: "Miło, że to zauważyłeś.",
         exampleEN: "I'm glad you noticed that",
     },
-];
+].map((word) => {
+    return { ...word, id: uuidv4() };
+});

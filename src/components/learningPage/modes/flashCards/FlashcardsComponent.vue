@@ -22,6 +22,7 @@ onMounted(() => {
                 :exampleEN="getActualWord.exampleEN"
                 :fav="getActualWord.fav"
                 :key="getActualWord.examplePL"
+                :id="getActualWord.id"
             />
         </transition>
     </div>

@@ -54,10 +54,8 @@ export const useWordsStore = defineStore("wordsStore", {
             this.progress = 0;
         },
 
-        addWordAsFavourite(word: string) {
-            const findIndex = this.allWords.findIndex(
-                (example) => example.wordPL === word || example.wordEN === word
-            );
+        addWordAsFavourite(id: string) {
+            const findIndex = this.allWords.findIndex((example) => example.id === id);
 
             if (findIndex === -1) return;
 

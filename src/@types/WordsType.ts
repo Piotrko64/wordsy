@@ -1,4 +1,5 @@
 export interface WordsType {
+    id: string;
     wordPL: string;
     wordEN: string;
     fav?: boolean;

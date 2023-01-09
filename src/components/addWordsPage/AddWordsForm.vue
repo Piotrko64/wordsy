@@ -4,8 +4,10 @@ import BaseInput from "../../ui/form/BaseInput.vue";
 import BaseTextarea from "../../ui/form/BaseTextarea.vue";
 import { reactive } from "vue";
 import { useWordsStore } from "../../stores/WordsStore";
+import { v4 as uuidv4 } from "uuid";
 
-const dataForm: Record<"wordPL" | "wordEN" | "examplePL" | "exampleEN", string> = reactive({
+const dataForm: Record<"wordPL" | "wordEN" | "examplePL" | "exampleEN" | "id", string> = reactive({
+    id: uuidv4(),
     wordPL: "",
     wordEN: "",
     examplePL: "",
