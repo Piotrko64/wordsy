@@ -2,9 +2,10 @@
 import { InputNames } from "@/src/@types/forms/InputNames";
 import BaseInput from "../../ui/form/BaseInput.vue";
 import BaseTextarea from "../../ui/form/BaseTextarea.vue";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { useWordsStore } from "../../stores/WordsStore";
 import { v4 as uuidv4 } from "uuid";
+import { validatorWord } from "./helpers/validatorWord";
 
 const dataForm: Record<"wordPL" | "wordEN" | "examplePL" | "exampleEN" | "id", string> = reactive({
     id: uuidv4(),
@@ -14,7 +15,9 @@ const dataForm: Record<"wordPL" | "wordEN" | "examplePL" | "exampleEN" | "id", s
     exampleEN: "",
 });
 
-const { addNewOwnWord, getListWords } = useWordsStore();
+const { addNewOwnWord } = useWordsStore();
+const invalidMessage = ref("");
+const validMessage = ref("");
 
 function updateDataForm(name: InputNames, text: string) {
     dataForm[name] = text;
@@ -23,6 +26,15 @@ function updateDataForm(name: InputNames, text: string) {
 function addNewWord(event: Event) {
     event.preventDefault();
 
+    const validObject = validatorWord(dataForm);
+    invalidMessage.value = "";
+    validMessage.value = "";
+
+    if (!validObject.isValid) {
+        invalidMessage.value = validObject.msg;
+        return;
+    }
+    validMessage.value = validObject.msg;
     addNewOwnWord(dataForm);
 }
 </script>
@@ -34,7 +46,7 @@ function addNewWord(event: Event) {
             <BaseInput
                 name="wordPL"
                 title="Słowo po Polsku"
-                :min-length="2"
+                :min-length="1"
                 @update-data="updateDataForm"
                 placeholder="Tu napisz wyrażenie po polsku"
                 :requiredInput="true"
@@ -42,7 +54,7 @@ function addNewWord(event: Event) {
             <BaseInput
                 name="wordEN"
                 title="Słowo po Angielsku"
-                :min-length="2"
+                :min-length="1"
                 @update-data="updateDataForm"
                 placeholder="A tu jego angielski odpowiednik"
                 :requiredInput="true"
@@ -61,6 +73,8 @@ function addNewWord(event: Event) {
                     placeholder="Napisz tłumaczenie tego zdania na język angielski"
                 ></BaseTextarea>
             </div>
+            <p v-if="invalidMessage" class="alert">{{ invalidMessage }}</p>
+            <p v-if="validMessage" class="ok">{{ validMessage }}</p>
             <button type="submit" class="actionButton" @click="addNewWord($event)">
                 Dodaj nowe wyrażenie
             </button>
@@ -84,6 +98,18 @@ function addNewWord(event: Event) {
         margin: 0 10px;
         .exampleContainer {
             margin-top: 40px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            &.alert {
+                color: red;
+            }
+            &.ok {
+                font-size: 1.5rem;
+                color: var(--secondGreen);
+            }
         }
     }
 }
