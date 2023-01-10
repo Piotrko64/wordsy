@@ -48,33 +48,35 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="actionButton" @click="toggleFullScreen()">Włącz tryb Wygaszacza</div>
-    <div class="whiteBlock actualWord">
-        <h3>Aktualne słówko:</h3>
-        <p>{{ getActualWord.wordEN }}</p>
-    </div>
-    <div
-        ref="elementToFullScreen"
-        v-show="isScreensaverMode"
-        class="centerFlex fullScreen"
-        :style="{ backgroundImage: `url(/assets/wallpapers/${findWallpaper()}.jpg)` }"
-    >
-        <div class="container">
-            <transition name="fade" mode="out-in">
-                <div class="whiteCard whiteBlock centerFlex" :key="getActualWord.wordEN">
-                    <h2>{{ getActualWord.wordEN }}</h2>
-                    <p>{{ getActualWord.exampleEN }}</p>
-                </div>
-            </transition>
-            <div class="equal">czyli...</div>
-            <transition name="fade" mode="out-in">
-                <div class="whiteCard whiteBlock centerFlex" :key="getActualWord.wordPL">
-                    <h2>{{ getActualWord.wordPL }}</h2>
-                    <p>{{ getActualWord.examplePL }}</p>
-                </div>
-            </transition>
+    <div>
+        <div class="actionButton" @click="toggleFullScreen()">Włącz tryb Wygaszacza</div>
+        <div class="whiteBlock actualWord">
+            <h3>Aktualne słówko:</h3>
+            <p>{{ getActualWord.wordEN }}</p>
         </div>
-        <div class="actionButton offButton" @click="toggleFullScreen()">Wyłącz tryb Wygaszacza</div>
+        <div
+            ref="elementToFullScreen"
+            v-show="isScreensaverMode"
+            class="centerFlex fullScreen"
+            :style="{ backgroundImage: `url(/assets/wallpapers/${findWallpaper()}.jpg)` }"
+        >
+            <div class="container">
+                <transition name="fade" mode="out-in">
+                    <div class="whiteCard whiteBlock centerFlex" :key="getActualWord.wordEN">
+                        <h2>{{ getActualWord.wordEN }}</h2>
+                        <p>{{ getActualWord.exampleEN }}</p>
+                    </div>
+                </transition>
+                <div class="equal">czyli...</div>
+                <transition name="fade" mode="out-in">
+                    <div class="whiteCard whiteBlock centerFlex" :key="getActualWord.wordPL">
+                        <h2>{{ getActualWord.wordPL }}</h2>
+                        <p>{{ getActualWord.examplePL }}</p>
+                    </div>
+                </transition>
+            </div>
+            <div class="actionButton offButton" @click="toggleFullScreen()">Wyłącz tryb Wygaszacza</div>
+        </div>
     </div>
 </template>
 <style lang="scss">

@@ -27,24 +27,26 @@ watch(progress, () => {
 </script>
 
 <template>
-    <div class="question whiteBlock">
-        {{ quizQuestions[progress].question }}
-    </div>
-    <div class="so">czyli...</div>
-    <div class="containerButtons">
-        <button
-            v-for="answer in quizQuestions[progress].answers"
-            @click="checkAnswer(answer)"
-            :disabled="!!userAnswer"
-            v-wave
-            class="answerButton"
-            :class="{
-                good: userAnswer && quizQuestions[progress].correctAnswer === answer,
-                bad: userAnswer === answer && quizQuestions[progress].correctAnswer !== userAnswer,
-            }"
-        >
-            {{ answer }}
-        </button>
+    <div>
+        <div class="question whiteBlock">
+            {{ quizQuestions[progress].question }}
+        </div>
+        <div class="so">czyli...</div>
+        <div class="containerButtons">
+            <button
+                v-for="answer in quizQuestions[progress].answers"
+                @click="checkAnswer(answer)"
+                :disabled="!!userAnswer"
+                v-wave
+                class="answerButton"
+                :class="{
+                    good: userAnswer && quizQuestions[progress].correctAnswer === answer,
+                    bad: userAnswer === answer && quizQuestions[progress].correctAnswer !== userAnswer,
+                }"
+            >
+                {{ answer }}
+            </button>
+        </div>
     </div>
 </template>
 

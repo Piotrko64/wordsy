@@ -29,23 +29,25 @@ watch(progress, () => {
 </script>
 
 <template>
-    <button class="actionButton" @click="speakWord(voiceQuizQuestions[progress].word)" v-wave>
-        <img :src="micro" alt="Powiedz słowo" />
-    </button>
-    <div class="containerButtons">
-        <button
-            v-for="answer in voiceQuizQuestions[progress].allAnswers"
-            @click="validAnswers(answer)"
-            :disabled="!!userAnswer"
-            class="answer answerButton"
-            v-wave
-            :class="{
-                good: userAnswer && voiceQuizQuestions[progress].correctAnswer === answer,
-                bad: userAnswer === answer && voiceQuizQuestions[progress].correctAnswer !== userAnswer,
-            }"
-        >
-            {{ answer }}
+    <div>
+        <button class="actionButton" @click="speakWord(voiceQuizQuestions[progress].word)" v-wave>
+            <img :src="micro" alt="Powiedz słowo" />
         </button>
+        <div class="containerButtons">
+            <button
+                v-for="answer in voiceQuizQuestions[progress].allAnswers"
+                @click="validAnswers(answer)"
+                :disabled="!!userAnswer"
+                class="answer answerButton"
+                v-wave
+                :class="{
+                    good: userAnswer && voiceQuizQuestions[progress].correctAnswer === answer,
+                    bad: userAnswer === answer && voiceQuizQuestions[progress].correctAnswer !== userAnswer,
+                }"
+            >
+                {{ answer }}
+            </button>
+        </div>
     </div>
 </template>
 

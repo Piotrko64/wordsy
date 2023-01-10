@@ -51,28 +51,30 @@ watch(getActualWord, () => {
 </script>
 
 <template>
-    <h2>Tryb mówienia</h2>
-    <p v-if="!isPermission">Ten tryb potrzebuje pozwolenia na używanie mikrofonu!</p>
-    <p v-if="!isSpeechRecognition">
-        Ten tryb zaleca się używać w przeglądarce Chrome - korzystanie na innych może być problematyczne
-    </p>
-    {{ getActualWord.exampleEN }}
-    <button @click="recognitionStart()">rere</button>
-    <div v-for="(word, index) in resultSpeech.split(' ')">
-        <span
-            :style="{
-                backgroundColor:
-                    word.toLowerCase() ===
-                    getActualWord.exampleEN
-                        .split(' ')
-                        [index].toLowerCase()
-                        .replace(/[^a-zA-Z0-9 | ']/g, '')
-                        ? 'var(--green)'
-                        : 'red',
-            }"
-        >
-            {{ word }}
-        </span>
+    <div>
+        <h2>Tryb mówienia</h2>
+        <p v-if="!isPermission">Ten tryb potrzebuje pozwolenia na używanie mikrofonu!</p>
+        <p v-if="!isSpeechRecognition">
+            Ten tryb zaleca się używać w przeglądarce Chrome - korzystanie na innych może być problematyczne
+        </p>
+        {{ getActualWord.exampleEN }}
+        <button @click="recognitionStart()">rere</button>
+        <div v-for="(word, index) in resultSpeech.split(' ')">
+            <span
+                :style="{
+                    backgroundColor:
+                        word.toLowerCase() ===
+                        getActualWord.exampleEN
+                            .split(' ')
+                            [index].toLowerCase()
+                            .replace(/[^a-zA-Z0-9 | ']/g, '')
+                            ? 'var(--green)'
+                            : 'red',
+                }"
+            >
+                {{ word }}
+            </span>
+        </div>
     </div>
 </template>
 
