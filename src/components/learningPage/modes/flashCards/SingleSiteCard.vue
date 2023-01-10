@@ -32,7 +32,11 @@ function addFavWord(e: Event) {
 <template>
     <div :class="classes" class="card">
         <h2>
-            {{ word }} <img :src="micro" alt="Powiedz to wyrażenie" @click="speakSentence($event, word)" />
+            {{ word }} <br /><img
+                :src="micro"
+                alt="Powiedz to wyrażenie"
+                @click="speakSentence($event, word)"
+            />
         </h2>
         <div>
             <p v-if="sentence">{{ sentence }}</p>

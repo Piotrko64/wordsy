@@ -114,6 +114,14 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "I don't want to risk losing my money",
     },
     {
+        wordPL: "kąt, styk, róg, narożnik ",
+        wordEN: "corner",
+        fav: false,
+
+        examplePL: "Czy widzisz to pudełko w rogu?",
+        exampleEN: "Do you see that box in the corner?",
+    },
+    {
         wordPL: "młodość",
         wordEN: "youth",
         fav: false,
@@ -136,6 +144,14 @@ export const startingWords: Array<WordsType> = [
 
         examplePL: "Zakres (rozpiętość pamięci)",
         exampleEN: "Memory span",
+    },
+    {
+        wordPL: "opieka / ostrożność / troska / zmartwienia",
+        wordEN: "care",
+        fav: false,
+
+        examplePL: "Zaplanuj swój tydzień z ostrożnością.",
+        exampleEN: "Plan your week with care.",
     },
     {
         wordPL: "przejść na emeryturę",
@@ -162,6 +178,30 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "This soup is very smooth, you can give it to your child.",
     },
     {
+        wordPL: "zaimek",
+        wordEN: "pronoun",
+        fav: false,
+
+        examplePL: "Słowa takie jak 'ja', 'ty', 'oni' są zaimkami osobowymi.",
+        exampleEN: "Words such as 'I', 'you', or 'they' are personal pronouns.",
+    },
+    {
+        wordPL: "zakładać / organizować / ustawiać (coś)",
+        wordEN: "set (something) up",
+        fav: false,
+
+        examplePL: "Twoja mama przygotuje obiad.",
+        exampleEN: "Your mother will set the dinner up.",
+    },
+    {
+        wordPL: "ufność / zaufanie / wiara / religia ",
+        wordEN: "faith",
+        fav: false,
+
+        examplePL: "To jest kwestia wiary.",
+        exampleEN: "It's a matter of faith. ",
+    },
+    {
         wordPL: "dorastać",
         wordEN: "grow up",
         fav: false,
@@ -184,6 +224,14 @@ export const startingWords: Array<WordsType> = [
 
         examplePL: "On nadmiernie wykorzystywał ten komputer, dlatego się zepsuł.",
         exampleEN: "He exploited this computer, that's why it broke down",
+    },
+    {
+        wordPL: "okazja / umowa / targować się",
+        wordEN: "bargain",
+        fav: false,
+
+        examplePL: "Wygląda na to, że ty dużo więcej zyskasz na tym porozumieniu.",
+        exampleEN: "It sounds like you get the better part of this bargain.",
     },
     {
         wordPL: "ukończenie wyższych studiów",
@@ -210,6 +258,14 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "I work as a musical records seller",
     },
     {
+        wordPL: "przymocować / przywiązywać / załączać",
+        wordEN: "attach",
+        fav: false,
+
+        examplePL: "Powinieneś przytwierdzić lustro do ściany.",
+        exampleEN: "You should attach the mirror to the wall.",
+    },
+    {
         wordPL: "różnorodność / rodzaj / odmiana",
         wordEN: "variety",
         fav: false,
@@ -232,6 +288,14 @@ export const startingWords: Array<WordsType> = [
 
         examplePL: "Miło, że to zauważyłeś.",
         exampleEN: "I'm glad you noticed that",
+    },
+    {
+        wordPL: "kłócić się / uzasadniać / argumentować / dowodzić",
+        wordEN: "argue",
+        fav: false,
+
+        examplePL: "Jak możesz uzasadnić swoją propozycję?",
+        exampleEN: "How can you argue your proposition?",
     },
 ].map((word) => {
     return { ...word, id: uuidv4() };
