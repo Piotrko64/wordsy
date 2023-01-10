@@ -35,3 +35,11 @@ export const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+
+router.beforeEach((_to, _from) => {
+    window.scrollTo({
+        top: 0,
+
+        behavior: "smooth",
+    });
+});

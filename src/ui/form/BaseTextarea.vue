@@ -13,7 +13,7 @@ const valueInput = ref<string>("");
 </script>
 <template>
     <div class="entireTextarea">
-        <label for="field">{{ name }}</label>
+        <label for="field">{{ title }}</label>
         <textarea
             id="field"
             @input="emits('updateData', name, valueInput)"
@@ -35,13 +35,14 @@ const valueInput = ref<string>("");
     label {
         margin-bottom: 5px;
         font-size: 1rem;
+        color: var(--green);
     }
     textarea {
         flex-direction: column;
-        min-height: 200px;
+        min-height: 120px;
         width: 100%;
         color: white;
-        background-color: rgba(255, 255, 255, 0.103);
+        background-color: white;
         border: 1px solid transparent;
         transition: all 0.3s ease;
         font-size: 1.2rem;
@@ -53,8 +54,10 @@ const valueInput = ref<string>("");
         font-family: "Lato";
         font-weight: 400;
         resize: none;
+        color: black;
+        font-family: var(--signika);
         &:focus-visible {
-            border: 1px solid rgb(255, 255, 255);
+            border-bottom: 4px solid black;
         }
     }
 }

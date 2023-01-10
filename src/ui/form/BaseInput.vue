@@ -49,6 +49,7 @@ watch([isBlur], () => {
             @focus="isBlur = false"
             :placeholder="placeholder"
             maxlength="50"
+            :class="{ invalid: !isValid && isBlur }"
         />
 
         <p v-if="!isValid && isBlur">{{ errorInputMesage }}</p>
@@ -64,10 +65,12 @@ watch([isBlur], () => {
     label {
         margin-bottom: 5px;
         font-size: 1rem;
+        color: var(--green);
     }
     input {
-        background-color: rgba(255, 255, 255, 0.103);
-        border: 1px solid transparent;
+        background-color: white;
+        border: 4px solid white;
+        border-bottom: 4px solid var(--green);
         transition: all 0.3s ease;
         font-size: 1.2rem;
         color: white;
@@ -75,17 +78,22 @@ watch([isBlur], () => {
         outline: none;
         border-radius: 5px;
         box-sizing: border-box;
-
+        transition: all 0.2s ease-in-out;
         font-weight: 400;
         width: 100%;
+        color: black;
+        font-family: var(--signika);
+        &.invalid {
+            border-bottom: 4px solid red;
+        }
         &:focus-visible {
-            border: 1px solid rgb(255, 255, 255);
+            border-bottom: 4px solid black;
         }
     }
     p {
-        margin: 0;
+        margin: 6px 0 0;
         color: red;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 }
 </style>
