@@ -121,7 +121,7 @@ onMounted(() => {
 .fullScreen {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 120%;
+    background-size: 115vw auto;
     animation: animation 60s infinite;
 
     @keyframes animation {

@@ -418,12 +418,28 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "It's rude to ask a woman her age",
     },
     {
+        wordPL: "wychodzić z siebie, wariować ",
+        wordEN: "freak out",
+        fav: false,
+
+        examplePL: "Usłyszałem 'Ogień!' i zacząłem wariować.",
+        exampleEN: "I heard 'Fire!' and I started to freak out.",
+    },
+    {
         wordPL: "zauważać / ogłoszenie",
         wordEN: "notice",
         fav: false,
 
         examplePL: "Miło, że to zauważyłeś.",
         exampleEN: "I'm glad you noticed that",
+    },
+    {
+        wordPL: "maniak, świr, dziwak",
+        wordEN: "freak",
+        fav: false,
+
+        examplePL: "On jest maniakiem komputerowym.",
+        exampleEN: "He's a computer freak.",
     },
     {
         wordPL: "kłócić się / uzasadniać / argumentować / dowodzić",
