@@ -6,6 +6,7 @@ import { detect } from "detect-browser";
 
 const resultSpeech = ref("");
 const isPermission = ref(false);
+const isActiveSpeech = ref(false);
 const isSpeechRecognition = ref(false);
 const { getActualWord } = storeToRefs(useWordsStore());
 
@@ -34,12 +35,16 @@ onMounted(() => {
     recognition.lang = "en-US";
 
     recognition.addEventListener("result", (e: SpeechRecognitionEvent) => {
+        isActiveSpeech.value = true;
         const yourSpeech = e.results[0][0].transcript;
         resultSpeech.value = yourSpeech;
-        console.log(e);
+        console.log(getActualWord.value.exampleEN.split(" ")[0], yourSpeech);
+    });
+    recognition.addEventListener("start", () => {
+        isActiveSpeech.value = true;
     });
     recognition.addEventListener("end", () => {
-        console.log("Speech recognition service disconnected");
+        isActiveSpeech.value = false;
     });
     if (recognition) {
         isSpeechRecognition.value = true;
@@ -67,19 +72,31 @@ watch(getActualWord, () => {
                     :style="{
                         backgroundColor:
                             word.toLowerCase() ===
-                            getActualWord.exampleEN
-                                .split(' ')
-                                [index].toLowerCase()
-                                .replace(/[^a-zA-Z0-9 | ']/g, '')
+                                getActualWord.exampleEN
+                                    .split(' ')
+                                    [index + 1].toLowerCase()
+                                    .replace(/[^a-zA-Z0-9 | ']/g, '') ||
+                            word.toLowerCase() ===
+                                getActualWord.exampleEN
+                                    .split(' ')
+                                    [index].toLowerCase()
+                                    .replace(/[^a-zA-Z0-9 | ']/g, '') ||
+                            word.toLowerCase() ===
+                                getActualWord.exampleEN
+                                    .split(' ')
+                                    [index - 1].toLowerCase()
+                                    .replace(/[^a-zA-Z0-9 | ']/g, '')
                                 ? 'var(--green)'
-                                : 'red',
+                                : 'var(--red)',
                     }"
                 >
                     {{ word }}
                 </span>
             </div>
         </div>
-        <button @click="recognitionStart()" class="actionButton">Kliknij i powiedz</button>
+        <button @click="recognitionStart()" class="actionButton" :disabled="isActiveSpeech">
+            Kliknij i powiedz
+        </button>
     </div>
 </template>
 
