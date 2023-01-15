@@ -151,7 +151,7 @@ onMounted(() => {
             text-align: center;
             color: black;
             font-size: 1.2rem;
-            height: clamp(170px, 15vh, 450px);
+            min-height: 180px;
             flex-direction: column;
             padding: 8px;
             h2 {

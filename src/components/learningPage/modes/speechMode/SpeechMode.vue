@@ -12,8 +12,6 @@ const { getActualWord } = storeToRefs(useWordsStore());
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
-console.log(navigator.userAgent.indexOf("Chrome") != -1);
-
 function recognitionStart() {
     recognition.interimResults = true;
     recognition.start();
@@ -38,7 +36,10 @@ onMounted(() => {
     recognition.addEventListener("result", (e: SpeechRecognitionEvent) => {
         const yourSpeech = e.results[0][0].transcript;
         resultSpeech.value = yourSpeech;
-        console.log(!!recognition);
+        console.log(e);
+    });
+    recognition.addEventListener("end", () => {
+        console.log("Speech recognition service disconnected");
     });
     if (recognition) {
         isSpeechRecognition.value = true;
@@ -52,30 +53,57 @@ watch(getActualWord, () => {
 
 <template>
     <div>
-        <h2>Tryb mówienia</h2>
+        <div class="whiteBlock info">
+            <h2>Kliknij przycisk i powiedz poniższe zdanie / słowo!</h2>
+            <p>{{ getActualWord.exampleEN || getActualWord.wordEN }}</p>
+        </div>
         <p v-if="!isPermission">Ten tryb potrzebuje pozwolenia na używanie mikrofonu!</p>
         <p v-if="!isSpeechRecognition">
             Ten tryb zaleca się używać w przeglądarce Chrome - korzystanie na innych może być problematyczne
         </p>
-        {{ getActualWord.exampleEN }}
-        <button @click="recognitionStart()">rere</button>
-        <div v-for="(word, index) in resultSpeech.split(' ')">
-            <span
-                :style="{
-                    backgroundColor:
-                        word.toLowerCase() ===
-                        getActualWord.exampleEN
-                            .split(' ')
-                            [index].toLowerCase()
-                            .replace(/[^a-zA-Z0-9 | ']/g, '')
-                            ? 'var(--green)'
-                            : 'red',
-                }"
-            >
-                {{ word }}
-            </span>
+        <div class="whiteBlock info flex">
+            <div v-for="(word, index) in resultSpeech.split(' ')" v-if="resultSpeech.length">
+                <span
+                    :style="{
+                        backgroundColor:
+                            word.toLowerCase() ===
+                            getActualWord.exampleEN
+                                .split(' ')
+                                [index].toLowerCase()
+                                .replace(/[^a-zA-Z0-9 | ']/g, '')
+                                ? 'var(--green)'
+                                : 'red',
+                    }"
+                >
+                    {{ word }}
+                </span>
+            </div>
         </div>
+        <button @click="recognitionStart()" class="actionButton">Kliknij i powiedz</button>
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.info {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    p {
+        font-size: 1.4rem;
+        padding-top: 10px;
+    }
+    &.flex {
+        display: flex;
+        min-height: 40px;
+        justify-content: center;
+        align-items: center;
+        span {
+            padding: 3px;
+            border-radius: 3px;
+            margin-right: 4px;
+            color: white;
+            font-size: 1.2rem;
+        }
+    }
+}
+</style>
