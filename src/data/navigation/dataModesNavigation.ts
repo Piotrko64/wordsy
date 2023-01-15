@@ -29,6 +29,7 @@ export const dataModesNavigation = [
         name: "Wymów zdanie",
         urlName: "trybSpeech",
         img: micro,
+        notice: "Tylko na Chrome (PC)",
     },
 ];
 

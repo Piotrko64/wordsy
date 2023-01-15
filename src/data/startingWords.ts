@@ -434,6 +434,14 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "I'm glad you noticed that",
     },
     {
+        wordPL: "ponury, posępny, smutny",
+        wordEN: "gloomy",
+        fav: false,
+
+        examplePL: "Przez resztę wieczoru byliśmy podenerwowani i posępni",
+        exampleEN: "For the rest of the evening we were nervous and gloomy. ",
+    },
+    {
         wordPL: "maniak, świr, dziwak",
         wordEN: "freak",
         fav: false,

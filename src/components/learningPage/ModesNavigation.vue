@@ -8,7 +8,8 @@ const { changeMode } = useWordsStore();
 <template>
     <h3><span>Tryby</span></h3>
     <router-link v-for="mode in dataModesNavigation" :to="'/' + mode.urlName" @click="changeMode(mode.name)">
-        <div class="horizontalSpace">
+        <div class="horizontalSpace block">
+            <div class="notice" v-if="mode.notice">{{ mode.notice }}</div>
             <img :src="mode.img" :alt="mode.name" />
             {{ mode.name }}
         </div>
@@ -16,7 +17,7 @@ const { changeMode } = useWordsStore();
 </template>
 
 <style scoped lang="scss">
-div {
+div:not(.notice) {
     display: flex;
     margin-bottom: 5px;
     background-color: white;
@@ -27,6 +28,22 @@ div {
     padding-top: 5px;
     padding-bottom: 5px;
     border: 3px solid var(--secondGreen);
+    .block {
+        position: relative;
+    }
+    .notice {
+        font-size: 0.95rem;
+        position: absolute;
+        top: -5px;
+        right: 5px;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        max-width: 180px;
+        background-color: var(--green);
+        text-align: center;
+        z-index: 4;
+    }
     img {
         width: 34px;
         object-fit: contain;
