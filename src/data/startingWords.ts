@@ -114,6 +114,22 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "How can one person make such a mess?",
     },
     {
+        wordPL: "postanowienie, decyzja, rozwiązanie",
+        wordEN: "resolution",
+        fav: false,
+
+        examplePL: "Jej noworocznym postanowieniem jest zrzucić wagę.",
+        exampleEN: "Her New Year's resolution is to lose weight.",
+    },
+    {
+        wordPL: "kulawy, słaby, kiepski, nudny",
+        wordEN: "lame",
+        fav: false,
+
+        examplePL: "He's just so lame!",
+        exampleEN: "On jest taki słaby!",
+    },
+    {
         wordPL: "absurdalny, niedorzeczny, niepoważny",
         wordEN: "ridiculous",
         fav: false,
