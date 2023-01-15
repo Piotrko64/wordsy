@@ -386,6 +386,14 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "I work as a musical records seller",
     },
     {
+        wordPL: "dostrzegać / dosłyszeć / zrozumieć coś",
+        wordEN: "make something out",
+        fav: false,
+
+        examplePL: "Nie dosłyszałam jego ostatnich słów.",
+        exampleEN: "I didn't make out his final words.",
+    },
+    {
         wordPL: "przymocować / przywiązywać / załączać",
         wordEN: "attach",
         fav: false,
