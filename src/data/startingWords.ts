@@ -114,6 +114,54 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "How can one person make such a mess?",
     },
     {
+        wordPL: "wycierać, ścierać, wytarcie",
+        wordEN: "wipe",
+        fav: false,
+
+        examplePL: "Umyj talerze i wytrzyj je.",
+        exampleEN: "Wash the plates and wipe them.",
+    },
+    {
+        wordPL: "postanowienie, decyzja, rozwiązanie",
+        wordEN: "resolution",
+        fav: false,
+
+        examplePL: "Jej noworocznym postanowieniem jest zrzucić wagę.",
+        exampleEN: "Her New Year's resolution is to lose weight.",
+    },
+    {
+        wordPL: "współczesne",
+        wordEN: "modern / contemporary",
+        fav: false,
+
+        examplePL: "Dam ci całą moją kolekcję sztuki współczesnej.",
+        exampleEN: "I will give you my whole collection of modern art.",
+    },
+    {
+        wordPL: "kulawy, słaby, kiepski, nudny",
+        wordEN: "lame",
+        fav: false,
+
+        examplePL: "On jest taki słaby!",
+        exampleEN: "He's just so lame!",
+    },
+    {
+        wordPL: "kierownictwo, przywództwo, szefostwo",
+        wordEN: "leadership",
+        fav: false,
+
+        examplePL: "Kierownictwo podejmuje wszystkie ważne decyzje",
+        exampleEN: "The leadership makes all important decisions",
+    },
+    {
+        wordPL: "pot, ciężko pracować",
+        wordEN: "sweat",
+        fav: false,
+
+        examplePL: "On otarł z twarzy kropelki potu.",
+        exampleEN: "He wiped drops of sweat from his face.",
+    },
+    {
         wordPL: "absurdalny, niedorzeczny, niepoważny",
         wordEN: "ridiculous",
         fav: false,
