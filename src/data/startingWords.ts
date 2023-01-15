@@ -10,12 +10,92 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "They prefer carbonated water ",
     },
     {
+        wordPL: "dobroczynność / organizacja dobroczynna / miłosierdzie",
+        wordEN: "charity",
+        fav: false,
+
+        examplePL: "W zeszłym miesiącu para musiała poprosić o pomoc organizację charytatywną",
+        exampleEN: "Last month, the couple had to ask for help from charity.",
+    },
+    {
         wordPL: "podobne",
         wordEN: "similar",
         fav: false,
 
         examplePL: "Te dwa zdjęcia są podobne, ale nie identyczne.",
         exampleEN: "These two pictures are similar, but not identical.",
+    },
+    {
+        wordPL: "związywać / łączyć / zawiązywać",
+        wordEN: "bind",
+        fav: false,
+
+        examplePL: "Modlitwa nas jednoczy.",
+        exampleEN: "Prayer binds us together",
+    },
+    {
+        wordPL: "katastrofa / klęska",
+        wordEN: "disaster",
+        fav: false,
+
+        examplePL: "Katastrofa miała miejsce dwie przecznice od dworca autobusowego",
+        exampleEN: "The disaster took place two blocks from the bus station",
+    },
+    {
+        wordPL: "duch, dusza, zapał",
+        wordEN: "spirit",
+        fav: false,
+
+        examplePL: "Duch drużyny był fantastyczny!",
+        exampleEN: "The team spirit was fantastic!",
+    },
+    {
+        wordPL: "naprzeciwko / przeciwieństwo / odwrotny",
+        wordEN: "opposite",
+        fav: false,
+
+        examplePL: "Przeciwieństwo słowa 'duży' to 'mały'.",
+        exampleEN: "The opposite of 'big' is 'small'.",
+    },
+    {
+        wordPL: "pióro / kosmyk",
+        wordEN: "feather",
+        fav: false,
+
+        examplePL: "Znalazłem piórko w parku",
+        exampleEN: "I found a feather in the park",
+    },
+    {
+        wordPL: "ciasto (przed upieczeniem) ",
+        wordEN: "dough",
+        fav: false,
+
+        examplePL: "Czy mógłbyś dać mi przepis na to ciasto?",
+        exampleEN: "Could you give me the recipe for that dough?",
+    },
+    {
+        wordPL: "szczypać / uciskać / ściskać",
+        wordEN: "pinch",
+        fav: false,
+
+        examplePL: "Ktoś uszczypnął jego ramię",
+        exampleEN: "Somebody pinched his arm",
+    },
+    {
+        wordPL: "niegrzeczny, okropny, wstrętny",
+        wordEN: "nasty",
+        fav: false,
+
+        examplePL: "Ona jest nieprzyjemna. Ona krzyczy na ludzi i obraża wszystkich.",
+        exampleEN: "She's nasty. She yells at people and offends everyone.",
+    },
+    {
+        wordPL: "zawinąć, owinąć, zapakować",
+        wordEN: "wrap",
+        fav: false,
+
+        examplePL: "Czy możesz proszę zawinąć wszystko razem?",
+        exampleEN: "Would you wrap everything together, please?",
     },
     {
         wordPL: "zapewniać / dostarczać",
