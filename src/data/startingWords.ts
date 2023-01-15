@@ -10,12 +10,52 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "They prefer carbonated water ",
     },
     {
+        wordPL: "dobroczynność / organizacja dobroczynna / miłosierdzie",
+        wordEN: "charity",
+        fav: false,
+
+        examplePL: "W zeszłym miesiącu para musiała poprosić o pomoc organizację charytatywną",
+        exampleEN: "Last month, the couple had to ask for help from charity.",
+    },
+    {
         wordPL: "podobne",
         wordEN: "similar",
         fav: false,
 
         examplePL: "Te dwa zdjęcia są podobne, ale nie identyczne.",
         exampleEN: "These two pictures are similar, but not identical.",
+    },
+    {
+        wordPL: "związywać / łączyć / zawiązywać",
+        wordEN: "bind",
+        fav: false,
+
+        examplePL: "Modlitwa nas jednoczy.",
+        exampleEN: "Prayer binds us together",
+    },
+    {
+        wordPL: "katastrofa / klęska",
+        wordEN: "disaster",
+        fav: false,
+
+        examplePL: "Katastrofa miała miejsce dwie przecznice od dworca autobusowego",
+        exampleEN: "The disaster took place two blocks from the bus station",
+    },
+    {
+        wordPL: "szczypać / uciskać / ściskać",
+        wordEN: "pinch",
+        fav: false,
+
+        examplePL: "Ktoś uszczypnął jego ramię",
+        exampleEN: "Somebody pinched his arm",
+    },
+    {
+        wordPL: "zawinąć, owinąć, zapakować",
+        wordEN: "wrap",
+        fav: false,
+
+        examplePL: "Czy możesz proszę zawinąć wszystko razem?",
+        exampleEN: "Would you wrap everything together, please?",
     },
     {
         wordPL: "zapewniać / dostarczać",
