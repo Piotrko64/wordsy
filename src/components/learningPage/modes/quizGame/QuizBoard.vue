@@ -5,7 +5,7 @@ import { onMounted, ref, watch } from "vue";
 import { generateQuiz } from "../../../../helpers/quiz/generateQuiz";
 
 const store = useWordsStore();
-const { restartProgress } = store;
+const { restartProgress, shuffleWords } = store;
 const { getListWords, progress } = storeToRefs(store);
 const quizQuestions = ref(generateQuiz(getListWords.value));
 const userAnswer = ref<false | string>(false);
@@ -19,6 +19,7 @@ function checkAnswer(yourAnswer: string) {
 
 onMounted(() => {
     restartProgress();
+    shuffleWords();
 });
 
 watch(progress, () => {

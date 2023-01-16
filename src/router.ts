@@ -7,6 +7,7 @@ import ListPage from "./pages/ListPage.vue";
 import ScreenSaverMode from "./components/learningPage/modes/screensaverMode/ScreenSaverMode.vue";
 import SpeechMode from "./components/learningPage/modes/speechMode/SpeechMode.vue";
 import AddWordsPageVue from "./pages/AddWordsPage.vue";
+import { useWordsStore } from "./stores/WordsStore";
 
 const routes = [
     {
@@ -39,7 +40,6 @@ export const router = createRouter({
 router.beforeEach((_to, _from) => {
     window.scrollTo({
         top: 0,
-
         behavior: "smooth",
     });
 });

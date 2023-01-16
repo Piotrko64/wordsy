@@ -15,4 +15,4 @@ app.use(VWave, {
     easing: "ease-in",
 });
 
-app.use(router).use(pinia).mount("#app");
+app.use(pinia).use(router).mount("#app");

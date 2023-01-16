@@ -3,6 +3,7 @@ import { WordsType, SingleWord } from "./../@types/WordsType";
 import { defineStore } from "pinia";
 import { readWordsFromStorage } from "../helpers/localStorage/saveToLocalStorage";
 import { saveOwnWordsToLocalStorage } from "./../helpers/localStorage/saveToLocalStorage";
+import { shuffleElementsArray } from "../utils/shuffleElements/shuffleElementsArray";
 
 export const useWordsStore = defineStore("wordsStore", {
     state: () => ({
@@ -50,6 +51,11 @@ export const useWordsStore = defineStore("wordsStore", {
                 filter ? example.fav : true
             );
         },
+
+        shuffleWords() {
+            this.allWords = shuffleElementsArray(this.allWords);
+        },
+
         restartProgress() {
             this.progress = 0;
         },

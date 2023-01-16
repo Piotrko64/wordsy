@@ -18,10 +18,8 @@ function toggleFullScreen() {
         console.log(isScreensaverMode.value);
         if (!isScreensaverMode.value) {
             elementToFullScreen.value.requestFullscreen();
-            // isScreensaverMode.value = true;
         } else {
             document.exitFullscreen();
-            // isScreensaverMode.value = false;
         }
     }
 }
@@ -41,6 +39,7 @@ watch(isScreensaverMode, () => {
 });
 
 onMounted(() => {
+    store.shuffleWords();
     document.addEventListener("fullscreenchange", () => {
         isScreensaverMode.value = !isScreensaverMode.value;
     });
@@ -121,7 +120,7 @@ onMounted(() => {
 .fullScreen {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 115vw auto;
+    background-size: cover;
     animation: animation 60s infinite;
 
     @keyframes animation {

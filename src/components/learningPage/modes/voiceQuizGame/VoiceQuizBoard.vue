@@ -21,6 +21,7 @@ function speakWord(text: string) {
 
 onMounted(() => {
     store.restartProgress();
+    store.shuffleWords();
 });
 
 watch(progress, () => {

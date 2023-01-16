@@ -9,6 +9,7 @@ const { getActualWord } = storeToRefs(store);
 
 onMounted(() => {
     store.restartProgress();
+    store.shuffleWords();
 });
 </script>
 

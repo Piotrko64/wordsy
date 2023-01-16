@@ -2,6 +2,54 @@ import { WordsType } from "./../@types/WordsType";
 import { v4 as uuidv4 } from "uuid";
 export const startingWords: Array<WordsType> = [
     {
+        wordPL: "przypuszczać, zakładać, przybierać",
+        wordEN: "assume",
+        fav: false,
+
+        examplePL: "Nie zakładaj, że ona cię nie lubi; zapytaj ją.",
+        exampleEN: "Don't assume that she doesn't like you; ask her.",
+    },
+    {
+        wordPL: "oddziaływać na, mieć wpływ na",
+        wordEN: "affect",
+        fav: false,
+
+        examplePL: "Słońce może silnie oddziaływać na twoje rośliny",
+        exampleEN: "The Sun can strongly affect your plants.",
+    },
+    {
+        wordPL: "zatwierdzać, akceptować, przyjmować",
+        wordEN: "approve",
+        fav: false,
+
+        examplePL: "Mój szef zaakceptował moje sugestie.",
+        exampleEN: "My boss approved my suggestions.",
+    },
+    {
+        wordPL: "rzeczy, ciuchy, narzędzia, coś",
+        wordEN: "stuff",
+        fav: false,
+
+        examplePL: "Pokłóciliśmy się i wyrzuciłem jej rzeczy",
+        exampleEN: "We had an argument and I threw her stuff away.",
+    },
+    {
+        wordPL: "angazować, zajmować się, zainteresować, zatrudnić",
+        wordEN: "engage",
+        fav: false,
+
+        examplePL: "On chciał wciągnąć do bitwy młodych chłopców",
+        exampleEN: "He wanted to engage young boys in the battle",
+    },
+    {
+        wordPL: "w, wewnątrz, w środku, w ramach",
+        wordEN: "within",
+        fav: false,
+
+        examplePL: "Projekt został wykonany na czas i w ramach budżetu.",
+        exampleEN: "The project was completed on time and within the budget. ",
+    },
+    {
         wordPL: "woda gazowana",
         wordEN: "sparkling water (carbonated water)",
         fav: false,
@@ -10,12 +58,44 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "They prefer carbonated water ",
     },
     {
+        wordPL: "winny, skruszony",
+        wordEN: "guilty",
+        fav: false,
+
+        examplePL: "Czy czujesz się winny?",
+        exampleEN: "Are you feeling guilty?",
+    },
+    {
+        wordPL: "stać, znieść coś, tolerować",
+        wordEN: "stand",
+        fav: false,
+
+        examplePL: "Nie mogę zaakceptować jego niegrzecznego tonu!",
+        exampleEN: "I can't stand his rude tone! ",
+    },
+    {
         wordPL: "dobroczynność / organizacja dobroczynna / miłosierdzie",
         wordEN: "charity",
         fav: false,
 
         examplePL: "W zeszłym miesiącu para musiała poprosić o pomoc organizację charytatywną",
         exampleEN: "Last month, the couple had to ask for help from charity.",
+    },
+    {
+        wordPL: "wykładzina, dywan, warstwa",
+        wordEN: "carpet",
+        fav: false,
+
+        examplePL: "Droga była pokryta grubą warstwą śniegu",
+        exampleEN: "The road was covered with a thick carpet of snow.",
+    },
+    {
+        wordPL: "traktować, zabezpieczać, leczyć",
+        wordEN: "treat",
+        fav: false,
+
+        examplePL: "Potraktowali moje słowa jako dowcip",
+        exampleEN: "They treated my words as a joke.",
     },
     {
         wordPL: "podobne",
@@ -40,6 +120,14 @@ export const startingWords: Array<WordsType> = [
 
         examplePL: "Katastrofa miała miejsce dwie przecznice od dworca autobusowego",
         exampleEN: "The disaster took place two blocks from the bus station",
+    },
+    {
+        wordPL: "prowadzić dochodzenie, badać, dociekać",
+        wordEN: "investigate",
+        fav: false,
+
+        examplePL: "Ja chcę zbadać tę sprawę.",
+        exampleEN: "I want to investigate this case",
     },
     {
         wordPL: "duch, dusza, zapał",
@@ -432,6 +520,14 @@ export const startingWords: Array<WordsType> = [
 
         examplePL: "Miło, że to zauważyłeś.",
         exampleEN: "I'm glad you noticed that",
+    },
+    {
+        wordPL: "rupiecie, nieład, zagracać",
+        wordEN: "clutter",
+        fav: false,
+
+        examplePL: "W nieporządku, w nieładzie",
+        exampleEN: "In a clutter",
     },
     {
         wordPL: "ponury, posępny, smutny",
