@@ -4,9 +4,15 @@
    <div class="whiteBlock horizontalSpace">
       <h1>O co chodzi z kopią zapasową?</h1>
       <p>
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tempore
-         totam deserunt libero quaerat sunt iure odio eum at pariatur eius, sint
-         repellendus? Fugit ipsam deleniti officia delectus vero rerum.
+         Wordsy to szybka aplikacja która nie wykorzystuje baz danych. W
+         praktyce oznacza to że twoje dane są zapisywane jedynie w pamięci
+         podręcznej twojego urządzenia i nie są wysyłane nigdzie indziej. Jeśli
+         boisz się o utratę swoich słówek dodanych do Wordsów możesz pobrać
+         powyższymi przyciskami kopię zapasową w formie pliku JSON na swoje
+         urządzenie. Jeśli z jakiegoś powodu twoje dodane słówka znikną (na
+         przykład poprzez czyszczenie przeglądarki) możesz wgrać je za pomocą
+         wcześniej wygenerowanego pliku. Wgranie odbywa się poprzez
+         "upuszczenie" pliku w pole z zieloną przerywaną ramką
       </p>
    </div>
 </template>
