@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useWordsStore } from "../../stores/WordsStore";
 import { dataModesNavigation } from "../../data/navigation/dataModesNavigation";
+import Title from "../../ui/Title.vue";
 
 const { changeMode } = useWordsStore();
 </script>
 
 <template>
-    <h3><span>Tryby</span></h3>
+    <Title title="Tryby" />
     <router-link v-for="mode in dataModesNavigation" :to="'/' + mode.urlName" @click="changeMode(mode.name)">
         <div class="horizontalSpace block">
             <div class="notice" v-if="mode.notice">{{ mode.notice }}</div>
@@ -56,34 +57,6 @@ div:not(.notice) {
         &::first-letter {
             font-weight: 900;
         }
-    }
-}
-
-h3 {
-    margin-top: 30px;
-    position: relative;
-    z-index: 5;
-    margin-bottom: 10px;
-
-    text-align: center;
-    color: var(--secondGreen);
-    font-size: 2rem;
-    font-weight: 600;
-    span {
-        z-index: 10;
-        background-color: #ecece7;
-        padding: 0 15px;
-    }
-    &::before {
-        content: "";
-        height: 4px;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        background-color: var(--secondGreen);
-        transform: translate(-50%, -50%);
-        z-index: -5;
     }
 }
 </style>

@@ -2,9 +2,10 @@
 import { ref } from "vue";
 import { preventEvent } from "../../helpers/manageFiles/preventEvent";
 import { onChangeInput } from "../../helpers/manageFiles/inputFile/onChangeInput";
-
+import Title from "../../ui/Title.vue";
 import { handleDropFile } from "../../helpers/manageFiles/dropZone/handleDropFile";
 import BackupPanel from "./BackupPanel.vue";
+import jsonFile from "../../assets/icons/backup/jsonFile.png";
 
 const isActiveZone = ref(false);
 
@@ -18,6 +19,7 @@ function turnOffActiveZone() {
 </script>
 
 <template>
+    <Title title="Kopia zapasowa" />
     <label
         class="dropZone"
         :class="{ active: isActiveZone }"
@@ -27,7 +29,8 @@ function turnOffActiveZone() {
         @drop="preventEvent($event), turnOffActiveZone(), handleDropFile($event)"
         @change="onChangeInput($event)"
     >
-        Dodaj / przeciągnij plik JSON z twoimi słowkami
+        <p>Dodaj / przeciągnij plik JSON z twoimi słowkami</p>
+        <img :src="jsonFile" />
         <input type="file" class="zoneInput" accept="application/JSON" />
     </label>
     <BackupPanel />
@@ -37,7 +40,8 @@ function turnOffActiveZone() {
 .dropZone {
     cursor: pointer;
     border: 3px dashed var(--green);
-    height: 100px;
+    min-height: 100px;
+    padding: 15px 10px;
     width: 100%;
     border-radius: 5px;
     display: flex;
@@ -47,12 +51,19 @@ function turnOffActiveZone() {
     font-size: 1.3rem;
     color: var(--secondGreen);
     transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto 10px;
     &.active {
         background-color: white;
         color: var(--green);
     }
     .zoneInput {
         display: none;
+    }
+    img {
+        height: 50px;
+        margin-top: 15px;
     }
 }
 </style>

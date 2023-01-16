@@ -18,6 +18,38 @@ export const startingWords: Array<WordsType> = [
         exampleEN: "The Sun can strongly affect your plants.",
     },
     {
+        wordPL: "miska, kula do kręgli, toczyć, rzucać",
+        wordEN: "bowl",
+        fav: false,
+
+        examplePL: "On wziął kule i rozpoczął nową grę",
+        exampleEN: "He took the bowls and started a new game.",
+    },
+    {
+        wordPL: "dowiadywać się, odkryć coś",
+        wordEN: "find out",
+        fav: false,
+
+        examplePL: "W końcu odkryłem, co jest nie w porządku z moim rowerem.",
+        exampleEN: "I have finally found out what is wrong with my bike",
+    },
+    {
+        wordPL: "wynajmować, czynsz, wypożyczać",
+        wordEN: "rent",
+        fav: false,
+
+        examplePL: "Wynajęliśmy pokój w dobrej części miasta",
+        exampleEN: "We rented a room in the good part of the city",
+    },
+    {
+        wordPL: "ofiara",
+        wordEN: "victim",
+        fav: false,
+
+        examplePL: "Ofiara nie zauważyła, że złodziej zabrał jej torbę",
+        exampleEN: "The victim didn't notice that the thief took her bag",
+    },
+    {
         wordPL: "zatwierdzać, akceptować, przyjmować",
         wordEN: "approve",
         fav: false,

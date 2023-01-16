@@ -35,10 +35,20 @@ function downloadZipFile() {
 <style scoped lang="scss">
 .container {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    flex-direction: column;
     img {
         margin-left: 10px;
         height: 35px;
+    }
+}
+@media (min-width: 970px) {
+    .container {
+        flex-direction: row;
+        img {
+            margin-left: 10px;
+            height: 35px;
+        }
     }
 }
 </style>
