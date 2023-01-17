@@ -4,6 +4,8 @@ import { defineStore } from 'pinia';
 import { readWordsFromStorage } from '../helpers/localStorage/saveToLocalStorage';
 import { saveOwnWordsToLocalStorage } from './../helpers/localStorage/saveToLocalStorage';
 import { shuffleElementsArray } from '../utils/shuffleElements/shuffleElementsArray';
+import { toRaw, isProxy } from 'vue';
+import { filterArrayById } from './../utils/filterArray/filterArrayById';
 
 export const useWordsStore = defineStore('wordsStore', {
    state: () => ({
@@ -43,9 +45,13 @@ export const useWordsStore = defineStore('wordsStore', {
       getOwnWords(state) {
          return state.ownWords;
       },
+      getStartWords(state) {
+         return state.startWords;
+      },
    },
    actions: {
       filterFavWords(filter: boolean) {
+         this.progress = 0;
          this.onlyFavWords = filter;
          this.allWords = [...this.ownWords, ...this.startWords].filter(
             (example) => (filter ? example.fav : true)
@@ -68,11 +74,23 @@ export const useWordsStore = defineStore('wordsStore', {
          if (findIndex === -1) return;
 
          this.allWords[findIndex].fav = !this.allWords[findIndex].fav;
+
+         saveOwnWordsToLocalStorage(this.ownWords, 'ownWords');
+         saveOwnWordsToLocalStorage(this.startWords, 'startWords');
       },
 
       addWordsFromLocalStorage() {
-         this.ownWords = [...this.ownWords, ...readWordsFromStorage()];
-         this.allWords = this.allWords.concat(readWordsFromStorage());
+         this.startWords =
+            readWordsFromStorage('startWords').length === 0
+               ? startingWords
+               : readWordsFromStorage('startWords');
+
+         this.ownWords =
+            readWordsFromStorage('ownWords').length === 0
+               ? []
+               : readWordsFromStorage('ownWords');
+
+         this.allWords = this.ownWords.concat(this.startWords);
       },
 
       nextWord() {
@@ -94,7 +112,7 @@ export const useWordsStore = defineStore('wordsStore', {
       addNewOwnWord(word: SingleWord) {
          this.ownWords.unshift(word);
          this.allWords.unshift(word);
-         saveOwnWordsToLocalStorage(this.ownWords);
+         saveOwnWordsToLocalStorage(this.ownWords, 'ownWords');
       },
    },
 });
