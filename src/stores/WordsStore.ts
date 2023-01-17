@@ -4,8 +4,6 @@ import { defineStore } from 'pinia';
 import { readWordsFromStorage } from '../helpers/localStorage/saveToLocalStorage';
 import { saveOwnWordsToLocalStorage } from './../helpers/localStorage/saveToLocalStorage';
 import { shuffleElementsArray } from '../utils/shuffleElements/shuffleElementsArray';
-import { toRaw, isProxy } from 'vue';
-import { filterArrayById } from './../utils/filterArray/filterArrayById';
 
 export const useWordsStore = defineStore('wordsStore', {
    state: () => ({
@@ -67,6 +65,7 @@ export const useWordsStore = defineStore('wordsStore', {
       },
 
       addWordAsFavourite(id: string) {
+         console.log('aa');
          const findIndex = this.allWords.findIndex(
             (example) => example.id === id
          );

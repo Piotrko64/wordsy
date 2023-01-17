@@ -16,7 +16,7 @@
 
 <style scoped lang="scss">
 footer {
-   margin-top: 20px;
+   margin-top: 35px;
    padding: 20px 10px;
    background-color: white;
    color: var(--green);

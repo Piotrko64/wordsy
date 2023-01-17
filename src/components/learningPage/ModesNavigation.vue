@@ -44,7 +44,7 @@ const { changeMode } = useWordsStore();
 <style scoped lang="scss">
 .flex {
    display: flex;
-   gap: 10px;
+   gap: 5px;
    flex-direction: column;
 }
 .width {
@@ -64,7 +64,7 @@ h4 {
    &.alternative {
       background-color: var(--green);
       color: white;
-      margin-top: 20px;
+      margin-top: 10px;
    }
 }
 .content {

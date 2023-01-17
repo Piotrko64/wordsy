@@ -9,7 +9,11 @@ const { getWordsObject } = storeToRefs(store);
 
 <template>
    <Title title="Słowo dnia" />
-   <div class="whiteBlock border centerFlex" @click="store.changeIndexWords()">
+   <div
+      class="whiteBlock border centerFlex"
+      @click="store.changeIndexWords()"
+      v-wave
+   >
       <div class="word">{{ getWordsObject.enWord }}</div>
 
       czyli
