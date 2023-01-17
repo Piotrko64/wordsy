@@ -3,14 +3,14 @@ import { useAdditionalMode } from '../../../../../stores/AdditionalModeStore';
 import { storeToRefs } from 'pinia';
 
 const store = useAdditionalMode();
-const { getObjectWord } = storeToRefs(store);
+const { getQuiz } = storeToRefs(store);
 </script>
 
 <template>
-   <div class="whiteBlock">
-      {{ getObjectWord.enWord }}
-      {{ getObjectWord.plWord }}
-   </div>
+   {{ getQuiz.question }}
+   <button v-for="answer in getQuiz.answers">
+      {{ answer }}
+   </button>
 </template>
 
 <style scoped lang="scss"></style>

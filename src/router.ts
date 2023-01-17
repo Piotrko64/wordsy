@@ -8,7 +8,6 @@ import ScreenSaverMode from './components/learningPage/modes/screensaverMode/Scr
 import RandomWordMode from './components/learningPage/additionalModes/modes/randomWord/RandomWordMode.vue';
 import SpeechMode from './components/learningPage/modes/speechMode/SpeechMode.vue';
 import AddWordsPageVue from './pages/AddWordsPage.vue';
-import { useWordsStore } from './stores/WordsStore';
 import { nameAdditionalModes } from './data/navigation/dataAdditionalModes';
 import { useAdditionalMode } from './stores/AdditionalModeStore';
 

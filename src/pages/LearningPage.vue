@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import DropZoneFile from '../components/dropZone/DropZoneFile.vue';
+import NextButton from '../components/learningPage/additionalModes/NextButton.vue';
 import ButtonsPanel from '../components/learningPage/ButtonsPanel.vue';
 import ModeBlock from '../components/learningPage/ModeBlock.vue';
 import ModesNavigation from '../components/learningPage/ModesNavigation.vue';
@@ -19,6 +20,7 @@ const { isActive } = storeToRefs(useAdditionalMode());
          </transition>
       </router-view>
       <ButtonsPanel v-if="!isActive" />
+      <NextButton v-if="isActive" />
       <ModesNavigation />
       <DropZoneFile />
       <RandomWord />
