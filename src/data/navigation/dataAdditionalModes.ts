@@ -4,16 +4,16 @@ import randomQuiz from '../../assets/icons/modes/additional/randomQuiz.png';
 export const dataAdditionalModes = [
    {
       name: 'Losowe Słówko',
-      urlName: 'random',
+      urlName: 'Random',
       img: random,
    },
    {
       name: 'Quiz Losowy',
-      urlName: 'randomquiz',
+      urlName: 'Randomquiz',
       img: randomQuiz,
    },
 ];
 
 export const nameAdditionalModes = dataAdditionalModes.map(
-   (route) => route.name
+   (route) => route.urlName
 );

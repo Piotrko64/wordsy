@@ -20,7 +20,7 @@
 
 <style scoped lang="scss">
 .whiteBlock {
-   margin-top: 20px;
+   margin-top: 10px;
    padding-top: 15px;
    padding-bottom: 15px;
 

@@ -1,20 +1,24 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import DropZoneFile from '../components/dropZone/DropZoneFile.vue';
 import ButtonsPanel from '../components/learningPage/ButtonsPanel.vue';
 import ModeBlock from '../components/learningPage/ModeBlock.vue';
 import ModesNavigation from '../components/learningPage/ModesNavigation.vue';
 import RandomWord from '../components/randomWord/RandomWord.vue';
+import { useAdditionalMode } from '../stores/AdditionalModeStore';
+
+const { isActive } = storeToRefs(useAdditionalMode());
 </script>
 
 <template>
    <div>
-      <ModeBlock />
+      <ModeBlock v-if="!isActive" />
       <router-view v-slot="{ Component }">
          <transition name="fade" mode="out-in">
             <component :is="Component" />
          </transition>
       </router-view>
-      <ButtonsPanel />
+      <ButtonsPanel v-if="!isActive" />
       <ModesNavigation />
       <DropZoneFile />
       <RandomWord />
