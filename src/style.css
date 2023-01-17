@@ -1,108 +1,111 @@
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+   font-size: 16px;
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
+   color-scheme: light dark;
+   color: rgba(255, 255, 255, 0.87);
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    --signika: "Signika";
-    --rubik: "Rubik Moonrocks", cursive;
+   font-synthesis: none;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-text-size-adjust: 100%;
+   --signika: 'Signika';
+   --rubik: 'Rubik Moonrocks', cursive;
 
-    --red: #df1010;
-    --green: #19bc00;
-    --secondGreen: #2a961a;
-    --gray: #dfdfdd;
-    --secondGray: #898989;
+   --red: #df1010;
+   --green: #19bc00;
+   --secondGreen: #2a961a;
+   --gray: #dfdfdd;
+   --secondGray: #898989;
+}
+*::selection {
+   background-color: rgba(0, 128, 0, 0.2);
 }
 
 .horizontalSpace {
-    padding-left: 8px;
-    padding-right: 8px;
+   padding-left: 8px;
+   padding-right: 8px;
 }
 
 .centerFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .actionButton {
-    background-color: var(--green);
-    border-radius: 5px;
-    width: 100%;
-    font-size: 1.3rem;
-    padding: 5px;
-    cursor: pointer;
-    transition: all 0.6s ease-in-out;
+   background-color: var(--green);
+   border-radius: 5px;
+   width: 100%;
+   font-size: 1.3rem;
+   padding: 5px;
+   cursor: pointer;
+   transition: all 0.6s ease-in-out;
 }
 .actionButton:disabled {
-    background-color: var(--red);
+   background-color: var(--red);
 }
 button {
-    background-color: white;
-    border-radius: 5px;
-    border: 3px solid rgba(0, 0, 0, 0.1);
-    font-family: var(--signika);
-    font-size: 1.1rem;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: black;
+   background-color: white;
+   border-radius: 5px;
+   border: 3px solid rgba(0, 0, 0, 0.1);
+   font-family: var(--signika);
+   font-size: 1.1rem;
+   padding: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   color: black;
 }
 
 .answerButton {
-    border-radius: 5px;
-    font-size: 1.25rem;
-    font-family: var(--signika);
-    border: 3px solid var(--secondGray);
-    padding: 8px;
-    min-width: 220px;
-    flex: 1;
-    display: flex;
-    transition: all 0.1s ease-in-out;
+   border-radius: 5px;
+   font-size: 1.25rem;
+   font-family: var(--signika);
+   border: 3px solid var(--secondGray);
+   padding: 8px;
+   min-width: 220px;
+   flex: 1;
+   display: flex;
+   transition: all 0.1s ease-in-out;
 }
 .answerButton.good {
-    color: white;
-    background-color: var(--green);
-    border: 3px solid white;
+   color: white;
+   background-color: var(--green);
+   border: 3px solid white;
 }
 .answerButton.bad {
-    color: white;
-    background-color: rgb(230, 70, 70);
-    border: 3px solid white;
+   color: white;
+   background-color: rgb(230, 70, 70);
+   border: 3px solid white;
 }
 
 .whiteBlock {
-    background-color: white;
-    border-radius: 5px;
-    color: black;
-    width: 100%;
-    overflow: hidden;
+   background-color: white;
+   border-radius: 5px;
+   color: black;
+   width: 100%;
+   overflow: hidden;
 }
 
 a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
+   font-weight: 500;
+   color: #646cff;
+   text-decoration: inherit;
 }
 a:hover {
-    color: #535bf2;
+   color: #535bf2;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+   box-sizing: border-box;
+   margin: 0;
 }
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #ecece7;
-    font-family: var(--signika);
+   margin: 0;
+   padding: 0;
+   background-color: #ecece7;
+   font-family: var(--signika);
 }
