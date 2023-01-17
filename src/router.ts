@@ -6,6 +6,7 @@ import LearningPageVue from './pages/LearningPage.vue';
 import ListPage from './pages/ListPage.vue';
 import ScreenSaverMode from './components/learningPage/modes/screensaverMode/ScreenSaverMode.vue';
 import RandomWordMode from './components/learningPage/additionalModes/modes/randomWord/RandomWordMode.vue';
+import RandomQuizMode from './components/learningPage/additionalModes/modes/randomQuiz/RandomQuiz.vue';
 import SpeechMode from './components/learningPage/modes/speechMode/SpeechMode.vue';
 import AddWordsPageVue from './pages/AddWordsPage.vue';
 import { nameAdditionalModes } from './data/navigation/dataAdditionalModes';
@@ -23,6 +24,7 @@ const routes = [
          { path: 'TrybWygaszacza', component: ScreenSaverMode },
          { path: 'TrybSpeech', component: SpeechMode },
          { path: 'Random', component: RandomWordMode },
+         { path: 'RandomQuiz', component: RandomQuizMode },
       ],
    },
    {

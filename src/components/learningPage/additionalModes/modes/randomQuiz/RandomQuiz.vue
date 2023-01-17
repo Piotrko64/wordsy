@@ -7,10 +7,12 @@ const { getQuiz } = storeToRefs(store);
 </script>
 
 <template>
-   {{ getQuiz.question }}
-   <button v-for="answer in getQuiz.answers">
-      {{ answer }}
-   </button>
+   <div>
+      {{ getQuiz.question }}
+      <button v-for="answer in getQuiz.answers">
+         {{ answer }}
+      </button>
+   </div>
 </template>
 
 <style scoped lang="scss"></style>
