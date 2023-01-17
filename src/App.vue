@@ -1,17 +1,20 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
-import MainLayout from "./layout/MainLayout.vue";
-import { useWordsStore } from "./stores/WordsStore";
+import { onMounted } from 'vue';
+import MainLayout from './layout/MainLayout.vue';
+import { useWordsStore } from './stores/WordsStore';
+import { useRandomWordsStore } from './stores/RandomWordsStore';
 
 const { addWordsFromLocalStorage } = useWordsStore();
+const { changeIndexWords } = useRandomWordsStore();
 
 onMounted(() => {
-    addWordsFromLocalStorage();
+   addWordsFromLocalStorage();
+   changeIndexWords();
 });
 </script>
 
 <template>
-    <MainLayout> </MainLayout>
+   <MainLayout> </MainLayout>
 </template>
 
 <style scoped></style>
