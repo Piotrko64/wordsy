@@ -19,6 +19,11 @@
    --gray: #dfdfdd;
    --secondGray: #898989;
 }
+
+* {
+   -webkit-tap-highlight-color: transparent;
+}
+
 *::selection {
    background-color: rgba(0, 128, 0, 0.2);
 }

@@ -8,6 +8,7 @@ export const useAdditionalMode = defineStore('additionalMode', {
    state: () => ({
       isActive: false,
       indexWord: 99,
+      historyIndex: [],
    }),
    getters: {
       getObjectWord(state) {
