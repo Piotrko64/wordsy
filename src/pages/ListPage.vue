@@ -1,9 +1,9 @@
 <script setup lang="ts">
-// import ListMainComponent from '../components/listPage/listMainComponent.vue';
+import ListMainComponent from '../components/listPage/listMainComponent.vue';
 </script>
 
 <template>
-   <!-- <ListMainComponent /> -->
+   <ListMainComponent />
 </template>
 
 <style scoped lang="scss"></style>
