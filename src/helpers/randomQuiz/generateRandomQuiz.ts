@@ -2,16 +2,13 @@ import { enWords } from '../../data/additionalWords/enWords';
 import { plWords } from '../../data/additionalWords/plWords';
 import { getRandomNumber } from './../../utils/randomNumber/getRandomNumber';
 
-const [plWordList, enWordList] = [plWords, enWords];
-
 export function generateRandomQuiz(index: number) {
    const langQue = getRandomNumber(0, 1) ? 'pl' : 'en';
-   const correctAnswer: string = eval(
-      (langQue === 'pl' ? 'en' : 'pl') + 'WordList'
-   )[index];
+   const correctAnswer: string =
+      langQue === 'pl' ? enWords[index] : plWords[index];
 
    return {
-      question: eval(langQue + 'WordList')[index],
+      question: langQue === 'pl' ? plWords[index] : enWords[index],
       answers: generateAnswers(langQue === 'pl' ? 'en' : 'pl', correctAnswer),
       correctAnswer,
    };
@@ -30,7 +27,7 @@ function generateAnswers(lang: 'pl' | 'en', correctAnswer: string) {
 
       takenAnswersIndex.push(randomNumber);
 
-      return eval(lang + 'WordList')[randomNumber];
+      return lang === 'pl' ? enWords[randomNumber] : plWords[randomNumber];
    }
 
    for (let i = 0; i <= 3; i++) {
