@@ -27,7 +27,7 @@ function generateAnswers(lang: 'pl' | 'en', correctAnswer: string) {
 
       takenAnswersIndex.push(randomNumber);
 
-      return lang === 'pl' ? enWords[randomNumber] : plWords[randomNumber];
+      return lang === 'pl' ? plWords[randomNumber] : enWords[randomNumber];
    }
 
    for (let i = 0; i <= 3; i++) {
