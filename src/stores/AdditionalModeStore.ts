@@ -7,7 +7,7 @@ import { generateRandomQuiz } from './../helpers/randomQuiz/generateRandomQuiz';
 export const useAdditionalMode = defineStore('additionalMode', {
    state: () => ({
       isActive: false,
-      indexWord: 99,
+      indexWord: getRandomNumber(0, plWords.length),
       historyIndex: [],
    }),
    getters: {
