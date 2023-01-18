@@ -55,6 +55,7 @@ watch(getQuiz, () => {
    .answer {
       font-size: 1.25rem;
       padding: 10px 5px;
+      transition: all 0.1s ease-in-out;
       &.good {
          color: white;
          background-color: var(--green);
@@ -62,7 +63,7 @@ watch(getQuiz, () => {
       }
       &.bad {
          color: white;
-         background-color: rgb(230, 70, 70);
+         background-color: var(--red);
          border: 3px solid white;
       }
    }
