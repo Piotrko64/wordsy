@@ -7,18 +7,21 @@ import ModeBlock from '../components/learningPage/ModeBlock.vue';
 import ModesNavigation from '../components/learningPage/ModesNavigation.vue';
 import RandomWord from '../components/randomWord/RandomWord.vue';
 import { useAdditionalMode } from '../stores/AdditionalModeStore';
+import { useWordsStore } from '../stores/WordsStore';
 
 const { isActive } = storeToRefs(useAdditionalMode());
+const { getListWords } = storeToRefs(useWordsStore());
 </script>
 
 <template>
    <div>
       <ModeBlock v-if="!isActive" />
-      <router-view v-slot="{ Component }">
+      <router-view v-slot="{ Component }" v-if="getListWords.length">
          <transition name="fade" mode="out-in">
             <component :is="Component" />
          </transition>
       </router-view>
+      <div v-if="!getListWords.length">NIE MA</div>
       <ButtonsPanel v-if="!isActive" />
       <NextButton v-if="isActive" />
       <ModesNavigation />

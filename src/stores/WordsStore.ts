@@ -13,16 +13,26 @@ export const useWordsStore = defineStore('wordsStore', {
       ownWords: [] as Array<WordsType>,
       allWords: startingWords,
       onlyFavWords: false,
+      onlyOwnWords: false,
    }),
    getters: {
+      isOnlyOwnWords(state) {
+         return state.onlyOwnWords;
+      },
       isFav(state) {
          return state.onlyFavWords;
       },
       getListWords(state) {
-         if (this.onlyFavWords) {
-            return state.allWords.filter((word) => word.fav);
+         let listWords = state.allWords;
+         if (state.onlyOwnWords) {
+            listWords = state.ownWords;
+         } else {
+            listWords = [...state.ownWords, ...state.startWords];
          }
-         return state.allWords;
+         if (state.onlyFavWords) {
+            return listWords.filter((word) => word.fav);
+         }
+         return listWords;
       },
 
       getMode(state) {
@@ -48,12 +58,23 @@ export const useWordsStore = defineStore('wordsStore', {
       },
    },
    actions: {
+      toggleOnlyOwnWords() {
+         this.onlyOwnWords = !this.onlyOwnWords;
+         if (this.onlyOwnWords) {
+            this.allWords = this.ownWords;
+         } else {
+            this.allWords = [...this.ownWords, ...this.startWords];
+         }
+      },
       filterFavWords(filter: boolean) {
+         console.log(filter);
          this.progress = 0;
          this.onlyFavWords = filter;
-         this.allWords = [...this.ownWords, ...this.startWords].filter(
-            (example) => (filter ? example.fav : true)
-         );
+         this.allWords = (
+            this.onlyOwnWords
+               ? [...this.ownWords]
+               : [...this.ownWords, ...this.startWords]
+         ).filter((example) => (filter ? example.fav : true));
       },
 
       shuffleWords() {

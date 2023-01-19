@@ -1,17 +1,24 @@
 <script setup lang="ts">
 import { useWordsStore } from '../../stores/WordsStore';
 import { storeToRefs } from 'pinia';
-import Star from '../../ui/svg/Star.vue';
 import SingleWord from './SingleWord.vue';
 const store = useWordsStore();
-const { getOwnWords, getStartWords } = storeToRefs(store);
+const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
 </script>
 <template>
    <div>
-      <label class="toggler-wrapper style-1"
-         >aaaaaaa<input type="checkbox" />
-         <div class="toggler-slider"><div class="toggler-knob"></div></div
-      ></label>
+      <div class="whiteBlock">
+         <div>Wyświetlaj tylko własne słówka</div>
+
+         <label class="toggler-wrapper style-1">
+            <input
+               type="checkbox"
+               :checked="isOnlyOwnWords"
+               @change="store.toggleOnlyOwnWords()" />
+
+            <div class="toggler-slider"><div class="toggler-knob"></div></div
+         ></label>
+      </div>
       <div>
          <h2>Własne słówka</h2>
          <div v-for="word in getOwnWords" class="block">
@@ -48,12 +55,15 @@ const { getOwnWords, getStartWords } = storeToRefs(store);
    cursor: pointer;
    position: relative;
 }
+
 .toggler-wrapper input[type='checkbox'] {
    display: none;
 }
+
 .toggler-wrapper input[type='checkbox']:checked + .toggler-slider {
    background-color: #44cc66;
 }
+
 .toggler-wrapper .toggler-slider {
    background-color: #ccc;
    position: absolute;
@@ -65,15 +75,20 @@ const { getOwnWords, getStartWords } = storeToRefs(store);
    -webkit-transition: all 300ms ease;
    transition: all 300ms ease;
 }
+
 .toggler-wrapper .toggler-knob {
    position: absolute;
    -webkit-transition: all 300ms ease;
    transition: all 300ms ease;
 }
-.toggler-wrapper.style-1input[type='checkbox']:checked
-   + .toggler-slider.toggler-knob {
+
+.toggler-wrapper.style-1
+   input[type='checkbox']:checked
+   + .toggler-slider
+   .toggler-knob {
    left: calc(100% - 19px - 3px);
 }
+
 .toggler-wrapper.style-1 .toggler-knob {
    width: calc(25px - 6px);
    height: calc(25px - 6px);
