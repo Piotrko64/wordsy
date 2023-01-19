@@ -1,16 +1,23 @@
+import { isJsonType } from './isJsonType';
+import { validationJSON } from './validationJSON';
+
 export function handleDropFile(event: DragEvent) {
-    const files = event.dataTransfer!.files;
+   const files = event.dataTransfer!.files;
 
-    const jsonFile = files[0];
-    const reader = new FileReader();
+   const jsonFile = files[0];
+   const reader = new FileReader();
 
-    reader.onload = (() => {
-        return () => {
-            const dataJson = JSON.parse(reader.result as string);
+   if (!isJsonType(jsonFile)) {
+      return;
+   }
 
-            console.log(dataJson);
-        };
-    })();
+   reader.onload = (() => {
+      return () => {
+         const dataJson = JSON.parse(reader.result as string);
+         console.log(dataJson);
+         console.log(validationJSON(dataJson));
+      };
+   })();
 
-    reader.readAsText(jsonFile);
+   reader.readAsText(jsonFile);
 }

@@ -1,17 +1,22 @@
-import { isJsonType } from "../dropZone/isJsonType";
+import { isJsonType } from '../dropZone/isJsonType';
 
 export function onChangeInput(event: Event) {
-    const target = event.target as HTMLInputElement;
-    const file: File = (target.files as FileList)[0];
+   const target = event.target as HTMLInputElement;
+   const file: File = (target.files as FileList)[0];
 
-    const reader = new FileReader();
+   if (!isJsonType(file)) {
+      return;
+   }
 
-    function onReaderLoad() {
-        const obj = JSON.parse(reader.result as string);
-        console.log(obj);
-    }
+   const reader = new FileReader();
 
-    reader.onload = onReaderLoad;
-    isJsonType(file);
-    reader.readAsText(file);
+   function onReaderLoad() {
+      const obj = JSON.parse(reader.result as string);
+
+      alert(obj);
+   }
+
+   reader.onload = onReaderLoad;
+
+   reader.readAsText(file);
 }
