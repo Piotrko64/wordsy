@@ -1,4 +1,5 @@
 import { isJsonType } from '../dropZone/isJsonType';
+import { saveJSONWordstoLocalStorage } from '../dropZone/saveToLocalStorage';
 
 export function onChangeInput(event: Event) {
    const target = event.target as HTMLInputElement;
@@ -13,7 +14,7 @@ export function onChangeInput(event: Event) {
    function onReaderLoad() {
       const obj = JSON.parse(reader.result as string);
 
-      alert(obj);
+      saveJSONWordstoLocalStorage(obj);
    }
 
    reader.onload = onReaderLoad;

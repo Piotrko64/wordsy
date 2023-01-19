@@ -1,5 +1,5 @@
 import { isJsonType } from './isJsonType';
-import { validationJSON } from './validationJSON';
+import { saveJSONWordstoLocalStorage } from './saveToLocalStorage';
 
 export function handleDropFile(event: DragEvent) {
    const files = event.dataTransfer!.files;
@@ -14,8 +14,8 @@ export function handleDropFile(event: DragEvent) {
    reader.onload = (() => {
       return () => {
          const dataJson = JSON.parse(reader.result as string);
-         console.log(dataJson);
-         console.log(validationJSON(dataJson));
+
+         saveJSONWordstoLocalStorage(dataJson);
       };
    })();
 
