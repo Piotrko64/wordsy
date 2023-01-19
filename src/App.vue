@@ -11,7 +11,6 @@ const { changeIndexWords } = useRandomWordsStore();
 onMounted(() => {
    addWordsFromLocalStorage();
    changeIndexWords();
-   console.log(generateRandomQuiz(0));
 });
 </script>
 

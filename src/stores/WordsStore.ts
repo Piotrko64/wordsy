@@ -110,6 +110,10 @@ export const useWordsStore = defineStore('wordsStore', {
          saveOwnWordsToLocalStorage(this.startWords, 'startWords');
       },
 
+      updateWordsByUploadWords() {
+         this.ownWords = readWordsFromStorage('ownWords');
+      },
+
       addWordsFromLocalStorage() {
          this.startWords =
             readWordsFromStorage('startWords').length === 0
@@ -121,7 +125,7 @@ export const useWordsStore = defineStore('wordsStore', {
                ? []
                : readWordsFromStorage('ownWords');
 
-         this.allWords = this.ownWords.concat(this.startWords);
+         this.allWords = [...this.ownWords, ...this.startWords];
       },
 
       nextWord() {

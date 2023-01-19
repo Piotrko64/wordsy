@@ -7,7 +7,9 @@ import { handleDropFile } from '../../../helpers/manageFiles/dropZone/handleDrop
 import BackupPanel from './BackupPanel.vue';
 import InfoBackup from './InfoBackup.vue';
 import jsonFile from '../../../assets/icons/backup/jsonFile.png';
+import { useWordsStore } from '../../../stores/WordsStore';
 
+const { updateWordsByUploadWords } = useWordsStore();
 const isActiveZone = ref(false);
 
 function turnOnActiveZone() {
@@ -16,6 +18,14 @@ function turnOnActiveZone() {
 
 function turnOffActiveZone() {
    isActiveZone.value = false;
+}
+
+function handleChangeInputValue(event: Event) {
+   onChangeInput(event, updateWordsByUploadWords);
+}
+
+function dropFile(event: DragEvent) {
+   handleDropFile(event, updateWordsByUploadWords);
 }
 </script>
 
@@ -27,8 +37,8 @@ function turnOffActiveZone() {
       @dragenter="preventEvent($event), turnOnActiveZone()"
       @dragover="preventEvent($event), turnOnActiveZone()"
       @dragleave="preventEvent($event), turnOffActiveZone()"
-      @drop="preventEvent($event), turnOffActiveZone(), handleDropFile($event)"
-      @change="onChangeInput($event)"
+      @drop="preventEvent($event), turnOffActiveZone(), dropFile($event)"
+      @change="handleChangeInputValue($event)"
    >
       <p>Dodaj / przeciągnij plik JSON z twoimi słowkami</p>
       <img :src="jsonFile" />

@@ -1,7 +1,7 @@
 import { isJsonType } from './isJsonType';
 import { saveJSONWordstoLocalStorage } from './saveToLocalStorage';
 
-export function handleDropFile(event: DragEvent) {
+export async function handleDropFile(event: DragEvent, callback: () => void) {
    const files = event.dataTransfer!.files;
 
    const jsonFile = files[0];
@@ -16,6 +16,7 @@ export function handleDropFile(event: DragEvent) {
          const dataJson = JSON.parse(reader.result as string);
 
          saveJSONWordstoLocalStorage(dataJson);
+         callback();
       };
    })();
 
