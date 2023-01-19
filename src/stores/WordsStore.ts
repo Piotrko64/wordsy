@@ -80,8 +80,10 @@ export const useWordsStore = defineStore('wordsStore', {
          this.ownWords = this.ownWords.filter((word) => word.id !== id);
          this.allWords = this.allWords.filter((word) => word.id !== id);
 
-         console.log(this.ownWords);
          saveOwnWordsToLocalStorage(this.ownWords, 'ownWords');
+         if (this.ownWords.length === 0) {
+            localStorage.removeItem('ownWords');
+         }
       },
 
       shuffleWords() {

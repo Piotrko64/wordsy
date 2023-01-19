@@ -23,15 +23,17 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
       </div>
       <div>
          <h2>Własne słówka</h2>
-         <div v-for="word in getOwnWords" class="block">
-            <SingleWord
-               :id="word.id"
-               :fav="!!word.fav"
-               :wordPL="word.wordPL"
-               :wordEN="word.wordEN"
-               :ownWord="true"
-            />
-         </div>
+         <TransitionGroup name="list" tag="p" class="relative">
+            <div v-for="word in getOwnWords" class="block" :key="word.id">
+               <SingleWord
+                  :id="word.id"
+                  :fav="!!word.fav"
+                  :wordPL="word.wordPL"
+                  :wordEN="word.wordEN"
+                  :ownWord="true"
+               />
+            </div>
+         </TransitionGroup>
       </div>
       <div>
          <h2>Słówka startowe</h2>
@@ -47,6 +49,25 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
    </div>
 </template>
 <style scoped lang="scss">
+.relative {
+   position: relative;
+}
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+   transition: all 0.5s ease;
+   width: 100%;
+}
+
+.list-enter-from,
+.list-leave-to {
+   opacity: 0;
+   transform: translateX(30px);
+}
+
+.list-leave-active {
+   position: absolute;
+}
 .flex {
    justify-content: space-between;
    width: 100%;

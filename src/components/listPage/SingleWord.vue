@@ -36,6 +36,7 @@ function addFav() {
 
 <style scoped lang="scss">
 .block {
+   width: 100%;
    display: flex;
    justify-content: space-between;
 }
