@@ -4,12 +4,33 @@ import Title from '../../../ui/Title.vue';
 
 <template>
    <Title title="Inne Operacje" />
-   <router-link to="AddWords" class="activeButton">
-      Dodaj własne słówko
-   </router-link>
-   <router-link to="List" class="activeButton">
-      Zobacz liste słówek
-   </router-link>
+   <div class="flex">
+      <router-link to="AddWords" class="actionButton" v-wave>
+         Dodaj własne słówko
+      </router-link>
+      <router-link to="List" class="actionButton" v-wave>
+         Zobacz liste słówek
+      </router-link>
+   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.flex {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   .actionButton {
+      border: 3px solid var(--secondGreen);
+      padding: 15px;
+   }
+   a {
+      color: white;
+   }
+}
+@media (min-width: 720px) {
+   .flex {
+      display: flex;
+      flex-direction: row;
+   }
+}
+</style>

@@ -63,7 +63,9 @@ function addFav() {
    justify-content: space-between;
 }
 .pl {
+   font-weight: 600;
    color: var(--green);
+   font-size: 0.9em;
 }
 .flex {
    display: flex;
