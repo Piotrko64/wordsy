@@ -6,6 +6,7 @@ import { reactive, ref } from 'vue';
 import { useWordsStore } from '../../stores/WordsStore';
 import { v4 as uuidv4 } from 'uuid';
 import { validatorWord } from './helpers/validatorWord';
+import BackToMainPage from '../../ui/BackToMainPage.vue';
 
 type FormInputs = 'wordPL' | 'wordEN' | 'examplePL' | 'exampleEN' | 'id';
 
@@ -81,6 +82,7 @@ function addNewWord(event: Event) {
          <button type="submit" class="actionButton" @click="addNewWord($event)">
             Dodaj nowe wyrażenie
          </button>
+         <BackToMainPage />
       </form>
    </div>
 </template>
@@ -88,8 +90,9 @@ function addNewWord(event: Event) {
 <style scoped lang="scss">
 .container {
    display: flex;
-   justify-content: center;
 
+   flex-direction: column;
+   align-items: center;
    margin-top: 10px;
    min-height: calc(100vh - 120px);
    form {

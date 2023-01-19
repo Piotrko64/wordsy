@@ -2,6 +2,7 @@
 import { useWordsStore } from '../../stores/WordsStore';
 import { storeToRefs } from 'pinia';
 import SingleWord from './SingleWord.vue';
+import BackToMainPage from '../../ui/BackToMainPage.vue';
 const store = useWordsStore();
 const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
 </script>
@@ -46,6 +47,7 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
             />
          </div>
       </div>
+      <BackToMainPage />
    </div>
 </template>
 <style scoped lang="scss">
