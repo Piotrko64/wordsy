@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Title from '../../ui/Title.vue';
-import { useRandomWordsStore } from '../../stores/RandomWordsStore';
+import Title from '../../../ui/Title.vue';
+import { useRandomWordsStore } from '../../../stores/RandomWordsStore';
 import { storeToRefs } from 'pinia';
 
 const store = useRandomWordsStore();
@@ -8,7 +8,7 @@ const { getWordsObject } = storeToRefs(store);
 </script>
 
 <template>
-   <Title title="Słowo dnia" />
+   <Title title="Słowo Dnia" />
    <div
       class="whiteBlock border centerFlex"
       @click="store.changeIndexWords()"

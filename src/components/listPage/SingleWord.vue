@@ -46,6 +46,10 @@ function addFav() {
       border: none;
       img {
          height: 30px;
+         transition: all 0.1s ease-in-out;
+         &:active {
+            transform: scale(1.15);
+         }
       }
    }
 }

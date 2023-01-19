@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import DropZoneFile from '../components/dropZone/DropZoneFile.vue';
+import DropZoneFile from '../components/learningPage/dropZone/DropZoneFile.vue';
 import NextButton from '../components/learningPage/additionalModes/NextButton.vue';
 import ButtonsPanel from '../components/learningPage/ButtonsPanel.vue';
 import ModeBlock from '../components/learningPage/ModeBlock.vue';
 import ModesNavigation from '../components/learningPage/ModesNavigation.vue';
-import RandomWord from '../components/randomWord/RandomWord.vue';
+import RandomWord from '../components/learningPage/randomWord/RandomWord.vue';
 import { useAdditionalMode } from '../stores/AdditionalModeStore';
 import { useWordsStore } from '../stores/WordsStore';
+import OtherOperations from '../components/learningPage/otherOperations/OtherOperations.vue';
 
 const { isActive } = storeToRefs(useAdditionalMode());
 const { getListWords } = storeToRefs(useWordsStore());
@@ -27,8 +28,9 @@ const { getListWords } = storeToRefs(useWordsStore());
       <ButtonsPanel v-if="!isActive" />
       <NextButton v-if="isActive" />
       <ModesNavigation />
-      <DropZoneFile />
       <RandomWord />
+      <DropZoneFile />
+      <OtherOperations />
    </div>
 </template>
 

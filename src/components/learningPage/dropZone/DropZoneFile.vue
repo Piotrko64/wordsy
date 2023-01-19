@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { preventEvent } from '../../helpers/manageFiles/preventEvent';
-import { onChangeInput } from '../../helpers/manageFiles/inputFile/onChangeInput';
-import Title from '../../ui/Title.vue';
-import { handleDropFile } from '../../helpers/manageFiles/dropZone/handleDropFile';
+import { preventEvent } from '../../../helpers/manageFiles/preventEvent';
+import { onChangeInput } from '../../../helpers/manageFiles/inputFile/onChangeInput';
+import Title from '../../../ui/Title.vue';
+import { handleDropFile } from '../../../helpers/manageFiles/dropZone/handleDropFile';
 import BackupPanel from './BackupPanel.vue';
 import InfoBackup from './InfoBackup.vue';
-import jsonFile from '../../assets/icons/backup/jsonFile.png';
+import jsonFile from '../../../assets/icons/backup/jsonFile.png';
 
 const isActiveZone = ref(false);
 

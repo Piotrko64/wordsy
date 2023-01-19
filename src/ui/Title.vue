@@ -37,4 +37,10 @@ const { title } = defineProps<{
       z-index: -5;
    }
 }
+@media (min-width: 1200px) {
+   .title {
+      margin-top: 60px;
+      margin-bottom: 30px;
+   }
+}
 </style>

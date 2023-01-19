@@ -20,12 +20,16 @@ const emits = defineEmits(['click-star']);
       />
    </svg>
 </template>
-<style>
+<style lang="scss">
 svg {
    cursor: pointer;
    display: flex;
    justify-content: flex-end;
    align-items: flex-end;
+   transition: all 0.08s ease-in-out;
+   &:active {
+      transform: scale(1.15);
+   }
 }
 path {
    stroke: var(--green);

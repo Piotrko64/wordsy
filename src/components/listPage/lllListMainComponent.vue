@@ -55,14 +55,14 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
 .list-leave-active {
-   transition: all 0.5s ease;
+   transition: all 0.3s ease;
    width: 100%;
 }
 
 .list-enter-from,
 .list-leave-to {
    opacity: 0;
-   transform: translateX(30px);
+   transform: translateX(100px);
 }
 
 .list-leave-active {
