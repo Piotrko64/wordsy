@@ -21,7 +21,9 @@ const { getListWords } = storeToRefs(useWordsStore());
             <component :is="Component" />
          </transition>
       </router-view>
-      <div v-if="!getListWords.length">NIE MA</div>
+      <div v-if="!getListWords.length" class="centerFlex whiteBlock">
+         BRAK SŁÓW
+      </div>
       <ButtonsPanel v-if="!isActive" />
       <NextButton v-if="isActive" />
       <ModesNavigation />
@@ -41,5 +43,12 @@ const { getListWords } = storeToRefs(useWordsStore());
 .fade-leave-to {
    transform: translateY(50%);
    opacity: 0;
+}
+.centerFlex {
+   color: var(--green);
+   font-weight: 900;
+   font-size: 2.4rem;
+   min-height: 180px;
+   margin-bottom: 10px;
 }
 </style>

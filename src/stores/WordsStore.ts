@@ -48,7 +48,10 @@ export const useWordsStore = defineStore('wordsStore', {
          return state.progress + 1 + '/' + state.allWords.length;
       },
       getPercentProgress(state) {
-         return ((state.progress + 1) / state.allWords.length) * 100 + '%';
+         const lengthWords = state.allWords.length;
+         return (
+            ((state.progress + 1) / (lengthWords ? lengthWords : 1)) * 100 + '%'
+         );
       },
       getOwnWords(state) {
          return state.ownWords;

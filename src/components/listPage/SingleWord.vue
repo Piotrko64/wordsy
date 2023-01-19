@@ -2,7 +2,7 @@
 import { useWordsStore } from '../../stores/WordsStore';
 import { storeToRefs } from 'pinia';
 import Star from '../../ui/svg/Star.vue';
-import { WordsType } from '../../@types/WordsType';
+import trash from '../../assets/icons/trash.png';
 
 const store = useWordsStore();
 
@@ -27,14 +27,32 @@ function addFav() {
          <div class="pl">{{ wordPL }}</div>
          <div class="en">{{ wordEN }}</div>
       </div>
-      <div>
+      <div class="operation centerFlex">
          <Star :isActive="fav" @click-star="addFav" />
-         <button v-if="ownWord" @click="deleteWord(id)">Usuń</button>
+         <button v-if="ownWord" @click="deleteWord(id)">
+            <img :src="trash" alt="Usuń słówko" />
+         </button>
       </div>
    </div>
 </template>
 
 <style scoped lang="scss">
+.operation {
+   display: flex;
+   gap: 10px;
+   width: 20%;
+   justify-content: flex-end;
+   button {
+      border: none;
+      img {
+         height: 30px;
+      }
+   }
+}
+.words {
+   width: 80%;
+   word-break: break-all;
+}
 .block {
    width: 100%;
    display: flex;
