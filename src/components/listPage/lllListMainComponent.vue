@@ -7,17 +7,19 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
 </script>
 <template>
    <div>
-      <div class="whiteBlock">
-         <div>Wyświetlaj tylko własne słówka</div>
+      <div class="centerFlex flex whiteBlock">
+         <div class="text">Wyświetlaj tylko własne słówka</div>
 
-         <label class="toggler-wrapper style-1">
-            <input
-               type="checkbox"
-               :checked="isOnlyOwnWords"
-               @change="store.toggleOnlyOwnWords()" />
+         <div>
+            <label class="toggler-wrapper style-1">
+               <input
+                  type="checkbox"
+                  :checked="isOnlyOwnWords"
+                  @change="store.toggleOnlyOwnWords()" />
 
-            <div class="toggler-slider"><div class="toggler-knob"></div></div
-         ></label>
+               <div class="toggler-slider"><div class="toggler-knob"></div></div
+            ></label>
+         </div>
       </div>
       <div>
          <h2>Własne słówka</h2>
@@ -27,6 +29,7 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
                :fav="!!word.fav"
                :wordPL="word.wordPL"
                :wordEN="word.wordEN"
+               :ownWord="true"
             />
          </div>
       </div>
@@ -38,13 +41,22 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
                :fav="!!word.fav"
                :wordPL="word.wordPL"
                :wordEN="word.wordEN"
-               :ownWord="true"
             />
          </div>
       </div>
    </div>
 </template>
 <style scoped lang="scss">
+.flex {
+   justify-content: space-between;
+   width: 100%;
+   padding: 10px;
+   flex-direction: row;
+   font-size: 1.25rem;
+   font-weight: 700;
+}
+.text {
+}
 .pl {
    color: var(--green);
 }

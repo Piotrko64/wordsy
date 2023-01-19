@@ -7,10 +7,9 @@ import { useWordsStore } from '../../stores/WordsStore';
 import { v4 as uuidv4 } from 'uuid';
 import { validatorWord } from './helpers/validatorWord';
 
-const dataForm: Record<
-   'wordPL' | 'wordEN' | 'examplePL' | 'exampleEN' | 'id',
-   string
-> = reactive({
+type FormInputs = 'wordPL' | 'wordEN' | 'examplePL' | 'exampleEN' | 'id';
+
+const dataForm: Record<FormInputs, string> = reactive({
    id: uuidv4(),
    wordPL: '',
    wordEN: '',
@@ -38,6 +37,7 @@ function addNewWord(event: Event) {
       return;
    }
    validMessage.value = validObject.msg;
+   dataForm.id = uuidv4();
    addNewOwnWord(dataForm);
 }
 </script>

@@ -67,7 +67,6 @@ export const useWordsStore = defineStore('wordsStore', {
          }
       },
       filterFavWords(filter: boolean) {
-         console.log(filter);
          this.progress = 0;
          this.onlyFavWords = filter;
          this.allWords = (
@@ -75,6 +74,14 @@ export const useWordsStore = defineStore('wordsStore', {
                ? [...this.ownWords]
                : [...this.ownWords, ...this.startWords]
          ).filter((example) => (filter ? example.fav : true));
+      },
+
+      deleteWord(id: string) {
+         this.ownWords = this.ownWords.filter((word) => word.id !== id);
+         this.allWords = this.allWords.filter((word) => word.id !== id);
+
+         console.log(this.ownWords);
+         saveOwnWordsToLocalStorage(this.ownWords, 'ownWords');
       },
 
       shuffleWords() {
@@ -86,7 +93,6 @@ export const useWordsStore = defineStore('wordsStore', {
       },
 
       addWordAsFavourite(id: string) {
-         console.log('aa');
          const findIndex = this.allWords.findIndex(
             (example) => example.id === id
          );

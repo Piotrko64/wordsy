@@ -6,7 +6,7 @@ import { WordsType } from '../../@types/WordsType';
 
 const store = useWordsStore();
 
-const { addWordAsFavourite } = store;
+const { addWordAsFavourite, deleteWord } = store;
 
 const { wordPL, wordEN, fav, id, ownWord } = defineProps<{
    id: string;
@@ -22,14 +22,29 @@ function addFav() {
 </script>
 
 <template>
-   <div class="pl">{{ wordPL }}</div>
-   <div class="en">{{ wordEN }}</div>
-   <Star :isActive="fav" @click-star="addFav" />
-   <button v-if="ownWord">Usuń</button>
+   <div class="block whiteBlock flex">
+      <div class="words">
+         <div class="pl">{{ wordPL }}</div>
+         <div class="en">{{ wordEN }}</div>
+      </div>
+      <div>
+         <Star :isActive="fav" @click-star="addFav" />
+         <button v-if="ownWord" @click="deleteWord(id)">Usuń</button>
+      </div>
+   </div>
 </template>
 
 <style scoped lang="scss">
+.block {
+   display: flex;
+   justify-content: space-between;
+}
 .pl {
    color: var(--green);
+}
+.flex {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 10px;
 }
 </style>
