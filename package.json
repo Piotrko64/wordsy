@@ -29,6 +29,7 @@
     "devDependencies": {
         "@types/lodash": "^4.14.191",
         "@vitejs/plugin-vue": "^4.0.0",
+        "cypress": "^12.3.0",
         "jsdom": "^20.0.3",
         "typescript": "^4.9.3",
         "vite": "^4.0.0",
