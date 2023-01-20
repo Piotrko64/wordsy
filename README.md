@@ -1,4 +1,4 @@
-# <p align="center">[Wordsy](wordsy-angielski.vercel.app)</p>
+# <p align="center">[Wordsy](https://wordsy-angielski.vercel.app/Fiszki)</p>
 
 <br />
 
