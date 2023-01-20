@@ -67,9 +67,13 @@ export const useWordsStore = defineStore('wordsStore', {
       toggleOnlyOwnWords() {
          this.onlyOwnWords = !this.onlyOwnWords;
          if (this.onlyOwnWords) {
-            this.allWords = this.ownWords;
+            this.allWords = this.ownWords.filter((example) =>
+               this.onlyFavWords ? example.fav : true
+            );
          } else {
-            this.allWords = [...this.ownWords, ...this.startWords];
+            this.allWords = [...this.ownWords, ...this.startWords].filter(
+               (example) => (this.onlyFavWords ? example.fav : true)
+            );
          }
          saveOwnWordsToLocalStorage(this.onlyOwnWords, 'onlyOwnWords');
       },

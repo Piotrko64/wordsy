@@ -8,7 +8,7 @@ import Star from '../../ui/svg/Star.vue';
 const store = useWordsStore();
 
 const { getProgress, getPercentProgress } = storeToRefs(store);
-console.log(store);
+
 const route = useRoute();
 
 function toggleFavourite() {
