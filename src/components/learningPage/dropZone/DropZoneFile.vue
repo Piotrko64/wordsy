@@ -8,8 +8,11 @@ import BackupPanel from './BackupPanel.vue';
 import InfoBackup from './InfoBackup.vue';
 import jsonFile from '../../../assets/icons/backup/jsonFile.png';
 import { useWordsStore } from '../../../stores/WordsStore';
+import { useModalStore } from '../../../stores/ModalStore';
 
 const { updateWordsByUploadWords } = useWordsStore();
+const { activationModal } = useModalStore();
+
 const isActiveZone = ref(false);
 
 function turnOnActiveZone() {
@@ -20,12 +23,25 @@ function turnOffActiveZone() {
    isActiveZone.value = false;
 }
 
+const functionsToUploadWords = {
+   ok: () => {
+      updateWordsByUploadWords();
+      activationModal('Udało się!', `Twoje nowe słówka zostały dodane`);
+   },
+   fail: () => {
+      activationModal(
+         'Ups!',
+         `Coś poszło nie tak! Sprawdź rozszerzenie oraz poprawność pliku JSON`
+      );
+   },
+};
+
 function handleChangeInputValue(event: Event) {
-   onChangeInput(event, updateWordsByUploadWords);
+   onChangeInput(event, functionsToUploadWords);
 }
 
 function dropFile(event: DragEvent) {
-   handleDropFile(event, updateWordsByUploadWords);
+   handleDropFile(event, functionsToUploadWords);
 }
 </script>
 

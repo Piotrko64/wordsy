@@ -22,7 +22,7 @@ function addFav() {
 </script>
 
 <template>
-   <div class="block whiteBlock flex">
+   <div class="block whiteBlock flex horizontalSpace">
       <div class="words">
          <div class="pl">{{ wordPL }}</div>
          <div class="en">{{ wordEN }}</div>
@@ -53,6 +53,11 @@ function addFav() {
       }
    }
 }
+.flex {
+   display: flex;
+
+   margin-top: 10px;
+}
 .words {
    width: 80%;
    word-break: break-all;
@@ -61,15 +66,15 @@ function addFav() {
    width: 100%;
    display: flex;
    justify-content: space-between;
+   flex-direction: row;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   font-size: 1.25rem;
+   font-weight: 900;
 }
 .pl {
    font-weight: 600;
    color: var(--green);
    font-size: 0.9em;
-}
-.flex {
-   display: flex;
-   flex-direction: column;
-   margin-bottom: 10px;
 }
 </style>

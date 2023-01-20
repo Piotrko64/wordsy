@@ -7,6 +7,7 @@ import { useWordsStore } from '../../stores/WordsStore';
 import { v4 as uuidv4 } from 'uuid';
 import { validatorWord } from './helpers/validatorWord';
 import BackToMainPage from '../../ui/BackToMainPage.vue';
+import { useModalStore } from '../../stores/ModalStore';
 
 type FormInputs = 'wordPL' | 'wordEN' | 'examplePL' | 'exampleEN' | 'id';
 
@@ -19,6 +20,8 @@ const dataForm: Record<FormInputs, string> = reactive({
 });
 
 const { addNewOwnWord } = useWordsStore();
+const { activationModal } = useModalStore();
+
 const invalidMessage = ref('');
 const validMessage = ref('');
 
@@ -40,6 +43,10 @@ function addNewWord(event: Event) {
    validMessage.value = validObject.msg;
    dataForm.id = uuidv4();
    addNewOwnWord(dataForm);
+   activationModal(
+      'Yeah! 🎉',
+      `Twoje nowe słówko (${dataForm.wordEN}) zostało dodane`
+   );
 }
 </script>
 

@@ -2,6 +2,10 @@
 import Navigation from './Navigation.vue';
 import Footer from './Footer.vue';
 import InfoModal from '../ui/modal/InfoModal.vue';
+import { useModalStore } from '../stores/ModalStore';
+import { storeToRefs } from 'pinia';
+
+const { isActiveModal } = storeToRefs(useModalStore());
 </script>
 
 <template>
@@ -13,7 +17,9 @@ import InfoModal from '../ui/modal/InfoModal.vue';
          </transition>
       </router-view>
    </div>
-   <InfoModal />
+   <transition name="fade" mode="out-in">
+      <InfoModal v-if="isActiveModal" />
+   </transition>
    <Footer />
 </template>
 

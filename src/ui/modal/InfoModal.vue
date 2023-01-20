@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { useModalStore } from '../../stores/ModalStore';
 
-const { title, description } = useModalStore();
+const { title, description, turnOffModal } = useModalStore();
 </script>
 
 <template>
-   <Teleport to="body">
-      <div class="background centerFlex">
-         <div class="whiteBlock">
-            <h2>{{ title }}</h2>
-            <p>{{ description }}</p>
-            <button class="actionButton">OK</button>
+   <div>
+      <Teleport to="body">
+         <div class="background centerFlex">
+            <div class="whiteBlock">
+               <h2>{{ title }}</h2>
+               <p>{{ description }}</p>
+               <button class="actionButton" @click="turnOffModal()">OK</button>
+            </div>
          </div>
-      </div>
-   </Teleport>
+      </Teleport>
+   </div>
 </template>
 <style lang="scss">
 .background {

@@ -16,5 +16,9 @@ export function saveJSONWordstoLocalStorage(dataJson: Array<SingleWord>) {
       );
 
       saveOwnWordsToLocalStorage(newArrayWithNewId, 'ownWords');
+      return true;
+   } else {
+      console.log('Struktura pliku jest nie prawidłowa');
+      return false;
    }
 }

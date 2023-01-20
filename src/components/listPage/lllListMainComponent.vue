@@ -3,6 +3,7 @@ import { useWordsStore } from '../../stores/WordsStore';
 import { storeToRefs } from 'pinia';
 import SingleWord from './SingleWord.vue';
 import BackToMainPage from '../../ui/BackToMainPage.vue';
+import SingleList from './SingleList.vue';
 const store = useWordsStore();
 const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
 </script>
@@ -22,31 +23,14 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
             ></label>
          </div>
       </div>
-      <div>
-         <h2>Własne słówka</h2>
-         <TransitionGroup name="list" tag="p" class="relative">
-            <div v-for="word in getOwnWords" class="block" :key="word.id">
-               <SingleWord
-                  :id="word.id"
-                  :fav="!!word.fav"
-                  :wordPL="word.wordPL"
-                  :wordEN="word.wordEN"
-                  :ownWord="true"
-               />
-            </div>
-         </TransitionGroup>
-      </div>
-      <div>
-         <h2>Słówka startowe</h2>
-         <div v-for="word in getStartWords" class="block">
-            <SingleWord
-               :id="word.id"
-               :fav="!!word.fav"
-               :wordPL="word.wordPL"
-               :wordEN="word.wordEN"
-            />
-         </div>
-      </div>
+      <SingleList
+         title="Własne słówka"
+         :isOwnWords="true"
+         :words="getOwnWords"
+      />
+
+      <SingleList title="Słówka startowe" :words="getStartWords" />
+
       <BackToMainPage />
    </div>
 </template>
