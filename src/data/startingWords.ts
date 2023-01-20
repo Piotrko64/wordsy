@@ -18,12 +18,76 @@ export const startingWords: Array<WordsType> = [
       exampleEN: 'You behaved like a coward and ran away from the snake',
    },
    {
+      wordPL: 'zanikać, ściemniać, wyciszać coś',
+      wordEN: 'fade out',
+      fav: false,
+
+      examplePL: 'Słowa na monitorze zanikły',
+      exampleEN: 'The words on the monitor faded out.',
+   },
+   {
+      wordPL: 'paznokieć',
+      wordEN: 'nail / fingernail',
+      fav: false,
+
+      examplePL: 'Złamałam kolejny paznokieć!',
+      exampleEN: "I've broken another fingernail!",
+   },
+   {
+      wordPL: 'odwoływać, przywoływać, powołać się na kogoś',
+      wordEN: 'invoke',
+      fav: false,
+
+      examplePL: 'W razie kłopotów powołaj się na mnie',
+      exampleEN: 'In case of trouble, invoke me.',
+   },
+   {
+      wordPL: 'bezczynny, niepracujący, próżnować, leniwy, marnować',
+      wordEN: 'idle',
+      fav: false,
+
+      examplePL: '',
+      exampleEN: '',
+   },
+   {
+      wordPL: 'uświadamiać sobie, realizować, osiągnąć',
+      wordEN: 'realize',
+      fav: false,
+
+      examplePL: 'Zdałem sobie sprawę, że zostawiłem klucze w środku',
+      exampleEN: 'I realized I had left my keys inside',
+   },
+   {
+      wordPL: 'dostosowywać, przystosować, nastawiać, poprawiać',
+      wordEN: 'adjust',
+      fav: false,
+
+      examplePL: 'Zmodyfikowałem swoje plany, aby się z nią spotkać',
+      exampleEN: 'I adjusted my plans to meet her',
+   },
+   {
+      wordPL: 'ustalać, decydować, uregulować, rozstrzygnąć ',
+      wordEN: 'settle',
+      fav: false,
+
+      examplePL: 'Musimy ustalić limit czasu dla zawodników',
+      exampleEN: 'We have to settle the time limit for the competitors',
+   },
+   {
       wordPL: 'oddziaływać na, mieć wpływ na',
       wordEN: 'affect',
       fav: false,
 
       examplePL: 'Słońce może silnie oddziaływać na twoje rośliny',
       exampleEN: 'The Sun can strongly affect your plants.',
+   },
+   {
+      wordPL: 'ogar, pies gończy, ścigać',
+      wordEN: 'hound',
+      fav: false,
+
+      examplePL: 'Myśliwi wysłali ogary w pogoni za lisem',
+      exampleEN: 'The hunters sent hounds after the fox',
    },
    {
       wordPL: 'mrugać',
