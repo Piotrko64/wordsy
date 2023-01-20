@@ -86,6 +86,9 @@ function dropFile(event: DragEvent) {
       background-color: white;
       color: var(--green);
    }
+   &:hover {
+      background-color: rgba(255, 255, 255, 0.65);
+   }
    .zoneInput {
       display: none;
    }

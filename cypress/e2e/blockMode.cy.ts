@@ -18,4 +18,43 @@ describe('block mode testing', () => {
       cy.get('nav > .flex > a:first-child').click();
       cy.get('.modeTitle').should('not.exist');
    });
+
+   it.skip('should be different values', () => {
+      let firstText;
+
+      cy.get('.counter > div').should(($div) => {
+         firstText = $div.text();
+      });
+
+      cy.get('button.next').click();
+
+      cy.get('.counter > div').should(($div) => {
+         expect($div.text()).not.equal(firstText);
+      });
+   });
+
+   it.skip('should be exactly the same values', () => {
+      let firstText;
+
+      cy.get('.counter > div').should(($div) => {
+         firstText = $div.text();
+      });
+
+      cy.get('button.prev').click();
+
+      cy.get('.counter > div').should(($div) => {
+         expect($div.text()).equal(firstText);
+      });
+   });
+
+   it('should correct counting', () => {
+      cy.get('button.next').click();
+      cy.get('button.next').click();
+      cy.get('button.next').click();
+      cy.get('button.prev').click();
+
+      cy.get('.counter > div').should(($div) => {
+         expect($div.text()).contain('3/');
+      });
+   });
 });
