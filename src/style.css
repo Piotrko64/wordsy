@@ -20,6 +20,20 @@
    --secondGray: #898989;
 }
 
+::-webkit-scrollbar {
+   width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: var(--green);
+}
+
 * {
    -webkit-tap-highlight-color: transparent;
 }

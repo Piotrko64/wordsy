@@ -9,7 +9,7 @@ import backArrow from '../assets/icons/arrowBack.png';
 </template>
 <style lang="scss" scope>
 .anchor {
-   margin-top: 40px;
+   margin-top: 15px;
    display: flex;
    justify-content: flex-start;
    align-items: center;

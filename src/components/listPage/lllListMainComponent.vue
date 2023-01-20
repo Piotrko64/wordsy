@@ -8,7 +8,7 @@ const store = useWordsStore();
 const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
 </script>
 <template>
-   <div>
+   <div class="height">
       <div class="centerFlex flex whiteBlock">
          <div class="text">Wyświetlaj tylko własne słówka</div>
 
@@ -35,6 +35,9 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
    </div>
 </template>
 <style scoped lang="scss">
+.height {
+   min-height: calc(100vh - 200px);
+}
 .relative {
    position: relative;
 }
