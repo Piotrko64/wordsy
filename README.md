@@ -29,6 +29,8 @@ Quick application to learning english vocabulary. This app if for Poles and crea
 
 * [About project](#about)
 
+* [PWA](#pwa)
+
 * [Future](#future)
 
 
@@ -84,7 +86,10 @@ This is list of your every word on **Wordsy**
 Wordsy don't use any database to storage your words! Your own words will be sorage in local storage. However, You can create backup by JSON file. This was my individual decision (I wanted create app without any login system).  
 
 
+# PWA
 
+You can install Wordsy as a mobile app (Progressive web aplication). This also mean that you can use this app offline! I think this is awesome!
+Thanks **Vite** for greatful functions for PWA! 
 
 
 <br />
