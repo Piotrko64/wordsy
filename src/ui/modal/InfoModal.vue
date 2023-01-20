@@ -1,4 +1,47 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useModalStore } from '../../stores/ModalStore';
 
-<template></template>
-<style></style>
+const { title, description } = useModalStore();
+</script>
+
+<template>
+   <Teleport to="body">
+      <div class="background centerFlex">
+         <div class="whiteBlock">
+            <h2>{{ title }}</h2>
+            <p>{{ description }}</p>
+            <button class="actionButton">OK</button>
+         </div>
+      </div>
+   </Teleport>
+</template>
+<style lang="scss">
+.background {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100vw;
+   background-color: rgba(0, 0, 0, 0.2);
+   z-index: 999;
+   text-align: center;
+
+   .whiteBlock {
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 10px;
+      width: calc(100vw - 20px);
+      h2 {
+         font-size: 1.9rem;
+      }
+      p {
+         font-size: 1.25rem;
+         padding: 20px 5px;
+      }
+   }
+   .actionButton {
+      padding: 10px;
+   }
+}
+</style>

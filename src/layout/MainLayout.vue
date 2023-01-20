@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Navigation from './Navigation.vue';
 import Footer from './Footer.vue';
+import InfoModal from '../ui/modal/InfoModal.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Footer from './Footer.vue';
          </transition>
       </router-view>
    </div>
+   <InfoModal />
    <Footer />
 </template>
 
