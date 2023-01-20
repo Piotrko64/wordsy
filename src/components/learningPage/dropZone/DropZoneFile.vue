@@ -26,7 +26,7 @@ function turnOffActiveZone() {
 const functionsToUploadWords = {
    ok: () => {
       updateWordsByUploadWords();
-      activationModal('Udało się!', `Twoje nowe słówka zostały dodane`);
+      activationModal('Udało się! 🎊', `Twoje nowe słówka zostały dodane`);
    },
    fail: () => {
       activationModal(

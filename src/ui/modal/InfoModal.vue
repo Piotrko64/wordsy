@@ -10,16 +10,31 @@ const { isActiveModal } = storeToRefs(useModalStore());
    <div>
       <Teleport to="body">
          <div class="background centerFlex" @click="turnOffModal($event)">
-            <div class="whiteBlock" v-if="isActiveModal">
-               <h2>{{ title }}</h2>
-               <p>{{ description }}</p>
-               <button class="actionButton" @click="turnOffModal()">OK</button>
-            </div>
+            <transition name="translate" appear>
+               <div class="whiteBlock" v-if="isActiveModal">
+                  <h2>{{ title }}</h2>
+                  <p>{{ description }}</p>
+                  <button class="actionButton" @click="turnOffModal()">
+                     OK
+                  </button>
+               </div>
+            </transition>
          </div>
       </Teleport>
    </div>
 </template>
 <style lang="scss">
+.translate-enter-active {
+   transition: all 0.2s ease;
+}
+.translate-leave-active {
+   transition: all 0.2s ease;
+}
+.translate-enter-from,
+.translate-leave-to {
+   transform: translateX(10%);
+   opacity: 0;
+}
 .background {
    position: fixed;
    top: 0;
