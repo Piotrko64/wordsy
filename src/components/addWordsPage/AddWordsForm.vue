@@ -41,7 +41,7 @@ function addNewWord(event: Event) {
       return;
    }
    validMessage.value = validObject.msg;
-   dataForm.id = uuidv4();
+
    addNewOwnWord(dataForm);
    activationModal(
       'Yeah! 🎉',

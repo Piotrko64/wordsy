@@ -17,9 +17,9 @@ const { isActiveModal } = storeToRefs(useModalStore());
          </transition>
       </router-view>
    </div>
-   <transition name="fade" mode="out-in">
-      <InfoModal v-if="isActiveModal" />
-   </transition>
+
+   <InfoModal v-if="isActiveModal" />
+
    <Footer />
 </template>
 

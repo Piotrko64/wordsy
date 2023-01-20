@@ -1,6 +1,7 @@
 import { startingWords } from './../data/startingWords';
 import { WordsType, SingleWord } from './../@types/WordsType';
 import { defineStore } from 'pinia';
+import { v4 as uuidv4 } from 'uuid';
 import {
    readValueFromStorage,
    readWordsFromStorage,
@@ -161,8 +162,10 @@ export const useWordsStore = defineStore('wordsStore', {
          this.mode = mode;
       },
       addNewOwnWord(word: SingleWord) {
-         this.ownWords.unshift(word);
-         this.allWords.unshift(word);
+         const correctWord = { ...word, id: uuidv4() };
+
+         this.ownWords.unshift(correctWord);
+         this.allWords.unshift(correctWord);
          saveOwnWordsToLocalStorage(this.ownWords, 'ownWords');
       },
    },

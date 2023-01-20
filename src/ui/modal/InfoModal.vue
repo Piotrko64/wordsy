@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { useModalStore } from '../../stores/ModalStore';
 
 const { title, description, turnOffModal } = useModalStore();
+const { isActiveModal } = storeToRefs(useModalStore());
 </script>
 
 <template>
    <div>
       <Teleport to="body">
          <div class="background centerFlex" @click="turnOffModal($event)">
-            <div class="whiteBlock">
+            <div class="whiteBlock" v-if="isActiveModal">
                <h2>{{ title }}</h2>
                <p>{{ description }}</p>
                <button class="actionButton" @click="turnOffModal()">OK</button>
