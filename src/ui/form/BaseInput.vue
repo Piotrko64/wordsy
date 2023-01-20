@@ -47,7 +47,7 @@ watch([isBlur], () => {
          @blur="isBlur = true"
          @focus="isBlur = false"
          :placeholder="placeholder"
-         maxlength="50"
+         maxlength="65"
          :class="{ invalid: !isValid && isBlur }"
       />
 

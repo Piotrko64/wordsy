@@ -1,7 +1,10 @@
 import { startingWords } from './../data/startingWords';
 import { WordsType, SingleWord } from './../@types/WordsType';
 import { defineStore } from 'pinia';
-import { readWordsFromStorage } from '../helpers/localStorage/saveToLocalStorage';
+import {
+   readValueFromStorage,
+   readWordsFromStorage,
+} from '../helpers/localStorage/saveToLocalStorage';
 import { saveOwnWordsToLocalStorage } from './../helpers/localStorage/saveToLocalStorage';
 import { shuffleElementsArray } from '../utils/shuffleElements/shuffleElementsArray';
 
@@ -68,6 +71,7 @@ export const useWordsStore = defineStore('wordsStore', {
          } else {
             this.allWords = [...this.ownWords, ...this.startWords];
          }
+         saveOwnWordsToLocalStorage(this.onlyOwnWords, 'onlyOwnWords');
       },
       filterFavWords(filter: boolean) {
          this.progress = 0;
@@ -77,6 +81,7 @@ export const useWordsStore = defineStore('wordsStore', {
                ? [...this.ownWords]
                : [...this.ownWords, ...this.startWords]
          ).filter((example) => (filter ? example.fav : true));
+         saveOwnWordsToLocalStorage(this.onlyFavWords, 'onlyFavWords');
       },
 
       deleteWord(id: string) {
@@ -125,7 +130,14 @@ export const useWordsStore = defineStore('wordsStore', {
                ? []
                : readWordsFromStorage('ownWords');
 
-         this.allWords = [...this.ownWords, ...this.startWords];
+         this.onlyOwnWords = readValueFromStorage('onlyOwnWords');
+         this.onlyFavWords = readValueFromStorage('onlyFavWords');
+
+         this.allWords = (
+            this.onlyOwnWords
+               ? [...this.ownWords]
+               : [...this.ownWords, ...this.startWords]
+         ).filter((example) => (this.onlyFavWords ? example.fav : true));
       },
 
       nextWord() {

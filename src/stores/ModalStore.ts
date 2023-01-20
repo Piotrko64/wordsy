@@ -13,8 +13,9 @@ export const useModalStore = defineStore('modalStore', {
          this.title = title;
          this.description = description;
       },
-      turnOffModal() {
+      turnOffModal(event?: Event) {
          this.isActiveModal = false;
+         event?.stopPropagation();
       },
    },
 });

@@ -1,16 +1,17 @@
 import { SingleWord } from '@/src/@types/WordsType';
 
-const NAME_LOCAL_OWN_WORDS = 'ownWords';
-
 export function saveOwnWordsToLocalStorage(
-   words: Array<SingleWord>,
+   value: Array<SingleWord> | boolean,
    nameLocalStorage: string
 ) {
-   if (words.length > 0) {
-      localStorage.setItem(nameLocalStorage, JSON.stringify(words));
+   if (Array.isArray(value) ? value.length > 0 : true) {
+      localStorage.setItem(nameLocalStorage, JSON.stringify(value));
    }
 }
 
 export function readWordsFromStorage(nameLocalStorage: string) {
    return JSON.parse(localStorage.getItem(nameLocalStorage)!) || [];
+}
+export function readValueFromStorage(nameLocalStorage: string) {
+   return !!JSON.parse(localStorage.getItem(nameLocalStorage)!);
 }

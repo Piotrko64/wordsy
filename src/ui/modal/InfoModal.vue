@@ -7,7 +7,7 @@ const { title, description, turnOffModal } = useModalStore();
 <template>
    <div>
       <Teleport to="body">
-         <div class="background centerFlex">
+         <div class="background centerFlex" @click="turnOffModal($event)">
             <div class="whiteBlock">
                <h2>{{ title }}</h2>
                <p>{{ description }}</p>
