@@ -14,12 +14,10 @@ Quick application to learning english vocabulary. This app if for Poles and crea
 <div align="center">
 
 <img src="https://user-images.githubusercontent.com/77500425/213710589-41466a3d-923c-46ca-b39b-4e160408b1a9.png" alt="vue" height="50"  align="center" title="Vue" />
-<img src="https://user-images.githubusercontent.com/77500425/213711265-db72039e-39a0-4715-9bfa-9105ed9fb421.svg" alt="vue" height="50"  align="center" title="Vue" />
-
-
+<img src="https://user-images.githubusercontent.com/77500425/213711265-db72039e-39a0-4715-9bfa-9105ed9fb421.svg" alt="pinia" height="50"  align="center" title="pinia" /><img src="https://user-images.githubusercontent.com/77500425/161311954-e03613e7-54b2-4d1b-ac2e-559f8c1e9f2d.png" alt="typescript" height="50"  align="center" title="TS"/>
 <img src="https://user-images.githubusercontent.com/77500425/188862747-34d46b46-169f-4efe-b2d4-fc4265305c32.svg" alt="vite" height="50"  align="center" title="Vite" />
 <p align="center"> 
-<img src="https://user-images.githubusercontent.com/77500425/161311954-e03613e7-54b2-4d1b-ac2e-559f8c1e9f2d.png" alt="typescript" height="50"  align="center" title="TS"/>
+
 
 
 </div>
@@ -31,9 +29,7 @@ Quick application to learning english vocabulary. This app if for Poles and crea
 
 * [About project](#about)
 
-* [Inspiration](#inspiration)
 
-* [Major Updates](#Updates)
 
 
 
@@ -70,7 +66,7 @@ This mode is good if you doing something but from time to time would like look a
 
 
 ### Word of the day and Backup
-<img src="https://user-images.githubusercontent.com/77500425/213715642-a4aaa813-68a1-4117-a9bf-3c4e194cc714.jpg" align="center"/>
+<img src="https://user-images.githubusercontent.com/77500425/213715642-a4aaa813-68a1-4117-a9bf-3c4e194cc714.jpg" align="center" width="250px"/>
 
 Main page have also other section for example - word of the day (Słowo dnia)
 
