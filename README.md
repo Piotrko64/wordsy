@@ -66,17 +66,30 @@ This mode is good if you doing something but from time to time would like look a
 
 
 ### Word of the day and Backup
-<img src="https://user-images.githubusercontent.com/77500425/213715642-a4aaa813-68a1-4117-a9bf-3c4e194cc714.jpg" align="center" width="250px"/>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/213715642-a4aaa813-68a1-4117-a9bf-3c4e194cc714.jpg" align="center" width="250px"/></p>
 
 Main page have also other section for example - word of the day (Słowo dnia)
 
-## Attention!
+## You can add own words and using my words ;)
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/213718194-3bb2cca5-77b1-4107-af4f-fde295477ef2.png" align="center" width="250px"/></p>
+
+This is list of your every word on **Wordsy**
+
+
+### Attention!
 
 Wordsy don't use any database to storage your words! Your own words will be sorage in local storage. However, You can create backup by JSON file. This was my individual decision (I wanted create app without any login system).  
+
+
+
+
 
 <br />
 
 ### When I write this documentation I feel a litle confusion because I writing this documentation in english but App is for Poles! 🤔🤔
+
+# Have fun with Wordsy!
 
 
 
