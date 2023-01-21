@@ -63,6 +63,9 @@ export const useWordsStore = defineStore('wordsStore', {
       getStartWords(state) {
          return state.startWords;
       },
+      getFavWords(state) {
+         return state.allWords.filter((word) => word.fav);
+      },
    },
    actions: {
       toggleOnlyOwnWords() {

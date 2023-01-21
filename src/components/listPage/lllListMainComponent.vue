@@ -5,7 +5,8 @@ import SingleWord from './SingleWord.vue';
 import BackToMainPage from '../../ui/BackToMainPage.vue';
 import SingleList from './SingleList.vue';
 const store = useWordsStore();
-const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
+const { getOwnWords, getStartWords, isOnlyOwnWords, getFavWords } =
+   storeToRefs(store);
 </script>
 <template>
    <div class="height">
@@ -28,6 +29,8 @@ const { getOwnWords, getStartWords, isOnlyOwnWords } = storeToRefs(store);
          :isOwnWords="true"
          :words="getOwnWords"
       />
+
+      <SingleList title="Ulubione" :words="getFavWords" />
 
       <SingleList title="Słówka startowe" :words="getStartWords" />
 

@@ -50,6 +50,7 @@ function toggleActiveList() {
                />
             </div>
          </TransitionGroup>
+         <h3 class="centerFlex" v-if="!words.length">Brak słów</h3>
       </div>
    </div>
 </template>
@@ -63,7 +64,11 @@ function toggleActiveList() {
    overflow: hidden;
    transition: all 0s linear;
 }
-
+h3 {
+   padding: 20px;
+   font-size: 1.75rem;
+   color: white;
+}
 .relative {
    position: relative;
 }

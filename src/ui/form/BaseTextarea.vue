@@ -14,7 +14,7 @@ const valueInput = ref<string>('');
    <div class="entireTextarea">
       <label for="field">{{ title }}</label>
       <textarea
-         id="field"
+         :id="name"
          @input="emits('updateData', name, valueInput)"
          v-model="valueInput"
          :placeholder="placeholder"
