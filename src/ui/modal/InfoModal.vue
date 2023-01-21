@@ -14,7 +14,10 @@ const { isActiveModal } = storeToRefs(useModalStore());
                <div class="whiteBlock" v-if="isActiveModal">
                   <h2>{{ title }}</h2>
                   <p>{{ description }}</p>
-                  <button class="actionButton" @click="turnOffModal()">
+                  <button
+                     class="actionButton modalButton"
+                     @click="turnOffModal()"
+                  >
                      OK
                   </button>
                </div>

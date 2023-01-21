@@ -18,6 +18,14 @@ export const startingWords: Array<WordsType> = [
       exampleEN: 'You behaved like a coward and ran away from the snake',
    },
    {
+      wordPL: 'podpowiedź',
+      wordEN: 'prompt',
+      fav: false,
+
+      examplePL: '',
+      exampleEN: '',
+   },
+   {
       wordPL: 'zanikać, ściemniać, wyciszać coś',
       wordEN: 'fade out',
       fav: false,
