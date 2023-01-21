@@ -7,7 +7,7 @@
 
 <br />
 
-Quick application to learning english vocabulary. This app if for Poles and created mainly for mobile devices (Wordsy have PWA so you can install this app on mobile phone and using offline! )</p>
+Quick application to learning english vocabulary. This app is for Poles and created mainly for mobile devices (Wordsy have PWA so you can install this app on mobile phone and using offline!)</p>
 
 <br />
 
