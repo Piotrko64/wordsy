@@ -69,8 +69,8 @@ watch(getActualWord, () => {
       </div>
 
       <p v-if="!isSpeechRecognition" class="whiteBlock centerFlex redInfo">
-         Ten tryb powinno się używać jedynie w przeglądarce Chrome - korzystanie
-         na innych może być problematyczne
+         Ten tryb powinno się używać jedynie w przeglądarce Chrome dla
+         komputerów osobistych- korzystanie na innych może być problematyczne
       </p>
       <p v-if="!isPermission" class="whiteBlock centerFlex redInfo">
          Ten tryb potrzebuje pozwolenia na używanie mikrofonu!
