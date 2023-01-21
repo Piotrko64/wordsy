@@ -15,9 +15,10 @@ Quick application to learning english vocabulary. This app if for Poles and crea
 
 
 <img src="https://user-images.githubusercontent.com/77500425/213710589-41466a3d-923c-46ca-b39b-4e160408b1a9.png" alt="vue" height="50"  align="center" title="Vue" />
- <img src="https://user-images.githubusercontent.com/77500425/188862747-34d46b46-169f-4efe-b2d4-fc4265305c32.svg" alt="vite" height="50"  align="center" title="Vite" /><img src="https://user-images.githubusercontent.com/77500425/213711265-db72039e-39a0-4715-9bfa-9105ed9fb421.svg" alt="pinia" height="50"  align="center" title="pinia" /><img src="https://user-images.githubusercontent.com/77500425/161311954-e03613e7-54b2-4d1b-ac2e-559f8c1e9f2d.png" alt="typescript" height="50"  align="center" title="TS"/>
+ <img src="https://user-images.githubusercontent.com/77500425/188862747-34d46b46-169f-4efe-b2d4-fc4265305c32.svg" alt="vite" height="50"  align="center" title="Vite" /><img src="https://user-images.githubusercontent.com/77500425/213711265-db72039e-39a0-4715-9bfa-9105ed9fb421.svg" alt="pinia" height="50"  align="center" title="pinia" /><img src="https://user-images.githubusercontent.com/77500425/161311954-e03613e7-54b2-4d1b-ac2e-559f8c1e9f2d.png" alt="typescript" height="50"  align="center" title="TS"/><img src="https://user-images.githubusercontent.com/77500425/213865969-97483de1-62a0-4095-93ac-9661a1cf112c.png" alt="Cypress" height="50"  align="center" title="cypress" />
  <br/> <br/>
  <img src="https://user-images.githubusercontent.com/77500425/213722937-4b21843c-8c04-40b7-8f2f-e07c39c39e93.png" alt="PWA" height="50"  align="center" title="PWA" />
+
 
 
 
