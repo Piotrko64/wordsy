@@ -50,6 +50,104 @@ export const startingWords: Array<WordsType> = [
       exampleEN: '',
    },
    {
+      wordPL: 'odmawiać, zaprzeczać, odrzucać, negować',
+      wordEN: 'deny',
+      fav: false,
+
+      examplePL: 'Ona wyparła się udziału w oszustwie podatkowym',
+      exampleEN: 'She denied being involved in the tax fraud.',
+   },
+   {
+      wordPL: 'ogłaszać, zapowiadać, oznajmiać, komunikować',
+      wordEN: 'announce',
+      fav: false,
+
+      examplePL:
+         'Byłabyś tak uprzejma i zawiadomiła wszystkich, że jedziemy do Nowego Jorku?',
+      exampleEN:
+         'Would you be so kind as to announce everyone that we are going to New York?',
+   },
+   {
+      wordPL: 'dezorientujący, mylący, niejasny ',
+      wordEN: 'confusing',
+      examplePL: 'Ten opis jest bardzo niejasny',
+      exampleEN: 'This description is very confusing.',
+   },
+   {
+      wordPL: 'ogłoszenie, zawiadomienie,komunikat, zapowiedź',
+      wordEN: 'announcement',
+      examplePL: 'Obejrzałeś nowy komunikat telewizyjny?',
+      exampleEN: 'Have you watched the new TV announcement?',
+   },
+   {
+      wordPL: 'dostarczać, zaopatrywać, popyt, zapas',
+      wordEN: 'supply',
+      examplePL: 'Czy możesz dostarczyć mi szczegóły na temat tego kontraktu?',
+      exampleEN: 'Can you supply me with details of this contract?',
+   },
+   {
+      wordPL: 'oszustwo, oszust, naciągacz',
+      wordEN: 'fraud',
+      examplePL: 'Przyznaję się do oszustwa, ale nie do morderstwa',
+      exampleEN: 'I confess to the fraud but not to the murder',
+   },
+   {
+      wordPL: 'szacunek, brać pod uwagę, cenić, poważanie',
+      wordEN: 'regard',
+      examplePL: 'Zawsze miałem szacunek do mojego nauczyciela historii',
+      exampleEN: 'I have always had regard for my history teacher.',
+   },
+   {
+      wordPL: 'rozczarować, zawieść',
+      wordEN: 'disappoint',
+      examplePL: 'Nie chcę Cię rozczarować, ale on się nie zjawił',
+      exampleEN: "I don't want to disappoint you, but he didn't come",
+   },
+   {
+      wordPL: 'loteria (z nagrodami rzeczowymi), brać udział w loterii ',
+      wordEN: 'raffle',
+      fav: false,
+
+      examplePL: '',
+      exampleEN: '',
+   },
+   {
+      wordPL: 'szyja, kark, obcałowywać się',
+      wordEN: 'neck',
+      examplePL: 'Nie możecie się tu obcałowywać, moja córka was obserwuje!',
+      exampleEN: "You can't neck here, my daughter is watching you!",
+   },
+   {
+      wordPL: 'pogróżka, zagrożenie, groźba',
+      wordEN: 'threat',
+      examplePL: 'Otrzymujemy anonimowe pogróżki',
+      exampleEN: 'We have been receiving anonymous threats',
+   },
+   {
+      wordPL: 'babeczka, laska (o atrakcyjnej dziewczynie)',
+      wordEN: 'cupcake',
+      examplePL: 'Chcesz, żebym upiekła dziś wieczorem babeczki?',
+      exampleEN: 'Do you want me to make cupcakes tonight?',
+   },
+   {
+      wordPL: 'prosty, wyprostowany, szczery, czysty',
+      wordEN: 'straight',
+      fav: false,
+
+      examplePL: 'Nie lubię moich prostych włosów',
+      exampleEN: "I don't like my straight hair",
+   },
+   {
+      wordPL: 'dziwaczny, dziwny',
+      wordEN: 'weird',
+      fav: false,
+
+      examplePL:
+         'Jej nowa fryzura jest dość dziwaczna - o wiele bardziej podobała mi się poprzednia',
+      exampleEN:
+         'Her new haircut is rather weird - I liked the previous one much better',
+   },
+   {
       wordPL: 'uświadamiać sobie, realizować, osiągnąć',
       wordEN: 'realize',
       fav: false,
