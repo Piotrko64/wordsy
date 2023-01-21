@@ -10,6 +10,7 @@
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    -webkit-text-size-adjust: 100%;
+
    --signika: 'Signika';
    --rubik: 'Rubik Moonrocks', cursive;
 
@@ -24,12 +25,10 @@
    width: 12px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
    background: white;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
    background: var(--green);
 }
