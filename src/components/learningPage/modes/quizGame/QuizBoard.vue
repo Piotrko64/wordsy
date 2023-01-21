@@ -11,9 +11,6 @@ const quizQuestions = ref(generateQuiz(getListWords.value));
 const userAnswer = ref<false | string>(false);
 
 function checkAnswer(yourAnswer: string) {
-   if (yourAnswer === quizQuestions.value[progress.value].correctAnswer) {
-      console.log('yeah');
-   }
    userAnswer.value = yourAnswer;
 }
 

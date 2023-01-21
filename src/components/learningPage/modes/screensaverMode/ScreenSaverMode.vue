@@ -15,7 +15,6 @@ let timer: NodeJS.Timeout;
 
 function toggleFullScreen() {
    if (elementToFullScreen.value.requestFullscreen) {
-      console.log(isScreensaverMode.value);
       if (!isScreensaverMode.value) {
          elementToFullScreen.value.requestFullscreen();
       } else {

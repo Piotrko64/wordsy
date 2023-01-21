@@ -54,5 +54,4 @@ router.beforeEach((to, _from) => {
    } else {
       changeActiveAdditionalModes(false);
    }
-   console.log(to);
 });
