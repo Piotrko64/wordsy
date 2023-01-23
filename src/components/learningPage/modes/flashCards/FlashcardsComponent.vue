@@ -23,7 +23,7 @@ onMounted(() => {
             :examplePL="getActualWord.examplePL"
             :exampleEN="getActualWord.exampleEN"
             :fav="getActualWord.fav"
-            :key="getActualWord.examplePL"
+            :key="getActualWord.id"
             :id="getActualWord.id"
          />
       </transition>
