@@ -1,5 +1,3 @@
-import path from 'path';
-
 describe('checking backup component', () => {
    beforeEach(() => {
       cy.visit('http://127.0.0.1:5173/Fiszki');
