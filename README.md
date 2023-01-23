@@ -36,7 +36,7 @@ Quick application to learning english vocabulary. This app is for Poles and crea
 
 * [Future](#future)
 
-
+* [New features](#updates)
 
 
 
@@ -96,6 +96,11 @@ Thanks **Vite** for greatful functions for PWA!
 
 
 <br />
+
+# Updates
+
+* (23.01.2023) - On traditional modes (in Polish: na tradycyjnych trybach) you can use touch gestures to get next or previous word! You need only swipe in left or right! 
+
 
 # Future
 
