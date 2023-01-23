@@ -14,11 +14,16 @@ export function onChangeInput(event: Event, callback: NoticeType) {
    const reader = new FileReader();
 
    function onReaderLoad() {
-      const obj = JSON.parse(reader.result as string);
+      try {
+         const obj = JSON.parse(reader.result as string);
 
-      if (saveJSONWordstoLocalStorage(obj)) {
-         callback.ok();
-      } else {
+         if (saveJSONWordstoLocalStorage(obj)) {
+            callback.ok();
+         } else {
+            callback.fail();
+         }
+      } catch (error) {
+         console.log(error);
          callback.fail();
       }
    }

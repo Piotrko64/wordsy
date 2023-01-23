@@ -15,12 +15,17 @@ export async function handleDropFile(event: DragEvent, callback: NoticeType) {
 
    reader.onload = (() => {
       return () => {
-         const dataJson = JSON.parse(reader.result as string);
+         try {
+            const dataJson = JSON.parse(reader.result as string);
 
-         if (saveJSONWordstoLocalStorage(dataJson)) {
-            callback.ok();
-         } else {
+            if (saveJSONWordstoLocalStorage(dataJson)) {
+               callback.ok();
+            } else {
+               callback.fail();
+            }
+         } catch (error) {
             callback.fail();
+            console.log(error);
          }
       };
    })();

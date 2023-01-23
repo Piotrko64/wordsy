@@ -12,9 +12,9 @@ export function validationJSON(arrayObjectsFromJSON: Array<any>) {
       return false;
    }
 
-   for (let i = 0; i++; i <= arrayObjectsFromJSON.length - 1) {
-      for (const property in arrayObjectsFromJSON[i]) {
-         if (!neededProperties.includes(property)) {
+   for (let i = 0; i <= arrayObjectsFromJSON.length - 1; i++) {
+      for (let j = 0; j <= neededProperties.length - 1; j++) {
+         if (!arrayObjectsFromJSON[i].hasOwnProperty(neededProperties[j])) {
             isOkay = false;
             break;
          }
