@@ -9,6 +9,7 @@ import RandomWord from '../components/learningPage/randomWord/RandomWord.vue';
 import { useAdditionalMode } from '../stores/AdditionalModeStore';
 import { useWordsStore } from '../stores/WordsStore';
 import OtherOperations from '../components/learningPage/otherOperations/OtherOperations.vue';
+import GestureContainer from '../components/gestureContainer/GestureContainer.vue';
 
 const { isActive } = storeToRefs(useAdditionalMode());
 const { getListWords } = storeToRefs(useWordsStore());
@@ -17,15 +18,17 @@ const { getListWords } = storeToRefs(useWordsStore());
 <template>
    <div>
       <ModeBlock v-if="!isActive" />
-      <router-view v-slot="{ Component }" v-if="getListWords.length">
-         <transition name="fade" mode="out-in">
-            <component :is="Component" />
-         </transition>
-      </router-view>
-      <div v-if="!getListWords.length" class="centerFlex whiteBlock">
-         BRAK SŁÓW
-      </div>
-      <ButtonsPanel v-if="!isActive" />
+      <GestureContainer>
+         <router-view v-slot="{ Component }" v-if="getListWords.length">
+            <transition name="fade" mode="out-in">
+               <component :is="Component" />
+            </transition>
+         </router-view>
+         <div v-if="!getListWords.length" class="centerFlex whiteBlock">
+            BRAK SŁÓW
+         </div>
+         <ButtonsPanel v-if="!isActive" />
+      </GestureContainer>
       <NextButton v-if="isActive" />
       <ModesNavigation />
       <RandomWord />

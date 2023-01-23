@@ -15,7 +15,7 @@ onMounted(() => {
 </script>
 
 <template>
-   <GestureContainer>
+   <div>
       <transition name="fade" mode="out-in">
          <SingleCard
             :wordPL="getActualWord.wordPL"
@@ -27,7 +27,7 @@ onMounted(() => {
             :id="getActualWord.id"
          />
       </transition>
-   </GestureContainer>
+   </div>
 </template>
 
 <style scoped lang="scss">

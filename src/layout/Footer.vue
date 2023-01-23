@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
    <footer>
       <div>Realizacja i pomysł na aplikację:</div>

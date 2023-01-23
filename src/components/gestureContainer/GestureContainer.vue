@@ -2,8 +2,8 @@
 import { useWordsStore } from '../../stores/WordsStore';
 import { ref } from 'vue';
 
-const MIN_X_DIFFERENCE = 100;
-const MAX_Y_DIFFERENCE = 200;
+const MIN_X_DIFFERENCE = 20;
+const MAX_Y_DIFFERENCE = 160;
 
 const startGesture = ref([0, 0]);
 const endGesture = ref([0, 0]);
@@ -13,11 +13,10 @@ const { nextWord, prevWord } = useWordsStore();
 function onStartGesture(event: TouchEvent) {
    const { clientX, clientY } = event.touches[0];
    startGesture.value = [clientX, clientY];
-   console.log(startGesture.value);
 }
 
 function onEndGesture(event: TouchEvent) {
-   const { clientX, clientY } = event.touches[0];
+   const { clientX, clientY } = event.changedTouches[0];
    endGesture.value = [clientX, clientY];
 
    const differenceX = startGesture.value[0] - endGesture.value[0];
