@@ -7,7 +7,7 @@
 
 <br />
 
-Quick application to learning english vocabulary. This app is for Poles and created mainly for mobile devices (Wordsy have PWA so you can install this app on mobile phone and using offline!)</p>
+Quick application to learning English vocabulary. This app is for Poles and was created mainly for mobile devices (Wordsy has PWA so you can install this app on your mobile phone and using offline!)</p>
 
 <br />
 
@@ -55,7 +55,7 @@ Quick application to learning english vocabulary. This app is for Poles and crea
 # About 
 
 ### Why I created this app?
-Sometimes I reading articles or watching videos in English languages. Sometimes I meet word that I don't know and I would like learn this new word and repeat from time to time for better memory. Wordsy resolve this problem! You can add any word and example sentence! Next You can using a several modes to better learning this!
+Sometimes I read articles or watch videos in English languages. Sometimes I meet a word that I don't know and I would like to learn this new word and repeat it from time to time for better memory. Wordsy resolve this problem! You can add any word and example sentence! Next, You can use several modes to better learn this!
 <br />
 Wordsy have approximately 100 words of my authority and a big base of other simple words to learn. If you are Pole and you would like exercise your english** Wordsy is for you!**
 
@@ -115,7 +115,7 @@ If you would like talking with me about Wordsy you can message to me on discord 
 
 <br />
 
-P.S. When I write this documentation I feel a litle confusion because I writing this documentation in english but App is for Poles! 🤔🤔
+P.S. When I write this documentation I feel a little confused because I writing this documentation in English but App is for Poles! 🤔🤔
 
 <br />
 
