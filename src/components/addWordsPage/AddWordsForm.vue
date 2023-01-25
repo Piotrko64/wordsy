@@ -4,7 +4,7 @@ import BaseInput from '../../ui/form/BaseInput.vue';
 import BaseTextarea from '../../ui/form/BaseTextarea.vue';
 import { reactive, ref } from 'vue';
 import { useWordsStore } from '../../stores/WordsStore';
-import { v4 as uuidv4 } from 'uuid';
+
 import { validatorWord } from './helpers/validatorWord';
 import BackToMainPage from '../../ui/BackToMainPage.vue';
 import { useModalStore } from '../../stores/ModalStore';
@@ -12,7 +12,7 @@ import { useModalStore } from '../../stores/ModalStore';
 type FormInputs = 'wordPL' | 'wordEN' | 'examplePL' | 'exampleEN' | 'id';
 
 const dataForm: Record<FormInputs, string> = reactive({
-   id: uuidv4(),
+   id: '',
    wordPL: '',
    wordEN: '',
    examplePL: '',
@@ -29,7 +29,7 @@ function updateDataForm(name: InputNames, text: string) {
    dataForm[name] = text;
 }
 
-function addNewWord(event: Event) {
+function addNewWord(event: Event, isFav?: true) {
    event.preventDefault();
 
    const validObject = validatorWord(dataForm);
@@ -42,10 +42,12 @@ function addNewWord(event: Event) {
    }
    validMessage.value = validObject.msg;
 
-   addNewOwnWord(dataForm);
+   addNewOwnWord({ ...dataForm, fav: isFav });
    activationModal(
       'Yeah! 🎉',
-      `Twoje nowe słówko (${dataForm.wordEN}) zostało dodane`
+      `Twoje nowe słówko (${dataForm.wordEN}) zostało dodane ${
+         isFav ? 'oraz oznaczone jako ulubione' : ''
+      }!`
    );
 }
 </script>
@@ -86,9 +88,22 @@ function addNewWord(event: Event) {
          </div>
          <p v-if="invalidMessage" class="alert">{{ invalidMessage }}</p>
          <p v-if="validMessage" class="ok">{{ validMessage }}</p>
-         <button type="submit" class="actionButton" @click="addNewWord($event)">
-            Dodaj nowe wyrażenie
-         </button>
+         <div class="buttonContainer">
+            <button
+               type="submit"
+               class="actionButton"
+               @click="addNewWord($event)"
+            >
+               Dodaj nowe wyrażenie
+            </button>
+            <button
+               type="submit"
+               class="actionButton favButton"
+               @click="addNewWord($event, true)"
+            >
+               Dodaj je jako ulubione
+            </button>
+         </div>
          <BackToMainPage />
       </form>
    </div>
@@ -123,6 +138,23 @@ function addNewWord(event: Event) {
          &.ok {
             font-size: 1.5rem;
             color: var(--secondGreen);
+         }
+      }
+      .buttonContainer {
+         display: flex;
+         gap: 10px;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+
+         .actionButton {
+            min-width: 270px;
+            flex: 1;
+            &.favButton {
+               background-color: white;
+               color: var(--green);
+               border: 2px solid var(--secondGreen);
+            }
          }
       }
    }

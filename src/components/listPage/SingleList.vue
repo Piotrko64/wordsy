@@ -25,7 +25,7 @@ function toggleActiveList() {
 <template>
    <div>
       <h2 class="horizontalSpace" @click="toggleActiveList()">
-         {{ title }}
+         {{ title }} ({{ words.length }})
          <img
             :src="arrow"
             alt="Rozwiń"

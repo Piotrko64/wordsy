@@ -9,6 +9,7 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 import { shuffleElementsArray } from '../../../utils/shuffleElements/shuffleElementsArray';
 import { startingWords } from '../../../data/startingWords';
+import { WordsType } from './../../../@types/WordsType';
 
 export const ActionsWordsStore = {
    toggleOnlyOwnWords() {
@@ -55,8 +56,6 @@ export const ActionsWordsStore = {
 
    addWordAsFavourite(id: string) {
       const findIndex = this.allWords.findIndex((example) => example.id === id);
-
-      console.log(findIndex);
 
       if (findIndex === -1) return;
 
@@ -107,7 +106,7 @@ export const ActionsWordsStore = {
    changeMode(mode: string) {
       this.mode = mode;
    },
-   addNewOwnWord(word: SingleWord) {
+   addNewOwnWord(word: WordsType) {
       const correctWord = { ...word, id: uuidv4() };
 
       this.ownWords.unshift(correctWord);

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useWordsStore } from '../../stores/WordsStore';
 import { storeToRefs } from 'pinia';
-import SingleWord from './SingleWord.vue';
 import BackToMainPage from '../../ui/BackToMainPage.vue';
 import SingleList from './SingleList.vue';
+
 const store = useWordsStore();
 const { getOwnWords, getStartWords, isOnlyOwnWords, getFavWords } =
    storeToRefs(store);
