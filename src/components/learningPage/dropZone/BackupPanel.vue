@@ -12,7 +12,7 @@ function downloadJsonWords() {
    download(
       JSON.stringify(getOwnWords),
       'backup.json',
-      'application/json;charset=utf-8,'
+      'data:text/json;charset=utf-8,'
    );
 }
 
