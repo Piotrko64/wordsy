@@ -8,11 +8,27 @@ import zip from '../../../assets/icons/backup/zip.png';
 const { getOwnWords } = useWordsStore();
 
 function downloadJsonWords() {
-   download(
-      JSON.stringify(getOwnWords),
-      'backup.json',
-      'application/json;charset=utf-8,'
+   const data = JSON.stringify(getOwnWords);
+   const link = document.createElement('a');
+
+   link.setAttribute(
+      'href',
+      'data:text/plain;charset=utf-8,' + encodeURIComponent(data)
    );
+   link.setAttribute('download', 'backup.json');
+   link.style.display = 'none';
+
+   document.body.appendChild(link);
+
+   link.click();
+
+   document.body.removeChild(link);
+
+   // download(
+   //    JSON.stringify(getOwnWords),
+   //    'backup.json',
+   //    'application/json;charset=utf-8,'
+   // );
 }
 
 function downloadZipFile() {
