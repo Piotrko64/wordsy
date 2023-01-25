@@ -7,11 +7,12 @@ import zip from '../../../assets/icons/backup/zip.png';
 
 const { getOwnWords } = useWordsStore();
 
-function downloadFile(file: string | Blob, type: string, nameFile: string) {
+function downloadJsonFile() {
    const link = document.createElement('a');
+   const file = JSON.stringify(getOwnWords);
 
-   link.setAttribute('href', type + file);
-   link.setAttribute('download', nameFile);
+   link.setAttribute('href', 'data:text/plain;charset=utf-8,' + file);
+   link.setAttribute('download', 'backup.json');
    link.style.display = 'none';
 
    document.body.appendChild(link);
@@ -19,14 +20,6 @@ function downloadFile(file: string | Blob, type: string, nameFile: string) {
    link.click();
 
    document.body.removeChild(link);
-}
-
-function downloadJsonFile() {
-   downloadFile(
-      JSON.stringify(getOwnWords),
-      'data:text/plain;charset=utf-8,',
-      'backup.json'
-   );
 }
 
 function downloadZipFile() {
