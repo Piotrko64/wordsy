@@ -11,7 +11,7 @@ function downloadJsonWords() {
    download(
       JSON.stringify(getOwnWords),
       'backup.json',
-      'text/json;charset=utf-8'
+      'data:text/json;charset=utf-8'
    );
 }
 
@@ -20,7 +20,7 @@ function downloadZipFile() {
    zip.file('backup.json.', JSON.stringify(getOwnWords));
 
    zip.generateAsync({ type: 'blob' }).then(function (content: Blob) {
-      download(content, 'backup.zip');
+      download(content, 'backup.zip', 'application/zip;charset=utf-8');
    });
 }
 </script>
