@@ -8,7 +8,11 @@ import zip from '../../../assets/icons/backup/zip.png';
 const { getOwnWords } = useWordsStore();
 
 function downloadJsonWords() {
-   download(JSON.stringify(getOwnWords), 'backup.json', 'application/json');
+   download(
+      JSON.stringify(getOwnWords),
+      'backup.json',
+      'text/json;charset=utf-8'
+   );
 }
 
 function downloadZipFile() {
