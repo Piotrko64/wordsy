@@ -7,15 +7,11 @@ import zip from '../../../assets/icons/backup/zip.png';
 
 const { getOwnWords } = useWordsStore();
 
-function downloadJsonWords() {
-   const data = JSON.stringify(getOwnWords);
+function downloadFile(file: string | Blob, type: string, nameFile: string) {
    const link = document.createElement('a');
 
-   link.setAttribute(
-      'href',
-      'data:text/plain;charset=utf-8,' + encodeURIComponent(data)
-   );
-   link.setAttribute('download', 'backup.json');
+   link.setAttribute('href', type + file);
+   link.setAttribute('download', nameFile);
    link.style.display = 'none';
 
    document.body.appendChild(link);
@@ -23,17 +19,19 @@ function downloadJsonWords() {
    link.click();
 
    document.body.removeChild(link);
+}
 
-   // download(
-   //    JSON.stringify(getOwnWords),
-   //    'backup.json',
-   //    'application/json;charset=utf-8,'
-   // );
+function downloadJsonFile() {
+   downloadFile(
+      JSON.stringify(getOwnWords),
+      'data:text/plain;charset=utf-8,',
+      'backup.json'
+   );
 }
 
 function downloadZipFile() {
    const zip = new JSZip();
-   zip.file('backup.json.', JSON.stringify(getOwnWords));
+   zip.file('backup.json', JSON.stringify(getOwnWords));
 
    zip.generateAsync({ type: 'blob' }).then(function (content: Blob) {
       download(content, 'backup.zip', 'application/zip;charset=utf-8');
@@ -43,7 +41,7 @@ function downloadZipFile() {
 
 <template>
    <div class="container">
-      <button @click="downloadJsonWords()" class="actionButton">
+      <button @click="downloadJsonFile()" class="actionButton">
          Pobierz kopię zapasową słówek jako plik JSON <img :src="backup" />
       </button>
       <button @click="downloadZipFile()" class="actionButton">
