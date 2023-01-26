@@ -1,6 +1,5 @@
 // @ts-nocheck
 
-import { SingleWord } from '@/src/@types/WordsType';
 import {
    readValueFromStorage,
    readWordsFromStorage,
@@ -10,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { shuffleElementsArray } from '../../../utils/shuffleElements/shuffleElementsArray';
 import { startingWords } from '../../../data/startingWords';
 import { WordsType } from './../../../@types/WordsType';
+import { filterArrayById } from '../../../utils/filterArray/filterArrayById';
 
 export const ActionsWordsStore = {
    toggleOnlyOwnWords() {
@@ -57,8 +57,6 @@ export const ActionsWordsStore = {
    addWordAsFavourite(id: string) {
       const findIndex = this.allWords.findIndex((example) => example.id === id);
 
-      console.log(this.startWords);
-
       if (findIndex === -1) return;
 
       this.allWords[findIndex].fav = !this.allWords[findIndex].fav;
@@ -68,7 +66,7 @@ export const ActionsWordsStore = {
    },
 
    updateWordsByUploadWords() {
-      this.ownWords = readWordsFromStorage('ownWords');
+      this.ownWords = filterArrayById(readWordsFromStorage('ownWords'));
    },
 
    addWordsFromLocalStorage() {
