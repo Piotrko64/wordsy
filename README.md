@@ -103,6 +103,8 @@ Thanks **Vite** for greatful functions for PWA!
 
 * (23.01.2023) - On traditional modes (in Polish: na tradycyjnych trybach) you can use touch gestures to get next or previous word! You need only swipe in left or right! 
 
+* (25.01.2023) - Fix the problem with dropzone on mobile, add countings words and add a button to add words as favorite
+
 <br />
 <br />
 
