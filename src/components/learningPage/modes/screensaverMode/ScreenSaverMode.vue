@@ -3,6 +3,7 @@ import { useWordsStore } from '../../../../stores/WordsStore';
 import { ref, watch, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { findWallpaper } from '../../../../data/wallpapers/wallpapers';
+import { speakWithTranslate } from '../../../../helpers/speech/speakWithTranslate';
 
 const TIME_TO_READ = 12000;
 
@@ -33,8 +34,25 @@ function goToNext() {
    }
 }
 
+function otherWord(nextWord: boolean) {
+   clearInterval(timer);
+   nextWord ? store.nextWordWithoutLimit() : store.prevWordWithoutLimit();
+   timer = setInterval(() => {
+      store.nextWordWithoutLimit();
+   }, TIME_TO_READ);
+}
+
 watch(isScreensaverMode, () => {
    goToNext();
+});
+
+watch(getActualWord, () => {
+   if (isScreensaverMode.value) {
+      speakWithTranslate(
+         store.getActualWord.wordPL,
+         store.getActualWord.wordEN
+      );
+   }
 });
 
 onMounted(() => {
@@ -83,19 +101,25 @@ onMounted(() => {
                </div>
             </transition>
          </div>
-         <div class="actionButton offButton" @click="toggleFullScreen()">
-            Wyłącz tryb Wygaszacza
+
+         <div class="offButton">
+            <button @click="otherWord(true)">next</button>
+            <button @click="otherWord(false)">prev</button>
+
+            <div class="actionButton" @click="toggleFullScreen()">
+               Wyłącz tryb Wygaszacza
+            </div>
          </div>
       </div>
    </div>
 </template>
 <style lang="scss">
 .fade-enter-active {
-   transition: all 0.4s ease-out;
+   transition: all 0.3s ease-out;
 }
 
 .fade-leave-active {
-   transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+   transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .fade-enter-from,

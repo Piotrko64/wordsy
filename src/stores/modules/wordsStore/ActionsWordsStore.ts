@@ -103,6 +103,14 @@ export const ActionsWordsStore = {
          this.progress = this.progress + 1;
       }
    },
+   prevWordWithoutLimit() {
+      if (this.progress === 0) {
+         this.progress = this.allWords.length - 1;
+      } else {
+         this.progress = this.progress - 1;
+      }
+   },
+
    changeMode(mode: string) {
       this.mode = mode;
    },

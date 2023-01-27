@@ -10,7 +10,7 @@ const { isActiveModal } = storeToRefs(useModalStore());
 
 <template>
    <Navigation />
-   <div class="horizontalSpace">
+   <div class="horizontalSpace maxWidth">
       <router-view v-slot="{ Component }">
          <transition name="fade" mode="out-in">
             <component :is="Component" />
@@ -24,6 +24,10 @@ const { isActiveModal } = storeToRefs(useModalStore());
 </template>
 
 <style scoped lang="scss">
+.maxWidth {
+   max-width: 1450px;
+   margin: auto;
+}
 .fade-enter-active {
    transition: all 0.1s ease;
 }
