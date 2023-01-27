@@ -243,7 +243,7 @@ onMounted(() => {
       background-color: black;
    }
    .actionButton {
-      max-width: 200px;
+      max-width: 180px;
    }
    .buttonContainer {
       position: absolute;
