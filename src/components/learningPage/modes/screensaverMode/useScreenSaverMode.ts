@@ -4,6 +4,7 @@ import { onMounted, Ref, watch } from 'vue';
 import { speakWithTranslate } from './../../../../helpers/speech/speakWithTranslate';
 import { useWordsStore } from './../../../../stores/WordsStore';
 import { useScreenSaverStore } from './../../../../stores/ScreenSaverStore';
+import { stopSpeech } from './../../../../helpers/speech/stopSpeech';
 
 export function useScreenSaverMode(
    isScreensaverMode: Ref<boolean>,
@@ -60,6 +61,7 @@ export function useScreenSaverMode(
    });
 
    watch(getActualWord, () => {
+      stopSpeech();
       if (isScreensaverMode.value && isActiveSoundMode.value) {
          speakWithTranslate(
             store.getActualWord.wordPL,
