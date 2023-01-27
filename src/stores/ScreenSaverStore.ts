@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { stopSpeech } from './../helpers/speech/stopSpeech';
 
 export const useScreenSaverStore = defineStore('screenSaverStore', {
    state: () => ({
@@ -9,7 +10,7 @@ export const useScreenSaverStore = defineStore('screenSaverStore', {
       toggleSoundMode() {
          this.isActiveSoundMode = !this.isActiveSoundMode;
          if (!this.isActiveSoundMode) {
-            window.speechSynthesis.cancel();
+            stopSpeech();
          }
       },
    },

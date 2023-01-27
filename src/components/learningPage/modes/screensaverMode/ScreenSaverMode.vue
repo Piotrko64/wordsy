@@ -1,90 +1,28 @@
 <script setup lang="ts">
 import { useWordsStore } from '../../../../stores/WordsStore';
 import { useScreenSaverStore } from '../../../../stores/ScreenSaverStore';
-import { ref, watch, onMounted } from 'vue';
+import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { findWallpaper } from '../../../../data/wallpapers/wallpapers';
-import { speakWithTranslate } from '../../../../helpers/speech/speakWithTranslate';
-import NoSleep from 'nosleep.js';
 import leftArrow from '../../../../assets/icons/whiteArrow.png';
 import rightArrow from '../../../../assets/icons/whiteArrowRight.png';
-
+import { useScreenSaverMode } from './useScreenSaverMode';
 import micro from '../../../../assets/icons/screensaver/micro.png';
 import microBlock from '../../../../assets/icons/screensaver/microBlock.png';
 
-const noSleep = new NoSleep();
-
-const TIME_TO_READ = 10800;
-
 const isScreensaverMode = ref(false);
-
 const elementToFullScreen = ref();
-const store = useWordsStore();
-const { getActualWord } = storeToRefs(store);
+
+const storeWord = useWordsStore();
+const { getActualWord } = storeToRefs(storeWord);
+
+const { toggleFullScreen, otherWord } = useScreenSaverMode(
+   isScreensaverMode,
+   elementToFullScreen
+);
+
 const storeScreenSaver = useScreenSaverStore();
-
 const { isActiveSoundMode } = storeToRefs(storeScreenSaver);
-
-let timer: NodeJS.Timeout;
-
-function toggleFullScreen() {
-   if (elementToFullScreen.value.requestFullscreen) {
-      if (!isScreensaverMode.value) {
-         elementToFullScreen.value.requestFullscreen();
-      } else {
-         document.exitFullscreen();
-      }
-   }
-}
-
-function goToNext() {
-   if (isScreensaverMode.value) {
-      timer = setInterval(() => {
-         store.nextWordWithoutLimit();
-      }, TIME_TO_READ);
-   } else {
-      clearInterval(timer);
-   }
-}
-
-function otherWord(nextWord: boolean) {
-   clearInterval(timer);
-   nextWord ? store.nextWordWithoutLimit() : store.prevWordWithoutLimit();
-   timer = setInterval(() => {
-      store.nextWordWithoutLimit();
-   }, TIME_TO_READ);
-}
-
-watch(isScreensaverMode, () => {
-   goToNext();
-   if (isScreensaverMode.value && isActiveSoundMode.value) {
-      speakWithTranslate(
-         store.getActualWord.wordPL,
-         store.getActualWord.wordEN
-      );
-   }
-});
-
-watch(getActualWord, () => {
-   if (isScreensaverMode.value && isActiveSoundMode.value) {
-      speakWithTranslate(
-         store.getActualWord.wordPL,
-         store.getActualWord.wordEN
-      );
-   }
-});
-
-onMounted(() => {
-   store.shuffleWords();
-   document.addEventListener('fullscreenchange', () => {
-      isScreensaverMode.value = !isScreensaverMode.value;
-      if (isScreensaverMode.value) {
-         noSleep.enable();
-      } else {
-         noSleep.disable();
-      }
-   });
-});
 </script>
 
 <template>
