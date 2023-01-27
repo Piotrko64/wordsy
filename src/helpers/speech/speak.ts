@@ -1,3 +1,5 @@
+import { checkSpeechVoice } from './checkSpeechVoice';
+
 export function speak(text: string, lang: string, onSpeechEnd?: () => void) {
    if (speechSynthesis.speaking) {
       speechSynthesis.cancel();
@@ -12,4 +14,5 @@ export function speak(text: string, lang: string, onSpeechEnd?: () => void) {
    if (onSpeechEnd) {
       utterance.onend = () => onSpeechEnd();
    }
+   checkSpeechVoice().then((e) => console.log(e));
 }
