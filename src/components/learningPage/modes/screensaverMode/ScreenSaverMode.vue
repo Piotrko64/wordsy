@@ -4,8 +4,11 @@ import { ref, watch, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { findWallpaper } from '../../../../data/wallpapers/wallpapers';
 import { speakWithTranslate } from '../../../../helpers/speech/speakWithTranslate';
+import NoSleep from 'nosleep.js';
 
-const TIME_TO_READ = 12000;
+const noSleep = new NoSleep();
+
+const TIME_TO_READ = 10800;
 
 const isScreensaverMode = ref(false);
 const elementToFullScreen = ref();
@@ -59,6 +62,11 @@ onMounted(() => {
    store.shuffleWords();
    document.addEventListener('fullscreenchange', () => {
       isScreensaverMode.value = !isScreensaverMode.value;
+      if (isScreensaverMode.value) {
+         noSleep.enable();
+      } else {
+         noSleep.disable();
+      }
    });
 });
 </script>
