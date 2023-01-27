@@ -57,7 +57,7 @@ h4 {
    color: var(--green);
    padding: 4px 8px;
    border-radius: 4px;
-   font-size: 1.1rem;
+   font-size: 1rem;
    width: fit-content;
    margin-bottom: 4px;
    border: 2px solid var(--green);
@@ -78,7 +78,7 @@ h4 {
    padding-top: 5px;
    padding-bottom: 5px;
    border: 3px solid var(--secondGreen);
-   font-size: 1.5rem;
+   font-size: 1.4rem;
    color: var(--secondGreen);
    &.block {
       position: relative;

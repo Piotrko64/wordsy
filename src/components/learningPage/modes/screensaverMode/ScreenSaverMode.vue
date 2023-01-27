@@ -1,19 +1,29 @@
 <script setup lang="ts">
 import { useWordsStore } from '../../../../stores/WordsStore';
+import { useScreenSaverStore } from '../../../../stores/ScreenSaverStore';
 import { ref, watch, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { findWallpaper } from '../../../../data/wallpapers/wallpapers';
 import { speakWithTranslate } from '../../../../helpers/speech/speakWithTranslate';
 import NoSleep from 'nosleep.js';
+import leftArrow from '../../../../assets/icons/whiteArrow.png';
+import rightArrow from '../../../../assets/icons/whiteArrowRight.png';
+
+import micro from '../../../../assets/icons/screensaver/micro.png';
+import microBlock from '../../../../assets/icons/screensaver/microBlock.png';
 
 const noSleep = new NoSleep();
 
 const TIME_TO_READ = 10800;
 
 const isScreensaverMode = ref(false);
+
 const elementToFullScreen = ref();
 const store = useWordsStore();
 const { getActualWord } = storeToRefs(store);
+const storeScreenSaver = useScreenSaverStore();
+
+const { isActiveSoundMode } = storeToRefs(storeScreenSaver);
 
 let timer: NodeJS.Timeout;
 
@@ -47,10 +57,16 @@ function otherWord(nextWord: boolean) {
 
 watch(isScreensaverMode, () => {
    goToNext();
+   if (isScreensaverMode.value && isActiveSoundMode.value) {
+      speakWithTranslate(
+         store.getActualWord.wordPL,
+         store.getActualWord.wordEN
+      );
+   }
 });
 
 watch(getActualWord, () => {
-   if (isScreensaverMode.value) {
+   if (isScreensaverMode.value && isActiveSoundMode.value) {
       speakWithTranslate(
          store.getActualWord.wordPL,
          store.getActualWord.wordEN
@@ -110,13 +126,24 @@ onMounted(() => {
             </transition>
          </div>
 
-         <div class="offButton">
-            <button @click="otherWord(true)">next</button>
-            <button @click="otherWord(false)">prev</button>
+         <div class="buttonContainer">
+            <button @click="otherWord(false)" class="black">
+               <img :src="leftArrow" alt="wcześniejsze" />
+            </button>
 
-            <div class="actionButton" @click="toggleFullScreen()">
+            <div class="actionButton black" @click="toggleFullScreen()">
                Wyłącz tryb Wygaszacza
             </div>
+            <button @click="storeScreenSaver.toggleSoundMode()" class="black">
+               <img
+                  :src="isActiveSoundMode ? micro : microBlock"
+                  alt="tryb z czytaniem"
+                  class="micro"
+               />
+            </button>
+            <button @click="otherWord(true)" class="black">
+               <img :src="rightArrow" alt="następne" />
+            </button>
          </div>
       </div>
    </div>
@@ -205,12 +232,25 @@ onMounted(() => {
          }
       }
    }
-   .offButton {
+   img {
+      height: 18px;
+   }
+   .micro {
+      height: 29px;
+   }
+   .black {
+      padding: 8px;
+      background-color: black;
+   }
+   .actionButton {
+      max-width: 200px;
+   }
+   .buttonContainer {
       position: absolute;
       bottom: 5%;
       width: fit-content;
-      padding: 15px;
-      background-color: black;
+      display: flex;
+      gap: 5px;
    }
 }
 </style>
