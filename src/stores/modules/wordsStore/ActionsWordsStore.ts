@@ -55,12 +55,22 @@ export const ActionsWordsStore = {
    },
 
    addWordAsFavourite(id: string) {
-      const allWords = [...this.allWords];
-      const findIndex = allWords.findIndex((example) => example.id === id);
+      const findIndex = [...this.startWords, ...this.ownWords].findIndex(
+         (example) => example.id === id
+      );
 
       if (findIndex === -1) return;
 
-      this.allWords[findIndex].fav = !this.allWords[findIndex].fav;
+      [...this.startWords, ...this.ownWords][findIndex].fav = ![
+         ...this.startWords,
+         ...this.ownWords,
+      ][findIndex].fav;
+
+      this.allWords = (
+         this.onlyOwnWords
+            ? [...this.ownWords]
+            : [...this.ownWords, ...this.startWords]
+      ).filter((example) => (this.onlyFavWords ? example.fav : true));
 
       saveOwnWordsToLocalStorage(this.ownWords, 'ownWords');
       saveOwnWordsToLocalStorage(this.startWords, 'startWords');

@@ -8,7 +8,7 @@ export const GettersWordsStore = {
       return state.onlyFavWords;
    },
    getListWords(state: WordsStoreType) {
-      let listWords = state.allWords;
+      let listWords = [...state.startWords, ...state.ownWords];
       if (state.onlyOwnWords) {
          listWords = state.ownWords;
       } else {
@@ -45,6 +45,8 @@ export const GettersWordsStore = {
       return state.startWords;
    },
    getFavWords(state: WordsStoreType) {
-      return state.allWords.filter((word) => word.fav);
+      return [...state.ownWords, ...state.startWords].filter(
+         (word) => word.fav
+      );
    },
 };

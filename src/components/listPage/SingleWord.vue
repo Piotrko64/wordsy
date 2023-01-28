@@ -28,7 +28,7 @@ function addFav() {
          <div class="en">{{ wordEN }}</div>
       </div>
       <div class="operation centerFlex">
-         <Star :isActive="fav" @click-star="addFav()" />
+         <Star :isActive="fav" @click-star="addFav" />
          <button v-if="ownWord" @click="deleteWord(id)">
             <img :src="trash" alt="Usuń słówko" />
          </button>
