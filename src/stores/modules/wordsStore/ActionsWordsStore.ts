@@ -59,6 +59,7 @@ export const ActionsWordsStore = {
 
       if (findIndex === -1) return;
 
+      console.log(this.allWords, id);
       this.allWords[findIndex].fav = !this.allWords[findIndex].fav;
 
       saveOwnWordsToLocalStorage(this.ownWords, 'ownWords');
