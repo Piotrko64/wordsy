@@ -56,7 +56,7 @@ export const ActionsWordsStore = {
 
    addWordAsFavourite(id: string) {
       console.log(this.ownWords, this.startWords);
-      this.allWords = [...this.ownWords, this.startWords];
+      this.allWords = [...this.ownWords, ...this.startWords];
 
       const findIndex = this.allWords.findIndex((example) => example.id === id);
       console.log(this.allWords, id);
