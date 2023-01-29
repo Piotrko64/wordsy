@@ -5,7 +5,7 @@ const wallpapersData = [
    },
    {
       name: 'stars2',
-      hours: 22,
+      hours: 21,
    },
    {
       name: 'cat',
@@ -22,11 +22,11 @@ const wallpapersData = [
    },
    {
       name: 'books',
-      hours: 13,
+      hours: 14,
    },
    {
       name: 'mountain',
-      hours: 11,
+      hours: 12,
    },
    {
       name: 'stars',

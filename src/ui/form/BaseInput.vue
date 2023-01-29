@@ -49,6 +49,7 @@ watch([isBlur], () => {
          :placeholder="placeholder"
          maxlength="65"
          :class="{ invalid: !isValid && isBlur }"
+         autocomplete="off"
       />
 
       <p v-if="!isValid && isBlur">{{ errorInputMesage }}</p>
