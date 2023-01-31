@@ -2,6 +2,7 @@
 import { useAdditionalMode } from '../../../../../stores/AdditionalModeStore';
 import { storeToRefs } from 'pinia';
 import { ref, watch } from 'vue';
+import { findWordTranslate } from '../../../../../helpers/randomQuiz/findWordTranslate';
 
 const store = useAdditionalMode();
 const { getQuiz } = storeToRefs(store);
@@ -32,6 +33,9 @@ watch(getQuiz, () => {
             }"
          >
             {{ answer }}
+            <span v-if="userAnswer">
+               {{ findWordTranslate(answer, getQuiz.langQue) }}</span
+            >
          </button>
       </div>
    </div>
@@ -65,6 +69,9 @@ watch(getQuiz, () => {
          color: white;
          background-color: var(--red);
          border: 3px solid white;
+      }
+      span {
+         margin-left: 5px;
       }
    }
 }

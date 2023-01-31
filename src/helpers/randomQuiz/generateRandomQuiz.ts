@@ -3,11 +3,12 @@ import { plWords } from '../../data/additionalWords/plWords';
 import { getRandomNumber } from './../../utils/randomNumber/getRandomNumber';
 
 export function generateRandomQuiz(index: number) {
-   const langQue = getRandomNumber(0, 1) ? 'pl' : 'en';
+   const langQue: 'pl' | 'en' = getRandomNumber(0, 1) ? 'pl' : 'en';
    const correctAnswer: string =
       langQue === 'pl' ? enWords[index] : plWords[index];
 
    return {
+      langQue,
       question: langQue === 'pl' ? plWords[index] : enWords[index],
       answers: generateAnswers(langQue === 'pl' ? 'en' : 'pl', correctAnswer),
       correctAnswer,
