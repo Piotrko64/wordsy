@@ -25,7 +25,7 @@ const { isActiveModal } = storeToRefs(useModalStore());
 
 <style scoped lang="scss">
 .maxWidth {
-   max-width: 1450px;
+   max-width: 900px;
    margin: auto;
 }
 .fade-enter-active {
