@@ -20,7 +20,7 @@ import backArrow from '../assets/icons/arrowBack.png';
    width: 100%;
    border-radius: 6px;
    padding: 8px 12px 8px 0;
-
+   padding-bottom: 20px;
    &:hover {
       color: var(--secondGreen);
       img {

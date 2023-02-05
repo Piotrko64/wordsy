@@ -17,8 +17,8 @@ const { title } = defineProps<{
    margin-bottom: 15px;
 
    text-align: center;
-   // color: var(--secondGreen);
-   font-size: 1.85rem;
+
+   font-size: 1.65rem;
    font-weight: 600;
    background-color: white;
    padding: 8px;
@@ -49,6 +49,7 @@ const { title } = defineProps<{
    .title {
       margin-top: 80px;
       margin-bottom: 25px;
+      font-size: 1.9rem;
    }
 }
 </style>
