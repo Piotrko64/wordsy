@@ -19,6 +19,7 @@ import Title from '../../../ui/Title.vue';
    display: flex;
    flex-direction: column;
    gap: 8px;
+   padding-bottom: 40px;
    .actionButton {
       border: 3px solid var(--secondGreen);
       padding: 15px;

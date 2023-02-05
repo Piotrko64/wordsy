@@ -14,7 +14,6 @@
 
 <style scoped lang="scss">
 footer {
-   margin-top: 35px;
    padding: 20px 10px;
    background-color: white;
    color: var(--green);
@@ -22,7 +21,7 @@ footer {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   font-size: 1.35rem;
+   font-size: 1.15rem;
    .name {
       color: var(--secondGreen);
       text-decoration: underline;

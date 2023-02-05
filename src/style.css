@@ -124,6 +124,28 @@ a:hover {
 body {
    margin: 0;
    padding: 0;
-   background-color: #ecece7;
+   background-color: hsla(60, 11%, 91%, 1);
+   background-attachment: fixed;
+   background-image: radial-gradient(
+         at 36% 85%,
+         hsla(134, 49%, 55%, 0.16) 0px,
+         transparent 50%
+      ),
+      radial-gradient(
+         at 11% 15%,
+         hsla(130, 97%, 30%, 0.16) 0px,
+         transparent 50%
+      ),
+      radial-gradient(
+         at 100% 50%,
+         hsla(134, 56%, 42%, 0.31) 0px,
+         transparent 50%
+      ),
+      radial-gradient(at 1% 0%, hsla(340, 100%, 76%, 0) 0px, transparent 50%),
+      radial-gradient(
+         at 0% 100%,
+         hsla(22, 100%, 77%, 0.04) 0px,
+         transparent 50%
+      );
    font-family: var(--signika);
 }

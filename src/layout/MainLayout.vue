@@ -27,6 +27,8 @@ const { isActiveModal } = storeToRefs(useModalStore());
 .maxWidth {
    max-width: 900px;
    margin: auto;
+   background: transparent;
+   padding-top: 65px;
 }
 .fade-enter-active {
    transition: all 0.1s ease;
