@@ -130,27 +130,26 @@ body {
 }
 @media (min-width: 920px) {
    body {
-      background-color: hsla(60, 11%, 91%, 1);
       background-attachment: fixed;
+      background-color: hsla(0, 0%, 100%, 1);
       background-image: radial-gradient(
-            at 36% 85%,
-            hsla(134, 49%, 55%, 0.16) 0px,
+            at 93% 21%,
+            hsla(108, 100%, 36%, 0.23) 0px,
             transparent 50%
          ),
          radial-gradient(
-            at 11% 15%,
-            hsla(130, 97%, 30%, 0.16) 0px,
+            at 20% 83%,
+            hsla(108, 100%, 36%, 0.3) 0px,
             transparent 50%
          ),
          radial-gradient(
-            at 100% 50%,
-            hsla(134, 56%, 42%, 0.31) 0px,
+            at 82% 85%,
+            hsla(122, 32%, 56%, 0.34) 0px,
             transparent 50%
          ),
-         radial-gradient(at 1% 0%, hsla(340, 100%, 76%, 0) 0px, transparent 50%),
          radial-gradient(
-            at 0% 100%,
-            hsla(22, 100%, 77%, 0.04) 0px,
+            at 11% 20%,
+            hsla(116, 58%, 41%, 0.25) 0px,
             transparent 50%
          );
    }
