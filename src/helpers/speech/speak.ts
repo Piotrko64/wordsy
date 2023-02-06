@@ -1,15 +1,20 @@
+let sayTimeout: NodeJS.Timeout | null = null;
+
 export function speak(text: string, lang: string, onSpeechEnd?: () => void) {
    if (speechSynthesis.speaking) {
       speechSynthesis.cancel();
-   }
-   const utterance = new SpeechSynthesisUtterance(text);
 
-   utterance.rate = 1;
-   utterance.lang = lang;
+      if (sayTimeout !== null) clearTimeout(sayTimeout);
 
-   speechSynthesis.speak(utterance);
-
-   if (onSpeechEnd) {
-      utterance.onend = () => onSpeechEnd();
+      sayTimeout = setTimeout(function () {
+         speak(text, lang, onSpeechEnd);
+      }, 250);
+   } else {
+      const message = new SpeechSynthesisUtterance(text);
+      message.lang = lang;
+      speechSynthesis.speak(message);
+      if (onSpeechEnd) {
+         message.onend = () => onSpeechEnd();
+      }
    }
 }

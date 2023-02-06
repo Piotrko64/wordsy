@@ -33,7 +33,6 @@ export function useScreenSaverMode(
    }
 
    function goToNext() {
-      stopSpeech();
       if (isScreensaverMode.value) {
          timer = setInterval(() => {
             store.nextWordWithoutLimit();
@@ -44,7 +43,6 @@ export function useScreenSaverMode(
    }
 
    function otherWord(nextWord: boolean) {
-      stopSpeech();
       clearInterval(timer);
       nextWord ? store.nextWordWithoutLimit() : store.prevWordWithoutLimit();
       timer = setInterval(() => {
@@ -63,7 +61,6 @@ export function useScreenSaverMode(
    });
 
    watch(getActualWord, () => {
-      stopSpeech();
       if (isScreensaverMode.value && isActiveSoundMode.value) {
          speakWithTranslate(
             store.getActualWord.wordPL,
@@ -79,7 +76,7 @@ export function useScreenSaverMode(
          if (isScreensaverMode.value) {
             noSleep.enable();
          } else {
-            window.speechSynthesis.cancel();
+            stopSpeech();
             noSleep.disable();
          }
       });

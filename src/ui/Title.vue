@@ -11,7 +11,7 @@ const { title } = defineProps<{
 </template>
 <style lang="scss" scope>
 .title {
-   margin-top: 55px;
+   margin-top: 60px;
    position: relative;
    z-index: 5;
    margin-bottom: 15px;
@@ -22,7 +22,7 @@ const { title } = defineProps<{
    font-weight: 600;
    background-color: white;
    padding: 8px;
-   border-radius: 8px;
+   border-radius: 24px;
    border-bottom-left-radius: 0;
    border-bottom-right-radius: 0;
    border: 3px solid var(--secondGreen);
