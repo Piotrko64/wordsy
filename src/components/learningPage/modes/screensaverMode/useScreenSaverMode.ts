@@ -61,6 +61,7 @@ export function useScreenSaverMode(
    });
 
    watch(getActualWord, () => {
+      stopSpeech();
       if (isScreensaverMode.value && isActiveSoundMode.value) {
          speakWithTranslate(
             store.getActualWord.wordPL,
