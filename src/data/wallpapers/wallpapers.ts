@@ -28,13 +28,10 @@ const wallpapersData = [
       name: 'mountain',
       hours: 12,
    },
-   {
-      name: 'stars',
-      hours: 10,
-   },
+
    {
       name: 'road',
-      hours: 7,
+      hours: 8,
    },
    {
       name: 'mountain',
