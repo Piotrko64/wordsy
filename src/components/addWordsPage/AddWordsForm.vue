@@ -4,26 +4,22 @@ import BaseInput from '../../ui/form/BaseInput.vue';
 import BaseTextarea from '../../ui/form/BaseTextarea.vue';
 import { reactive, ref } from 'vue';
 import { useWordsStore } from '../../stores/WordsStore';
-
+import { startingFormData } from '../../data/form/startingFormData';
 import { validatorWord } from './helpers/validatorWord';
 import BackToMainPage from '../../ui/BackToMainPage.vue';
 import { useModalStore } from '../../stores/ModalStore';
+import { clearProperties } from './helpers/clearProperties';
 
 type FormInputs = 'wordPL' | 'wordEN' | 'examplePL' | 'exampleEN' | 'id';
 
-const dataForm: Record<FormInputs, string> = reactive({
-   id: '',
-   wordPL: '',
-   wordEN: '',
-   examplePL: '',
-   exampleEN: '',
-});
+const dataForm: Record<FormInputs, string> = reactive(startingFormData);
 
 const { addNewOwnWord } = useWordsStore();
 const { activationModal } = useModalStore();
 
 const invalidMessage = ref('');
 const validMessage = ref('');
+const form = ref();
 
 function updateDataForm(name: InputNames, text: string) {
    dataForm[name] = text;
@@ -49,12 +45,15 @@ function addNewWord(event: Event, isFav?: true) {
          isFav ? 'oraz oznaczone jako ulubione' : ''
       }!`
    );
+
+   form.value.reset();
+   clearProperties(dataForm);
 }
 </script>
 
 <template>
    <div class="container">
-      <form>
+      <form ref="form">
          <h1>Dodaj własne słowo</h1>
          <BaseInput
             name="wordPL"
@@ -63,6 +62,7 @@ function addNewWord(event: Event, isFav?: true) {
             @update-data="updateDataForm"
             placeholder="Tu napisz wyrażenie po polsku"
             :requiredInput="true"
+            :value="dataForm.wordPL"
          />
          <BaseInput
             name="wordEN"
@@ -71,6 +71,7 @@ function addNewWord(event: Event, isFav?: true) {
             @update-data="updateDataForm"
             placeholder="A tu jego angielski odpowiednik"
             :requiredInput="true"
+            :value="dataForm.wordEN"
          />
          <div class="exampleContainer">
             <BaseTextarea
@@ -78,12 +79,14 @@ function addNewWord(event: Event, isFav?: true) {
                title="Możesz podać przykład po Polsku"
                @update-data="updateDataForm"
                placeholder="Napisz zdanie zawierające wcześniej napisane słowo"
+               :value="dataForm.examplePL"
             ></BaseTextarea>
             <BaseTextarea
                name="exampleEN"
                title="A tu przetłumaczone zdanie na angielski"
                @update-data="updateDataForm"
                placeholder="Napisz tłumaczenie tego zdania na język angielski"
+               :value="dataForm.exampleEN"
             ></BaseTextarea>
          </div>
          <p v-if="invalidMessage" class="alert">{{ invalidMessage }}</p>

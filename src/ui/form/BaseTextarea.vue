@@ -1,22 +1,24 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const { name, placeholder } = defineProps<{
+const { name, placeholder, value } = defineProps<{
    name: string;
    placeholder?: string;
    title: string;
+   value: string;
 }>();
 const emits = defineEmits(['updateData']);
 
-const valueInput = ref<string>('');
+const input = ref();
 </script>
 <template>
    <div class="entireTextarea">
       <label for="field">{{ title }}</label>
       <textarea
+         ref="input"
          :id="name"
-         @input="emits('updateData', name, valueInput)"
-         v-model="valueInput"
+         @input="emits('updateData', name, input.value)"
+         :value="value"
          :placeholder="placeholder"
          maxlength="90"
       >

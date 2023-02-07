@@ -8,6 +8,7 @@ const {
    title,
    minLength,
    placeholder,
+   value,
 } = defineProps<{
    requiredInput?: boolean;
    typeInput?: string;
@@ -15,20 +16,24 @@ const {
    title: string;
    minLength: number;
    placeholder: string;
+   value: string;
 }>();
 
 const emits = defineEmits(['updateData']);
 
 const errorInputMesage: Ref<string> = ref('');
 const isBlur: Ref<boolean> = ref(false);
-const valueInput: Ref<string> = ref('');
+const input = ref();
 const isValid: Ref<boolean> = ref(true);
 
 watch([isBlur], () => {
    isValid.value = false;
-   if (requiredInput && valueInput.value.trim() === '') {
+
+   const valueInput = input.value.value;
+
+   if (requiredInput && valueInput.trim() === '') {
       errorInputMesage.value = 'To pole musi być uzupełnione!';
-   } else if (valueInput.value.length < minLength) {
+   } else if (valueInput.length < minLength) {
       errorInputMesage.value = `Minimalna liczba znaków to ${minLength}`;
    } else {
       isValid.value = true;
@@ -40,9 +45,10 @@ watch([isBlur], () => {
    <div class="flexInput">
       <label :for="name" data-testid="label">{{ title }}</label>
       <input
-         @input="emits('updateData', name, valueInput)"
+         ref="input"
+         @input="emits('updateData', name, input.value)"
          :type="typeInput"
-         v-model="valueInput"
+         :value="value"
          :id="name"
          @blur="isBlur = true"
          @focus="isBlur = false"
