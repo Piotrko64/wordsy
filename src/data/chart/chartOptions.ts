@@ -13,7 +13,7 @@ export const chartOptions = {
                textAlign: 'center',
                font: {
                   weight: 'bold',
-                  size: '18px',
+                  size: 18,
                   family: 'Signika',
                },
             },

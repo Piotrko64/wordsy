@@ -44,7 +44,7 @@ watch(onlyDataForChart, () => {
 
 <template>
    <div class="chart">
-      <Bar :data="dataBarChat" :options="chartOptions" />
+      <Bar :data="dataBarChat" :options="(chartOptions as any)" />
    </div>
 </template>
 
