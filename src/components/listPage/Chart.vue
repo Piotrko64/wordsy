@@ -48,7 +48,13 @@ watch(onlyDataForChart, () => {
 
 <style scoped lang="scss">
 .chart {
-   max-height: 800px;
+   height: 260px;
    margin-top: 40px;
+}
+@media (min-width: 720px) {
+   .chart {
+      height: 400px;
+      margin-top: 40px;
+   }
 }
 </style>
