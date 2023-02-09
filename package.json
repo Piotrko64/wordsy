@@ -17,6 +17,7 @@
       "@types/downloadjs": "^1.4.3",
       "@types/uuid": "^9.0.0",
       "chart.js": "^4.2.0",
+      "chartjs-plugin-datalabels": "^2.2.0",
       "downloadjs": "^1.4.7",
       "jszip": "^3.10.1",
       "lodash": "^4.17.21",

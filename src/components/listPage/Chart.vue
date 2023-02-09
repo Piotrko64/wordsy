@@ -14,8 +14,10 @@ import { Bar } from 'vue-chartjs';
 import { getChartData } from '../../helpers/chart/getChartData';
 import { ref, watch, reactive } from 'vue';
 import { storeToRefs } from 'pinia';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 ChartJS.register(
+   ChartDataLabels,
    CategoryScale,
    LinearScale,
    BarElement,
@@ -48,13 +50,14 @@ watch(onlyDataForChart, () => {
 
 <style scoped lang="scss">
 .chart {
-   height: 260px;
+   height: 330px;
    margin-top: 40px;
+   margin-bottom: 40px;
 }
 @media (min-width: 720px) {
    .chart {
       height: 400px;
-      margin-top: 40px;
+      margin-bottom: 30px;
    }
 }
 </style>
