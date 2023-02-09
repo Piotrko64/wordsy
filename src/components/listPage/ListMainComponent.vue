@@ -3,6 +3,7 @@ import { useWordsStore } from '../../stores/WordsStore';
 import { storeToRefs } from 'pinia';
 import BackToMainPage from '../../ui/BackToMainPage.vue';
 import SingleList from './SingleList.vue';
+import Chart from './Chart.vue';
 
 const store = useWordsStore();
 const { getOwnWords, getStartWords, isOnlyOwnWords, getFavWords } =
@@ -33,6 +34,8 @@ const { getOwnWords, getStartWords, isOnlyOwnWords, getFavWords } =
       <SingleList title="Ulubione" :words="getFavWords" />
 
       <SingleList title="Słówka startowe" :words="getStartWords" />
+
+      <Chart />
 
       <BackToMainPage />
    </div>
