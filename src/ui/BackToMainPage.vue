@@ -9,7 +9,7 @@ import backArrow from '../assets/icons/arrowBack.png';
 </template>
 <style lang="scss" scope>
 .anchor {
-   margin-top: 15px;
+   margin-top: 20px;
    display: flex;
    justify-content: flex-start;
    align-items: center;
@@ -17,7 +17,7 @@ import backArrow from '../assets/icons/arrowBack.png';
    color: var(--green);
    transition: all 0.1s ease-in-out;
 
-   width: 100%;
+   width: fit-content;
    border-radius: 6px;
    padding: 8px 12px 8px 0;
    padding-bottom: 20px;

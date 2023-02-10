@@ -14,6 +14,7 @@ export function getChartData({
          'Startowe',
          'Startowe ulubione',
       ],
+
       datasets: [
          {
             label: 'Ilości słówek',

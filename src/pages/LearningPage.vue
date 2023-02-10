@@ -10,6 +10,8 @@ import { useAdditionalMode } from '../stores/AdditionalModeStore';
 import { useWordsStore } from '../stores/WordsStore';
 import OtherOperations from '../components/learningPage/otherOperations/OtherOperations.vue';
 import GestureContainer from '../components/gestureContainer/GestureContainer.vue';
+import Chart from '../components/listPage/Chart.vue';
+import Title from '../ui/Title.vue';
 
 const { isActive } = storeToRefs(useAdditionalMode());
 const { getListWords } = storeToRefs(useWordsStore());

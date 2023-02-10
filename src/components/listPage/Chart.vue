@@ -51,13 +51,14 @@ watch(onlyDataForChart, () => {
 <style scoped lang="scss">
 .chart {
    height: 330px;
-   margin-top: 40px;
+   margin-top: 50px;
    margin-bottom: 40px;
 }
 @media (min-width: 720px) {
    .chart {
       height: 400px;
-      margin-bottom: 30px;
+      margin-top: 60px;
+      margin-bottom: 60px;
    }
 }
 </style>
