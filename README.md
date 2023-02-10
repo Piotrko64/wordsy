@@ -105,6 +105,11 @@ Thanks **Vite** for greatful functions for PWA!
 
 * (25.01.2023) - Fix the problem with dropzone on mobile, add countings words and add a button to add words as favorite
 
+* (09.02.2023) - **Chart update!**
+
+![image](https://user-images.githubusercontent.com/77500425/217927581-087bd4df-801a-4425-9bb2-0b1340921664.png)
+
+
 <br />
 <br />
 
