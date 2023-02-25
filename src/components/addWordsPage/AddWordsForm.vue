@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InputNames } from '@/src/@types/forms/InputNames';
+import { InputNames } from '../../@types/forms/InputNames';
 import BaseInput from '../../ui/form/BaseInput.vue';
 import BaseTextarea from '../../ui/form/BaseTextarea.vue';
 import { reactive, ref } from 'vue';

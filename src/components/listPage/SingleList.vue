@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { WordsType } from '@/src/@types/WordsType';
+import { WordsType } from '../../@types/WordsType';
 import { ref } from 'vue';
 import SingleWord from './SingleWord.vue';
 import arrow from '../../assets/icons/whiteArrow.png';
