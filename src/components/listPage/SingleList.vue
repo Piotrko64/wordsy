@@ -14,11 +14,7 @@ const heightList = ref(0);
 const container = ref();
 
 function toggleActiveList() {
-   if (!heightList.value) {
-      heightList.value = container.value.scrollHeight;
-   } else {
-      heightList.value = 0;
-   }
+   heightList.value = heightList.value ? 0 : container.value.scrollHeight;
 }
 </script>
 

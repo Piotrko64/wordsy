@@ -10,6 +10,22 @@ export const startingWords: Array<WordsType> = [
       exampleEN: "Don't assume that she doesn't like you; ask her.",
    },
    {
+      wordPL: 'przywoływalny',
+      wordEN: 'invokable',
+      fav: false,
+
+      examplePL: '',
+      exampleEN: '',
+   },
+   {
+      wordPL: 'miejsce, plama, krosta, kropka, szczypta',
+      wordEN: 'spot',
+      fav: false,
+
+      examplePL: 'Na kanapie jest paskudna plama',
+      exampleEN: 'There is a nasty spot on the couch',
+   },
+   {
       wordPL: 'tchórz',
       wordEN: 'coward',
       fav: false,

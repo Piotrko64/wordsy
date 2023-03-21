@@ -1,4 +1,5 @@
 import { SingleWord } from '@/src/@types/WordsType';
+import { filterArrayById } from '../../../utils/filterArray/filterArrayById';
 import {
    readWordsFromStorage,
    saveOwnWordsToLocalStorage,
@@ -14,10 +15,13 @@ export function saveJSONWordstoLocalStorage(dataJson: Array<SingleWord>) {
          }
       );
 
-      saveOwnWordsToLocalStorage(newArrayWithNewId, 'ownWords');
+      saveOwnWordsToLocalStorage(
+         filterArrayById(newArrayWithNewId),
+         'ownWords'
+      );
       return true;
    } else {
-      console.log(
+      console.warn(
          '%c Struktura pliku jest nie prawidłowa',
          'background: red; color: white'
       );

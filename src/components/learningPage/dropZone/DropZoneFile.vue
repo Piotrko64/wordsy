@@ -10,7 +10,7 @@ import jsonFile from '../../../assets/icons/backup/jsonFile.png';
 import { useWordsStore } from '../../../stores/WordsStore';
 import { useModalStore } from '../../../stores/ModalStore';
 
-const { updateWordsByUploadWords } = useWordsStore();
+const { addWordsFromLocalStorage } = useWordsStore();
 const { activationModal } = useModalStore();
 
 const isActiveZone = ref(false);
@@ -25,7 +25,7 @@ function turnOffActiveZone() {
 
 const functionsToUploadWords = {
    ok: () => {
-      updateWordsByUploadWords();
+      addWordsFromLocalStorage();
       activationModal('Udało się! 🎊', `Twoje nowe słówka zostały dodane`);
    },
    fail: () => {

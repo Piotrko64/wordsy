@@ -13,22 +13,20 @@ export async function handleDropFile(event: DragEvent, callback: NoticeType) {
       return;
    }
 
-   reader.onload = (() => {
-      return () => {
-         try {
-            const dataJson = JSON.parse(reader.result as string);
+   reader.onload = () => {
+      try {
+         const dataJson = JSON.parse(reader.result as string);
 
-            if (saveJSONWordstoLocalStorage(dataJson)) {
-               callback.ok();
-            } else {
-               callback.fail();
-            }
-         } catch (error) {
+         if (saveJSONWordstoLocalStorage(dataJson)) {
+            callback.ok();
+         } else {
             callback.fail();
-            console.log(error);
          }
-      };
-   })();
+      } catch (error) {
+         callback.fail();
+         console.warn('Error:', error);
+      }
+   };
 
    reader.readAsText(jsonFile);
 }

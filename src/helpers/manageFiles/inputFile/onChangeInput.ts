@@ -23,7 +23,7 @@ export function onChangeInput(event: Event, callback: NoticeType) {
             callback.fail();
          }
       } catch (error) {
-         console.log(error);
+         console.warn(error);
          callback.fail();
       }
    }

@@ -9,20 +9,17 @@ import { v4 as uuidv4 } from 'uuid';
 import { shuffleElementsArray } from '../../../utils/shuffleElements/shuffleElementsArray';
 import { startingWords } from '../../../data/startingWords';
 import { WordsType } from './../../../@types/WordsType';
-import { filterArrayById } from '../../../utils/filterArray/filterArrayById';
 
 export const ActionsWordsStore = {
    toggleOnlyOwnWords() {
       this.onlyOwnWords = !this.onlyOwnWords;
-      if (this.onlyOwnWords) {
-         this.allWords = this.ownWords.filter((example) =>
-            this.onlyFavWords ? example.fav : true
-         );
-      } else {
-         this.allWords = [...this.ownWords, ...this.startWords].filter(
-            (example) => (this.onlyFavWords ? example.fav : true)
-         );
-      }
+      this.allWords = this.onlyOwnWords
+         ? this.ownWords.filter((example) =>
+              this.onlyFavWords ? example.fav : true
+           )
+         : [...this.ownWords, ...this.startWords].filter((example) =>
+              this.onlyFavWords ? example.fav : true
+           );
       saveOwnWordsToLocalStorage(this.onlyOwnWords, 'onlyOwnWords');
    },
    filterFavWords(filter: boolean) {
@@ -76,10 +73,6 @@ export const ActionsWordsStore = {
       saveOwnWordsToLocalStorage(this.startWords, 'startWords');
    },
 
-   updateWordsByUploadWords() {
-      this.ownWords = filterArrayById(readWordsFromStorage('ownWords'));
-   },
-
    addWordsFromLocalStorage() {
       this.startWords =
          readWordsFromStorage('startWords').length === 0
@@ -108,18 +101,12 @@ export const ActionsWordsStore = {
       this.progress = Math.max(this.progress - 1, 0);
    },
    nextWordWithoutLimit() {
-      if (this.progress === this.allWords.length - 1) {
-         this.progress = 0;
-      } else {
-         this.progress = this.progress + 1;
-      }
+      this.progress =
+         this.progress === this.allWords.length - 1 ? 0 : this.progress + 1;
    },
    prevWordWithoutLimit() {
-      if (this.progress === 0) {
-         this.progress = this.allWords.length - 1;
-      } else {
-         this.progress = this.progress - 1;
-      }
+      this.progress =
+         this.progress === 0 ? this.allWords.length - 1 : this.progress - 1;
    },
 
    changeMode(mode: string) {

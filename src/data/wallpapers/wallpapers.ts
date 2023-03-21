@@ -46,9 +46,5 @@ const wallpapersData = [
 export function findWallpaper() {
    const hours = new Date().getHours();
 
-   const nameImg = wallpapersData.find(
-      (wallpaper) => hours >= wallpaper.hours
-   )?.name;
-
-   return nameImg;
+   return wallpapersData.find((wallpaper) => hours >= wallpaper.hours)?.name;
 }
