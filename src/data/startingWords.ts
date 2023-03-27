@@ -10,6 +10,38 @@ export const startingWords: Array<WordsType> = [
       exampleEN: "Don't assume that she doesn't like you; ask her.",
    },
    {
+      wordPL: 'przeszkadzać, zakłócać, zaburzać, martwić ',
+      wordEN: 'disturb',
+      fav: false,
+
+      examplePL: 'Nie przeszkadzaj mnie kiedy ja pracuję',
+      exampleEN: 'Do not disturb me when I work',
+   },
+   {
+      wordPL: 'smak, spróbować, smakować',
+      wordEN: 'taste',
+      fav: false,
+
+      examplePL: 'Spróbuj tego - jest naprawde dobre',
+      exampleEN: 'Taste it - It is really good',
+   },
+   {
+      wordPL: 'buntownik, rebeliant, buntować się, odmawiać posłuszeństwa',
+      wordEN: 'rebel',
+      fav: false,
+
+      examplePL: 'Kiedy ona miała 13 lat, buntowała się przeciwko rodzicom',
+      exampleEN: 'When she was 13 she rebelled against her parents',
+   },
+   {
+      wordPL: 'paznokcie',
+      wordEN: 'nail',
+      fav: false,
+
+      examplePL: 'Złamałam kolejny paznokieć',
+      exampleEN: 'I broke next nail',
+   },
+   {
       wordPL: 'przywoływalny',
       wordEN: 'invokable',
       fav: false,
@@ -26,12 +58,28 @@ export const startingWords: Array<WordsType> = [
       exampleEN: 'There is a nasty spot on the couch',
    },
    {
+      wordPL: 'zamieszanie, awantura, afera',
+      wordEN: 'fuss',
+      fav: false,
+
+      examplePL: 'Nie wiem tylko, o co to całe zamieszanie ',
+      exampleEN: 'I don"t know What the whole fuss is about',
+   },
+   {
       wordPL: 'tchórz',
       wordEN: 'coward',
       fav: false,
 
       examplePL: 'Zachowałeś się jak tchórz i uciekłeś przed wężem',
       exampleEN: 'You behaved like a coward and ran away from the snake',
+   },
+   {
+      wordPL: 'warga',
+      wordEN: 'lip',
+      fav: false,
+
+      examplePL: 'Jego dolna warga wciąż krwawiła',
+      exampleEN: 'His lower lip was still bleeding',
    },
    {
       wordPL: 'podpowiedź',

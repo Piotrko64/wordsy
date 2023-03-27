@@ -4,34 +4,45 @@ const wallpapersData = [
       hours: 23,
    },
    {
-      name: 'stars2',
-      hours: 21,
+      name: 'greenNight',
+      hours: 22,
    },
    {
-      name: 'cat',
+      name: 'stars2',
       hours: 20,
    },
    {
+      name: 'cat',
+      hours: 19,
+   },
+   {
+      name: 'darkRoad',
+      hours: 17,
+   },
+   {
       name: 'road',
-      hours: 18,
+      hours: 16,
    },
 
    {
       name: 'forest',
-      hours: 16,
-   },
-   {
-      name: 'books',
       hours: 14,
    },
    {
-      name: 'mountain',
+      name: 'books',
       hours: 12,
    },
-
+   {
+      name: 'mountain',
+      hours: 9,
+   },
+   {
+      name: 'skyRed',
+      hours: 8,
+   },
    {
       name: 'road',
-      hours: 8,
+      hours: 7,
    },
    {
       name: 'mountain',
