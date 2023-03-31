@@ -17,7 +17,11 @@ const wallpapersData = [
    },
    {
       name: 'darkRoad',
-      hours: 17,
+      hours: 18,
+   },
+   {
+      name: 'yellow',
+      hours: 18,
    },
    {
       name: 'road',
@@ -26,15 +30,19 @@ const wallpapersData = [
 
    {
       name: 'forest',
-      hours: 14,
+      hours: 15,
    },
    {
       name: 'books',
+      hours: 13,
+   },
+   {
+      name: 'roses',
       hours: 12,
    },
    {
       name: 'mountain',
-      hours: 9,
+      hours: 10,
    },
    {
       name: 'skyRed',
@@ -46,7 +54,7 @@ const wallpapersData = [
    },
    {
       name: 'mountain',
-      hours: 4,
+      hours: 5,
    },
    {
       name: 'books',
